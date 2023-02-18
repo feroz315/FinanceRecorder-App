@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="812" viewBox="0 0 375 812">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_154" data-name="Rectangle 154" width="375" height="812" fill="#fff"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.296" y1="0.259" x2="0.931" y2="0.562" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e7ffe4"/>
+      <stop offset="1" stop-color="#4fc0e7"/>
+    </linearGradient>
+    <filter id="Oval" x="-3" y="169.5" width="357" height="357" filterUnits="userSpaceOnUse">
+      <feOffset dx="-13" dy="47" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="39.5" result="blur"/>
+      <feFlood flood-color="#4162a9" flood-opacity="0.188"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Mask_Group_6" data-name="Mask Group 6" clip-path="url(#clip-path)">
+    <rect id="Rectangle_154-2" data-name="Rectangle 154" width="375" height="812" fill="#fff"/>
+    <g id="Shape" transform="translate(-112.261 -108.993)">
+      <path id="Shape-2" data-name="Shape" d="M0,280.578s53.225,91.141,167.473,91.141,141.992-155.445,204.862-164.4S505.082,155.3,520.363,115.168V0H0Z" transform="matrix(0.966, 0.259, -0.259, 0.966, 96.969, 0.993)" fill="url(#linear-gradient)"/>
+      <path id="Shape-3" data-name="Shape" d="M0,280.578s53.225,91.141,167.473,91.141,141.992-155.445,204.862-164.4S505.082,155.3,520.363,115.168V0H0Z" transform="matrix(-0.966, -0.259, 0.259, -0.966, 564.394, 1044.726)" opacity="0.1" fill="url(#linear-gradient)"/>
+    </g>
+    <g id="Welcome" transform="translate(98.5 407)">
+      <text id="Welcome_" data-name="Welcome!" transform="translate(89.5 28)" fill="#0e131e" font-size="29" font-family="Montserrat-Bold, Montserrat" font-weight="700"><tspan x="-76" y="0">Welcome!</tspan></text>
+      <text id="Start_by_creating_yo" data-name="Start by creating yo" transform="translate(89.5 65)" fill="#576c8a" font-size="14" font-family="Montserrat-Regular, Montserrat"><tspan x="-60" y="0">Start by creating </tspan><tspan x="-76" y="18">your account or login.</tspan></text>
+    </g>
+    <g id="Logo" transform="translate(128.5 241)">
+      <g transform="matrix(1, 0, 0, 1, -128.5, -241)" filter="url(#Oval)">
+        <circle id="Oval-2" data-name="Oval" cx="60" cy="60" r="60" transform="translate(128.5 241)" fill="#fff"/>
+      </g>
+      <g id="Group" transform="translate(20 35)">
+        <circle id="Oval-3" data-name="Oval" cx="15" cy="15" r="15" fill="#ff7362"/>
+        <circle id="Oval-4" data-name="Oval" cx="5" cy="5" r="5" transform="translate(20 40.267)" fill="#00d4ff"/>
+        <circle id="Oval-5" data-name="Oval" cx="20" cy="20" r="20" transform="translate(40)" fill="#b4ee73"/>
+      </g>
+    </g>
+  </g>
+</svg>

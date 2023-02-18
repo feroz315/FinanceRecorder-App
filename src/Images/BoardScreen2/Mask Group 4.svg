@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="812" viewBox="0 0 375 812">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_156" data-name="Rectangle 156" width="375" height="812" fill="#fff"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.296" y1="0.259" x2="0.931" y2="0.562" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e7ffe4"/>
+      <stop offset="1" stop-color="#4fc0e7"/>
+    </linearGradient>
+    <filter id="layer" x="79.67" y="128.5" width="390.33" height="493.279" filterUnits="userSpaceOnUse">
+      <feOffset dx="-13" dy="47" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="39.5" result="blur"/>
+      <feFlood flood-color="#4162a9" flood-opacity="0.188"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="layer-2" x="-40.33" y="95.5" width="430.33" height="560.135" filterUnits="userSpaceOnUse">
+      <feOffset dx="-13" dy="47" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="39.5" result="blur-2"/>
+      <feFlood flood-color="#4162a9" flood-opacity="0.188"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="layer-3" x="-303.335" y="62.5" width="470.335" height="627" filterUnits="userSpaceOnUse">
+      <feOffset dx="-13" dy="47" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="39.5" result="blur-3"/>
+      <feFlood flood-color="#4162a9" flood-opacity="0.188"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-2">
+      <path id="Clip_70" data-name="Clip 70" d="M0,97.734H159.471V0H0Z" transform="translate(0 0)" fill="none"/>
+    </clipPath>
+    <filter id="Oval" x="-99" y="-27.5" width="281" height="281" filterUnits="userSpaceOnUse">
+      <feOffset dx="-13" dy="47" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="39.5" result="blur-4"/>
+      <feFlood flood-color="#4162a9" flood-opacity="0.188"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Mask_Group_4" data-name="Mask Group 4" clip-path="url(#clip-path)">
+    <g id="Group_309" data-name="Group 309">
+      <rect id="Rectangle_154" data-name="Rectangle 154" width="375" height="812" fill="#fff"/>
+      <path id="Shape" d="M0,280.578s53.225,91.141,167.473,91.141,182.234-183.4,232.672-183.4,104.938-33.02,120.219-73.148V0H0Z" transform="matrix(0.985, 0.174, -0.174, 0.985, -73.273, -126.356)" fill="url(#linear-gradient)"/>
+    </g>
+    <g id="Group_2" data-name="Group 2" transform="translate(-172.5 134)">
+      <g id="Card" transform="translate(537)">
+        <g transform="matrix(1, 0, 0, 1, -364.5, -134)" filter="url(#layer)">
+          <path id="layer-4" data-name="layer" d="M-153.33,226.324c0,7.479,4.071,13.709,9.364,14.329l132.907,15.577a7.273,7.273,0,0,0,.847.05C-4.572,256.279,0,249.841,0,241.9V14.379q0-.6-.035-1.193C-.5,5.273-5.438-.608-11.058.05L-143.966,15.627c-5.293.62-9.364,6.85-9.364,14.329Z" transform="translate(364.5 200)" fill="#fff"/>
+        </g>
+        <g transform="matrix(1, 0, 0, 1, -364.5, -134)" filter="url(#layer-2)">
+          <path id="layer-5" data-name="layer" d="M-193.33,285.366c0,9.43,5.134,17.285,11.807,18.067l167.579,19.64a9.172,9.172,0,0,0,1.068.062C-5.764,323.136,0,315.019,0,305.006V18.13q0-.753-.044-1.5C-.634,6.649-6.857-.767-13.943.063L-181.523,19.7c-6.674.782-11.807,8.637-11.807,18.067Z" transform="translate(284.5 167)" fill="#fff"/>
+        </g>
+        <g transform="matrix(1, 0, 0, 1, -364.5, -134)" filter="url(#layer-3)">
+          <path id="layer-6" data-name="layer" d="M-233.335,344.415c0,11.381,6.2,20.861,14.251,21.805l202.255,23.7A11.065,11.065,0,0,0-15.54,390C-6.957,390,0,380.2,0,368.119V21.882q0-.909-.054-1.815C-.765,8.024-8.276-.926-16.829.077l-202.255,23.7c-8.055.944-14.251,10.425-14.251,21.805Z" transform="translate(61.5 134)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Illustration" transform="translate(280 146)">
+        <g id="Group_4" data-name="Group 4" transform="translate(141.639 46.587)">
+          <path id="Fill_1" data-name="Fill 1" d="M3.858,0A33.5,33.5,0,0,1,0,6.769" transform="translate(0.315 0.427)" fill="#fff"/>
+          <path id="Stroke_3" data-name="Stroke 3" d="M3.858,0A33.5,33.5,0,0,1,0,6.769" transform="translate(0.315 0.427)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.992"/>
+        </g>
+        <g id="Group_8" data-name="Group 8" transform="translate(80.656 0.03)">
+          <path id="Fill_5" data-name="Fill 5" d="M55.376,59.123A33.579,33.579,0,1,1,32.766.01C33.037,0,33.307,0,33.58,0A33.609,33.609,0,0,1,66.649,39.432" transform="translate(0.655 0.295)" fill="#fff"/>
+          <path id="Stroke_7" data-name="Stroke 7" d="M55.376,59.123A33.579,33.579,0,1,1,32.766.01C33.037,0,33.307,0,33.58,0A33.609,33.609,0,0,1,66.649,39.432" transform="translate(0.655 0.295)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.992"/>
+        </g>
+        <path id="Fill_9" data-name="Fill 9" d="M41.094,45.313c-1.161,4.46-2.616,5.911-4.069,6.009s-7.754,7.948-9.692,7.85S22,62.856,21.421,62.856s-.874-1.452.1-7.752-.483-4.652-2.711-7.657-4.264-8.723-2.812-10.952-.1-4.169-1.358-4.227-2.421-1.782-2.906-2.944S6.786,27.578,3.2,24.767.486,14.493.486,14.493L0,11.876V9.635A33.457,33.457,0,0,1,22.738,0a4.059,4.059,0,0,1,1.59,2.477c.193,3.2,5.621,2.711,6.4,4.555s-7.174,3.683-8.536,4.845.2,2.617-2.514,2.617-3.683,3.294-3.3,4.557.1,3.3-3.586-.583-6.107,3.392-5.233,4.942,2.908-1.26,3.779-1.452.873,2.519,1.938,2.907-.969,3.1.679,4.75,1.552-.388,2.907.483,6.2-.29,8.967-.483,2.569,4.069,5.476,3.876,4.071,2.424,5.233,3.683,6.785,2.228,7.269,2.714.1,3.1-2.715,5.426" transform="translate(91.339 0.335)" fill="#23c896"/>
+        <path id="Stroke_11" data-name="Stroke 11" d="M41.094,45.313c-1.161,4.46-2.616,5.911-4.069,6.009s-7.754,7.948-9.692,7.85S22,62.856,21.421,62.856s-.874-1.452.1-7.752-.483-4.652-2.711-7.657-4.264-8.723-2.812-10.952-.1-4.169-1.358-4.227-2.421-1.782-2.906-2.944S6.786,27.578,3.2,24.767.486,14.493.486,14.493L0,11.876V9.635A33.457,33.457,0,0,1,22.738,0a4.059,4.059,0,0,1,1.59,2.477c.193,3.2,5.621,2.711,6.4,4.555s-7.174,3.683-8.536,4.845.2,2.617-2.514,2.617-3.683,3.294-3.3,4.557.1,3.3-3.586-.583-6.107,3.392-5.233,4.942,2.908-1.26,3.779-1.452.873,2.519,1.938,2.907-.969,3.1.679,4.75,1.552-.388,2.907.483,6.2-.29,8.967-.483,2.569,4.069,5.476,3.876,4.071,2.424,5.233,3.683,6.785,2.228,7.269,2.714S43.906,42.988,41.094,45.313Z" transform="translate(91.339 0.335)" fill="none" stroke="#000" stroke-width="0.992"/>
+        <path id="Fill_13" data-name="Fill 13" d="M8.266,55.871H0L1.331,0h5.6Z" transform="translate(39.701 31.55)" fill="#fff"/>
+        <path id="Stroke_15" data-name="Stroke 15" d="M8.266,55.871H0L1.331,0h5.6Z" transform="translate(39.701 31.55)" fill="none" stroke="#000" stroke-width="1"/>
+        <path id="Fill_17" data-name="Fill 17" d="M8.265,55.871H0L1.33,0h5.6Z" transform="translate(59.449 31.55)" fill="#fff"/>
+        <path id="Stroke_19" data-name="Stroke 19" d="M8.265,55.871H0L1.33,0h5.6Z" transform="translate(59.449 31.55)" fill="none" stroke="#000" stroke-width="1"/>
+        <path id="Fill_21" data-name="Fill 21" d="M8.265,55.871H0L1.33,0h5.6Z" transform="translate(83.398 31.55)" fill="#fff"/>
+        <path id="Stroke_23" data-name="Stroke 23" d="M8.265,55.871H0L1.33,0h5.6Z" transform="translate(83.398 31.55)" fill="none" stroke="#000" stroke-width="1"/>
+        <path id="Fill_25" data-name="Fill 25" d="M8.265,55.871H0L1.331,0h5.6Z" transform="translate(101.345 31.55)" fill="#fff"/>
+        <path id="Stroke_27" data-name="Stroke 27" d="M8.265,55.871H0L1.331,0h5.6Z" transform="translate(101.345 31.55)" fill="none" stroke="#000" stroke-width="1"/>
+        <path id="Fill_29" data-name="Fill 29" d="M77.735,4.306H1.512A1.512,1.512,0,0,1,0,2.793V1.511A1.512,1.512,0,0,1,1.512,0H77.735a1.512,1.512,0,0,1,1.512,1.511V2.793a1.512,1.512,0,0,1-1.512,1.512" transform="translate(35.032 85.268)" fill="#fff"/>
+        <path id="Stroke_31" data-name="Stroke 31" d="M77.735,4.306H1.512A1.512,1.512,0,0,1,0,2.793V1.511A1.512,1.512,0,0,1,1.512,0H77.735a1.512,1.512,0,0,1,1.512,1.511V2.793A1.512,1.512,0,0,1,77.735,4.306Z" transform="translate(35.032 85.268)" fill="none" stroke="#000" stroke-width="1"/>
+        <path id="Fill_33" data-name="Fill 33" d="M89.047,4.306H1.512A1.512,1.512,0,0,1,0,2.793V1.511A1.512,1.512,0,0,1,1.512,0H89.047a1.512,1.512,0,0,1,1.512,1.511V2.793a1.512,1.512,0,0,1-1.512,1.512" transform="translate(29.377 88.795)" fill="#fff"/>
+        <path id="Stroke_35" data-name="Stroke 35" d="M89.047,4.306H1.512A1.512,1.512,0,0,1,0,2.793V1.511A1.512,1.512,0,0,1,1.512,0H89.047a1.512,1.512,0,0,1,1.512,1.511V2.793A1.512,1.512,0,0,1,89.047,4.306Z" transform="translate(29.377 88.795)" fill="none" stroke="#000" stroke-width="1"/>
+        <path id="Fill_37" data-name="Fill 37" d="M96.16,4.306H1.512A1.513,1.513,0,0,1,0,2.793V1.512A1.512,1.512,0,0,1,1.512,0H96.16a1.512,1.512,0,0,1,1.512,1.512V2.793A1.513,1.513,0,0,1,96.16,4.306" transform="translate(25.82 93.101)" fill="#fff"/>
+        <path id="Stroke_39" data-name="Stroke 39" d="M96.16,4.306H1.512A1.513,1.513,0,0,1,0,2.793V1.512A1.512,1.512,0,0,1,1.512,0H96.16a1.512,1.512,0,0,1,1.512,1.512V2.793A1.513,1.513,0,0,1,96.16,4.306Z" transform="translate(25.82 93.101)" fill="none" stroke="#000" stroke-width="1"/>
+        <path id="Fill_41" data-name="Fill 41" d="M12.06,3.409H1.2A1.2,1.2,0,0,1,0,2.212V1.2A1.2,1.2,0,0,1,1.2,0H12.06a1.2,1.2,0,0,1,1.2,1.2V2.212a1.2,1.2,0,0,1-1.2,1.2" transform="translate(36.984 36.447)" fill="#fff"/>
+        <path id="Stroke_43" data-name="Stroke 43" d="M12.06,3.409H1.2A1.2,1.2,0,0,1,0,2.212V1.2A1.2,1.2,0,0,1,1.2,0H12.06a1.2,1.2,0,0,1,1.2,1.2V2.212A1.2,1.2,0,0,1,12.06,3.409Z" transform="translate(36.984 36.447)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path id="Fill_45" data-name="Fill 45" d="M12.06,3.409H1.2A1.2,1.2,0,0,1,0,2.212V1.2A1.2,1.2,0,0,1,1.2,0H12.06a1.2,1.2,0,0,1,1.2,1.2V2.212a1.2,1.2,0,0,1-1.2,1.2" transform="translate(56.953 36.447)" fill="#fff"/>
+        <path id="Stroke_47" data-name="Stroke 47" d="M12.06,3.409H1.2A1.2,1.2,0,0,1,0,2.212V1.2A1.2,1.2,0,0,1,1.2,0H12.06a1.2,1.2,0,0,1,1.2,1.2V2.212A1.2,1.2,0,0,1,12.06,3.409Z" transform="translate(56.953 36.447)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path id="Fill_49" data-name="Fill 49" d="M12.06,3.409H1.2A1.2,1.2,0,0,1,0,2.212V1.2A1.2,1.2,0,0,1,1.2,0H12.06a1.2,1.2,0,0,1,1.2,1.2V2.212a1.2,1.2,0,0,1-1.2,1.2" transform="translate(80.901 36.447)" fill="#fff"/>
+        <path id="Stroke_51" data-name="Stroke 51" d="M12.06,3.409H1.2A1.2,1.2,0,0,1,0,2.212V1.2A1.2,1.2,0,0,1,1.2,0H12.06a1.2,1.2,0,0,1,1.2,1.2V2.212A1.2,1.2,0,0,1,12.06,3.409Z" transform="translate(80.901 36.447)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path id="Fill_53" data-name="Fill 53" d="M12.06,3.409H1.2A1.2,1.2,0,0,1,0,2.212V1.2A1.2,1.2,0,0,1,1.2,0H12.06a1.2,1.2,0,0,1,1.2,1.2V2.212a1.2,1.2,0,0,1-1.2,1.2" transform="translate(98.849 36.447)" fill="#fff"/>
+        <path id="Stroke_55" data-name="Stroke 55" d="M12.06,3.409H1.2A1.2,1.2,0,0,1,0,2.212V1.2A1.2,1.2,0,0,1,1.2,0H12.06a1.2,1.2,0,0,1,1.2,1.2V2.212A1.2,1.2,0,0,1,12.06,3.409Z" transform="translate(98.849 36.447)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path id="Fill_57" data-name="Fill 57" d="M86.431,21.976l-85.442.83A.978.978,0,0,1,.55,20.949L43.45,0,86.832,20.11a.978.978,0,0,1-.4,1.866" transform="translate(30.942 14.7)" fill="#fff"/>
+        <path id="Stroke_59" data-name="Stroke 59" d="M86.431,21.976l-85.442.83A.978.978,0,0,1,.55,20.949L43.45,0,86.832,20.11A.978.978,0,0,1,86.431,21.976Z" transform="translate(30.942 14.7)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path id="Fill_65" data-name="Fill 65" d="M2.623,27.113A2.631,2.631,0,0,1,0,24.49V2.623A2.631,2.631,0,0,1,2.623,0H40.759a2.631,2.631,0,0,1,2.623,2.623V24.49a2.631,2.631,0,0,1-2.623,2.623Z" transform="translate(115.765 1.429)" fill="#fff"/>
+        <path id="Stroke_67" data-name="Stroke 67" d="M40.759,27.113H2.623A2.631,2.631,0,0,1,0,24.49V2.623A2.631,2.631,0,0,1,2.623,0H40.759a2.631,2.631,0,0,1,2.623,2.623V24.49A2.631,2.631,0,0,1,40.759,27.113Z" transform="translate(115.765 1.429)" fill="none" stroke="#000" stroke-width="0.992"/>
+        <path id="Clip_70-2" data-name="Clip 70" d="M0,97.734H159.471V0H0Z" transform="translate(0 0)" fill="none"/>
+        <g id="Mask_Group_1" data-name="Mask Group 1" clip-path="url(#clip-path-2)">
+          <path id="Fill_69" data-name="Fill 69" d="M0,3.028H43.382V0H0Z" transform="translate(115.765 6.084)" fill="#848d95"/>
+          <path id="Stroke_71" data-name="Stroke 71" d="M0,3.028H43.382V0H0Z" transform="translate(115.765 6.084)" fill="none" stroke="#000" stroke-width="0.992"/>
+          <path id="Fill_72" data-name="Fill 72" d="M40.759,27.113H2.623A2.631,2.631,0,0,1,0,24.49V2.623A2.631,2.631,0,0,1,2.623,0H40.759a2.631,2.631,0,0,1,2.623,2.623V24.49a2.631,2.631,0,0,1-2.623,2.623" transform="translate(87.837 20.72)" fill="#fff"/>
+          <path id="Stroke_73" data-name="Stroke 73" d="M40.759,27.113H2.623A2.631,2.631,0,0,1,0,24.49V2.623A2.631,2.631,0,0,1,2.623,0H40.759a2.631,2.631,0,0,1,2.623,2.623V24.49A2.631,2.631,0,0,1,40.759,27.113Z" transform="translate(87.837 20.72)" fill="none" stroke="#000" stroke-width="0.992"/>
+          <path id="Fill_74" data-name="Fill 74" d="M5.053,2.527A2.527,2.527,0,1,1,2.527,0,2.527,2.527,0,0,1,5.053,2.527" transform="translate(124.175 39.525)" fill="#fff"/>
+          <path id="Stroke_75" data-name="Stroke 75" d="M5.053,2.527A2.527,2.527,0,1,1,2.527,0,2.527,2.527,0,0,1,5.053,2.527Z" transform="translate(124.175 39.525)" fill="none" stroke="#000" stroke-width="0.992"/>
+          <path id="Stroke_76" data-name="Stroke 76" d="M5.053,2.527A2.527,2.527,0,1,1,2.527,0,2.527,2.527,0,0,1,5.053,2.527Z" transform="translate(120.864 39.525)" fill="none" stroke="#000" stroke-width="0.992"/>
+          <path id="Fill_77" data-name="Fill 77" d="M3.114,3.079H1.54A1.539,1.539,0,1,1,1.54,0H3.114a1.539,1.539,0,1,1,0,3.079" transform="translate(91.225 29.165)" fill="#fff"/>
+          <path id="Stroke_78" data-name="Stroke 78" d="M3.114,3.079H1.54A1.539,1.539,0,1,1,1.54,0H3.114a1.539,1.539,0,1,1,0,3.079Z" transform="translate(91.225 29.165)" fill="none" stroke="#000" stroke-width="0.992"/>
+          <path id="Fill_79" data-name="Fill 79" d="M36.668,3.028H1.513A1.514,1.514,0,0,1,1.513,0H36.668a1.514,1.514,0,1,1,0,3.028" transform="translate(91.047 34.206)" fill="#848d95"/>
+          <path id="Stroke_80" data-name="Stroke 80" d="M0,.328H7.758" transform="translate(91.404 41.723)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.992"/>
+          <path id="Stroke_81" data-name="Stroke 81" d="M0,.328H7.758" transform="translate(91.404 43.64)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.992"/>
+          <path id="Fill_82" data-name="Fill 82" d="M17.861,16.346H8.173A8.173,8.173,0,1,1,8.173,0h9.689a8.173,8.173,0,1,1,0,16.346ZM9.128,3.677a4.5,4.5,0,1,0,0,8.991H17.17a4.5,4.5,0,1,0,0-8.991Z" transform="translate(29.212 63.273)" fill="#fbb03b"/>
+          <path id="Stroke_83" data-name="Stroke 83" d="M17.861,16.346H8.173A8.173,8.173,0,1,1,8.173,0h9.689a8.173,8.173,0,1,1,0,16.346ZM9.128,3.677a4.5,4.5,0,1,0,0,8.991H17.17a4.5,4.5,0,1,0,0-8.991Z" transform="translate(29.212 63.273)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <path id="Fill_84" data-name="Fill 84" d="M17.861,16.346H8.173A8.173,8.173,0,1,1,8.173,0h9.689a8.173,8.173,0,1,1,0,16.346ZM9.129,3.677a4.5,4.5,0,1,0,0,8.991H17.17a4.5,4.5,0,1,0,0-8.991Z" transform="translate(0.327 63.273)" fill="#fbb03b"/>
+          <path id="Stroke_85" data-name="Stroke 85" d="M17.861,16.346H8.173A8.173,8.173,0,1,1,8.173,0h9.689a8.173,8.173,0,1,1,0,16.346ZM9.129,3.677a4.5,4.5,0,1,0,0,8.991H17.17a4.5,4.5,0,1,0,0-8.991Z" transform="translate(0.327 63.273)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <path id="Fill_86" data-name="Fill 86" d="M18.366,0H1.519A1.523,1.523,0,0,0,0,1.518V2.864A1.523,1.523,0,0,0,1.519,4.384H18.366a1.523,1.523,0,0,0,1.519-1.519V1.518A1.523,1.523,0,0,0,18.366,0" transform="translate(17.892 69.102)" fill="#fbb03b"/>
+          <path id="Stroke_87" data-name="Stroke 87" d="M18.366,0H1.519A1.523,1.523,0,0,0,0,1.518V2.864A1.523,1.523,0,0,0,1.519,4.384H18.366a1.523,1.523,0,0,0,1.519-1.519V1.518A1.523,1.523,0,0,0,18.366,0Z" transform="translate(17.892 69.102)" fill="none" stroke="#000" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+    <g id="Logo" transform="translate(32.5 44)">
+      <g transform="matrix(1, 0, 0, 1, -32.5, -44)" filter="url(#Oval)">
+        <circle id="Oval-2" data-name="Oval" cx="22" cy="22" r="22" transform="translate(32.5 44)" fill="#fff"/>
+      </g>
+      <g id="Group" transform="translate(7.333 12.833)">
+        <circle id="Oval-3" data-name="Oval" cx="5.5" cy="5.5" r="5.5" fill="#ff7362"/>
+        <circle id="Oval-4" data-name="Oval" cx="1.833" cy="1.833" r="1.833" transform="translate(7.333 14.765)" fill="#00d4ff"/>
+        <circle id="Oval-5" data-name="Oval" cx="7.333" cy="7.333" r="7.333" transform="translate(14.667 0)" fill="#b4ee73"/>
+      </g>
+    </g>
+  </g>
+</svg>

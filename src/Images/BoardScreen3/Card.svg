@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="613.33" height="560.135" viewBox="0 0 613.33 560.135">
+  <defs>
+    <filter id="layer" x="223" y="33" width="390.33" height="493.279" filterUnits="userSpaceOnUse">
+      <feOffset dx="-13" dy="47" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="39.5" result="blur"/>
+      <feFlood flood-color="#4162a9" flood-opacity="0.188"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="layer-2" x="0" y="0" width="430.33" height="560.135" filterUnits="userSpaceOnUse">
+      <feOffset dx="-13" dy="47" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="39.5" result="blur-2"/>
+      <feFlood flood-color="#4162a9" flood-opacity="0.188"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Card" transform="translate(507.83 71.5)">
+    <g transform="matrix(1, 0, 0, 1, -507.83, -71.5)" filter="url(#layer)">
+      <path id="layer-3" data-name="layer" d="M-153.33,226.324c0,7.479,4.071,13.709,9.364,14.329l132.907,15.577a7.273,7.273,0,0,0,.847.05C-4.572,256.279,0,249.841,0,241.9V14.379q0-.6-.035-1.193C-.5,5.273-5.438-.608-11.058.05L-143.966,15.627c-5.293.62-9.364,6.85-9.364,14.329Z" transform="translate(507.83 104.5)" fill="#fff"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -507.83, -71.5)" filter="url(#layer-2)">
+      <path id="layer-4" data-name="layer" d="M-193.33,285.366c0,9.43,5.134,17.285,11.807,18.067l167.579,19.64a9.172,9.172,0,0,0,1.068.062C-5.764,323.136,0,315.019,0,305.006V18.13q0-.753-.044-1.5C-.634,6.649-6.857-.767-13.943.063L-181.523,19.7c-6.674.782-11.807,8.637-11.807,18.067Z" transform="translate(324.83 71.5)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

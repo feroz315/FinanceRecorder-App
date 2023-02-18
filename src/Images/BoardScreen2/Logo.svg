@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="281" height="281" viewBox="0 0 281 281">
+  <defs>
+    <filter id="Oval" x="0" y="0" width="281" height="281" filterUnits="userSpaceOnUse">
+      <feOffset dx="-13" dy="47" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="39.5" result="blur"/>
+      <feFlood flood-color="#4162a9" flood-opacity="0.188"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Logo" transform="translate(131.5 71.5)">
+    <g transform="matrix(1, 0, 0, 1, -131.5, -71.5)" filter="url(#Oval)">
+      <circle id="Oval-2" data-name="Oval" cx="22" cy="22" r="22" transform="translate(131.5 71.5)" fill="#fff"/>
+    </g>
+    <g id="Group" transform="translate(7.333 12.833)">
+      <circle id="Oval-3" data-name="Oval" cx="5.5" cy="5.5" r="5.5" fill="#ff7362"/>
+      <circle id="Oval-4" data-name="Oval" cx="1.833" cy="1.833" r="1.833" transform="translate(7.333 14.765)" fill="#00d4ff"/>
+      <circle id="Oval-5" data-name="Oval" cx="7.333" cy="7.333" r="7.333" transform="translate(14.667 0)" fill="#b4ee73"/>
+    </g>
+  </g>
+</svg>

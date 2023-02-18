@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="154" height="87" viewBox="0 0 154 87">
+  <g id="Welcome" transform="translate(-12.5)">
+    <text id="Welcome_" data-name="Welcome!" transform="translate(89.5 28)" fill="#0e131e" font-size="29" font-family="Montserrat-Bold, Montserrat" font-weight="700"><tspan x="-76" y="0">Welcome!</tspan></text>
+    <text id="Start_by_creating_yo" data-name="Start by creating yo" transform="translate(89.5 65)" fill="#576c8a" font-size="14" font-family="Montserrat-Regular, Montserrat"><tspan x="-60" y="0">Start by creating </tspan><tspan x="-76" y="18">your account or login.</tspan></text>
+  </g>
+</svg>
