@@ -74,13 +74,13 @@ useEffect(() => {
                     </View>
 
                     <View style={styles.viewspending}>
-                        <Text style={styles.spending}>Total Spedending</Text>
+                        <Text style={styles.spending}>Total Spending</Text>
                         <Text style={styles.totalamount}>${Totalexpense}</Text>
                     </View>
 
                 </View>
             </View>
-            <Text style={styles.textheading}>Spedending Breakdown</Text>
+            <Text style={styles.textheading}>Spending Breakdown</Text>
           
             <View style={styles.ViewCard}>
                 <View style={styles.ViewProgress}>
