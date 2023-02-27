@@ -28,7 +28,7 @@ const Registerscreen = ({ navigation, }) => {
     let Userdata = {
       username: userName,
       password: password,
-      phoneNo: Phonenum
+      phoneNo: Phonenum  
     }
     try {
 
@@ -37,7 +37,8 @@ const Registerscreen = ({ navigation, }) => {
         await AsyncStorage.setItem('userdata', JSON.stringify(data));
         setLoading(false)
         navigation.navigate('BottomNav', {
-          name: data.name
+          name: data.name,
+          
         })
       }
 
@@ -52,7 +53,7 @@ const Registerscreen = ({ navigation, }) => {
     <View style={{ width: "110%", }}>
       <ImageBackground source={require("../../Images/Login/Shape/Shape.png")} />
 
-      <TouchableOpacity style={{ marginTop: 35, marginLeft: 20 }} onPress={() => navigation.navigate('Welcome')}>
+      <TouchableOpacity style={{ marginTop: 35, marginLeft: 20 }} onPress={() => navigation.goBack()}>
         <AntDesign name="arrowleft" size={30} color="#000" />
       </TouchableOpacity>
 
@@ -60,7 +61,7 @@ const Registerscreen = ({ navigation, }) => {
         <Image source={require('../../Images/Login/Logo/Logo.png')} />
       </View>
 
-      <View style={{ marginHorizontal: 80 }}>
+      <View style={{ marginHorizontal: 80,marginTop:10 }}>
         <Image source={require('../../Images/Login/Name/Name.png')} />
       </View>
 
@@ -79,8 +80,8 @@ const Registerscreen = ({ navigation, }) => {
         </View>
 
         <View style={styles.viewphone} >
-          <Icon name="lock" size={16} color="#007BFF" />
-          <TextInput style={styles.input} placeholder="Phone No" placeholderTextColor="#818181" value={Phonenum} onChangeText={(val) => setPhonenum(val)} />
+          <Icon name="phone" size={16} color="#007BFF" />
+          <TextInput style={styles.input} placeholder="Phone No" keyboardType="numeric" placeholderTextColor="#818181" value={Phonenum} onChangeText={(val) => setPhonenum(val)} />
         </View>
       </View>
 

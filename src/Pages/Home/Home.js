@@ -5,6 +5,8 @@ import { LineChart } from "react-native-chart-kit";
 import styles from './style';
 import { apiCall } from '../../Connection/apiCall';
 import { useNavigation } from '@react-navigation/native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { useIsFocused } from '@react-navigation/native';
 
 
 
@@ -13,6 +15,8 @@ const screenWidth = Dimensions.get("window").width;
 
 
 const Home = ({ data }) => {
+const isFocused = useIsFocused();
+
 const navigation = useNavigation();
 const [ Monthexpense, setMonthexpense ] = useState(""); 
 const [ Data, setData ] = useState([])
@@ -46,10 +50,8 @@ const monthdata = {
   async function HomeExpense(){
     try {
       const res = await apiCall.monthExpense();
-        console.log("🚀 ~ file: Home.js:50 ~ HomeExpense ~ res", res)
         setMonthexpense(res.data[0].totalAmount);     
-
-    } 
+            } 
     catch (error) {
       console.log("🚀 ~ file: Home.js:55 ~ HomeExpense ~ error", error)
       
@@ -74,35 +76,31 @@ async function ItemExpense() {
 
 useEffect(() => {
   ItemExpense();
- }, []);
+  HomeExpense();
+ }, [isFocused]);
  
-
-useEffect(() => {
- HomeExpense();
-}, []);
-
   
   return (
-    <SafeAreaView style={{backgroundColor:COLORS.lightwhite}}>
+    <SafeAreaView style={{backgroundColor:COLORS.lightwhite,flex:1}}>
           <View style={styles.header}>
             <Image source={require('../../Images/Men2.png')} style={styles.headerimage} />
             <View style={styles.headertextview}>
-              <Text style={styles.headertext1}>Home</Text>
+              <Text style={styles.headertext}>Welcome</Text>
               <Text style={styles.headertext1}>{data}</Text>
               </View>
           </View>
-
-        <View style={styles.ViewCard}>
-           <LineChart data={monthdata} width={width*0.9} height={135} chartConfig={chartConfig}/>
-           <View style={styles.viewcardcenter}>
-             <View style={styles.cardviewtext}>
-             <View style={styles.viewtext}>
-               <Text style={styles.cardtext}>This Month</Text>
-               <Text style={styles.text}>${Monthexpense}</Text>
-             </View>
-           </View>
-             </View>
-          </View>
+        
+         <View style={styles.ViewCard}>
+          <LineChart data={monthdata} width={width*0.9} height={135} chartConfig={chartConfig}/>
+            <View style={styles.viewcardcenter}>
+            <View style={styles.cardviewtext}>
+            <View style={styles.viewtext}>
+            <Text style={styles.cardtext}>This Month</Text>
+            <Text style={styles.text}>${Monthexpense ? Monthexpense : 0  } </Text>
+            </View>
+            </View>
+            </View>
+            </View>
 
           <View style={[styles.viewcenter,{width:width*0.9,alignSelf:'center',paddingHorizontal:width*0.02}]}>
             <Text style={[styles.textrank]}>Top 5 Heads</Text>
@@ -111,15 +109,19 @@ useEffect(() => {
               <Text style={styles.viewItem}>View All</Text>
             </TouchableOpacity>
           </View>
-               
-        <FlatList
+
+          {
+            loading?
+            <ActivityIndicator size={'large'} color={"#000"} style={{marginTop:15}}/>:
+         <FlatList
           showsHorizontalScrollIndicator={false}
           data={Data}
           renderItem={({ item }) => {
             return (    
               <View style={{
                 width:width*0.9,
-                alignSelf:'center'
+                alignSelf:'center',
+                
               }}>
               <TouchableOpacity 
               onPress={() => navigation.navigate("ExpenseDetails",
@@ -129,7 +131,7 @@ useEffect(() => {
               )}>
               <View style={styles.cards}>
               <View style={styles.viewcarditems}>
-              <Image source={require('../../Images/Home/Utilities/Utilities.png')} style={{ color: "007BFF" }} />
+              <Image source={{ uri: item.category.img}} style={{height:15,width:15,}} resizeMode='cover'/>
               <Text style={styles.itemtext}>{item.category.name}</Text>
               </View>
               <Text style={styles.itemprice}>${item.ammount}</Text>
@@ -137,9 +139,11 @@ useEffect(() => {
               </TouchableOpacity>                          
               </View>
               )}}/>
+            
+            }
 
              <TouchableOpacity style={styles.viewbtn}    
-              onPress={() => navigation.navigate("AddExpense")}>
+              onPress={() => navigation.replace("AddExpense")}>
               <Text style={styles.textbtn}>Add Expense</Text>
               </TouchableOpacity>       
        </SafeAreaView>
@@ -147,6 +151,9 @@ useEffect(() => {
 
   );
 }
+
+
+
 
 export default Home;
 

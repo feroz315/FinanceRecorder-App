@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     Email:{
         fontSize: 15, 
         fontFamily: "PTSans-Regular",
-        marginRight:140
+        marginRight:130
     },
     name2:{
         fontSize: 18, 

@@ -52,7 +52,8 @@ const styles = StyleSheet.create({
       width: "87%",
       height: 45,
       backgroundColor:'#F9F9F9',
-      borderRadius:15 
+      borderRadius:15, 
+      flexDirection:"row"
     },
     viewamount:{
       marginTop: 10, 

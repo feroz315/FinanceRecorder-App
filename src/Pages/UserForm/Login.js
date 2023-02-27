@@ -16,7 +16,7 @@ const { width, height } = Dimensions.get('window');
 
 
 const Loginscreen = ({ navigation }) => {
-    const [Email, setEmail] = useState("");
+    const [userName, setUserName] = useState("");
     const [Password, setPassword] = useState("");
     const [ agree, setAgree ] = useState(false);
     const [emailError, setEmailError] = useState("");
@@ -29,11 +29,12 @@ const Loginscreen = ({ navigation }) => {
 async function Login()  {
 setLoading(true)
 let obj = {
-    email: Email,
+    username: userName,
     password: Password,
     
 }
- try{
+console.log("first",obj)
+try{
             let { data,status,responseCode} = await apiCall.signin(obj)
             if(status === true && responseCode === 200){
                 await AsyncStorage.setItem('userdata',JSON.stringify(data))
@@ -41,8 +42,7 @@ let obj = {
                 navigation.navigate("BottomNav", {
                     name:data.name
                 })               
-            
-            }
+              }
           }
         catch(error) {
             console.log("test", error)
@@ -51,6 +51,8 @@ let obj = {
      
     }
 
+
+    
  return (
         <SafeAreaView>
             <View style={{ width: "130%" }}>
@@ -65,14 +67,14 @@ let obj = {
                         <Image source={require('../../Images/Login/Logo/Logo.png')} />
                     </View>
 
-                    <View style={{ marginTop: 65, marginHorizontal: 85 }}>
-                        <Image source={require('../../Images/Login/Name/Name.png')} />
+                    <View style={{ marginTop: 65, marginHorizontal:65 }}>
+                        <Image source={require('../../Images/Login/Name/Name2.png')} style={{width:width * 0.6,height:55}} />
                     </View>
 
                     <View style={styles.viewInput}>
-                        <View style={styles.viewEmail}>
-                            <Icon name="envelope-o" size={16} color="#007BFF" />
-                            <TextInput style={styles.input} placeholder="Email" placeholderTextColor="#818181" value={Email} onChangeText={(val) => setEmail(val)}/>
+                        <View style={styles.viewUser}>
+                        <Icon name="user" size={16} color="#007BFF" style={{marginRight:5}} />
+                         <TextInput style={styles.input} placeholder="Username" placeholderTextColor="#818181" value={userName} onChangeText={(val) => setUserName(val)} />
                         </View>
                          <Text>{emailError}</Text>
                         
@@ -85,12 +87,11 @@ let obj = {
                              </TouchableOpacity>
                            </View>
                          <Text>{passwordError}</Text>
-                        
                     </View>
 
                  <View style={styles.viewRF}>
                     <View style={styles.viewtext}>
-                      <CheckBox disabled={false} value={agree} style={{marginBottom:3,color:COLORS.gray}} 
+                      <CheckBox disabled={false} value={agree} style={{marginBottom:5,color:COLORS.gray}} 
                          onValueChange={() => setAgree(!agree)} />   
                             <Text style={styles.textRM}>Remember Me</Text>
                         </View>

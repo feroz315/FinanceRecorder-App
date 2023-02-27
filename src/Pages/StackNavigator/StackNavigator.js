@@ -13,7 +13,6 @@ import Registerscreen from '../UserForm/Register';
 import Loginscreen from '../UserForm/Login';
 import AddExpense from '../Add Expense/AddExpense';
 import MyExpenseDetails from '../MyExpense/MyExpenseDetails';
-import Items from '../AllITems/Items';
 import Home from '../Home/Home';
 import BottomNavigator from '../BottomNavigator/Bottom';
 import Forgotscreen from '../UserForm/Forgotscreen';
@@ -61,7 +60,6 @@ const StackNavigation = () => {
         <Stack.Screen name="BottomNav" component={BottomNavigator} />
         <Stack.Screen name="Register" component={Registerscreen} />
         <Stack.Screen name="Login" component={Loginscreen} />
-        <Stack.Screen name="Items" component={Items} />
         <Stack.Screen name="Forgot" component={Forgotscreen} />
         <Stack.Screen name="Reset" component={Resetscreen} />
         

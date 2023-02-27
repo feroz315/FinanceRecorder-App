@@ -21,7 +21,28 @@ const AddExpense = ({ navigation }) => {
   const [ Otpmsg, setOtpmsg ] = useState(""); 
   
 
- 
+
+
+const Renderimages = [
+
+  { source: require("../../Uilites/Icons/food.png")},
+  { source: require("../../Uilites/Icons/basket.png")},
+  { source: require("../../Uilites/Icons/shirt.png")},
+  { source: require("../../Uilites/Icons/education.png")},
+  { source: require("../../Uilites/Icons/home.png")},
+  { source: require("../../Uilites/Icons/transfer.png")},
+  { source: require("../../Uilites/Icons/investment.png")},
+  { source: require("../../Uilites/Icons/services.png")},
+  { source: require("../../Uilites/Icons/gift.png")},
+  { source: require("../../Uilites/Icons/health.png")},
+  { source: require("../../Uilites/Icons/entertament.png")},
+  { source: require("../../Uilites/Icons/brifcase.png")},
+  { source: require("../../Uilites/Icons/wallet.png")},
+  { source: require("../../Uilites/Icons/electronic.png")},
+
+]
+
+
   async function AllCategory() {
       try {
              let res = await apiCall.category();
@@ -39,13 +60,13 @@ const AddExpense = ({ navigation }) => {
       categoryId:data._id,
       ammount:Amount,
       description:Description,
-        }
-     console.log("first",items)
+      }
+     console.log("AddExpense",items)
     try {
         
      let res = await apiCall.createaddExpense(items)
      if(res.status === true && res.responseCode === 200){
-       navigation.navigate("Homescreen")
+       navigation.replace("Homescreen")
     }
   } catch (error) {
     console.log("🚀 ~ file: AddExpense.js:58 ~ Addexpense ~ error", error)
@@ -53,15 +74,18 @@ const AddExpense = ({ navigation }) => {
   }
  }
 
-//  useEffect(() => {
-//   Addexpense();
-//  }, []);
+useEffect(() => {
+AllCategory();
+},[])
+
+
+
 
  return (
 
-    <SafeAreaView style={{ flex:1, backgroundColor: "#F2FEFA" }}>
+    <SafeAreaView style={{ flex:0.40, backgroundColor: "#F2FEFA" }}>
       <View style={styles.header}>
-        <TouchableOpacity style={{ marginTop: 10, marginLeft: 10 }} onPress={() => navigation.navigate("Homescreen")}>
+        <TouchableOpacity style={{ marginTop: 10, marginLeft: 10 }} onPress={() => navigation.replace("BottomNav")}>
           <Image source={require("../../Images/AddExpense/arrow.png")} />
         </TouchableOpacity>
         <Image source={require("../../Images/AddExpense/Add.png")} style={{ marginRight: 120, width: 150, height: 25 }} />
@@ -71,10 +95,13 @@ const AddExpense = ({ navigation }) => {
       <View style={styles.ViewCard}>
           <Text style={{ marginLeft: 15,marginTop:15 }}>Select Category</Text>
 
+
         <TouchableOpacity style={styles.viewcategory} onPress={() => setModalVisible(!modalVisible)}>
           <FontAwesome name="chevron-down" size={15} color={COLORS.gray} style={{marginRight:10,marginBottom:5}}/>
-            <Text style={styles.input}>{data?.name != null ? data?.name : 'Select'}</Text>
-            </TouchableOpacity>
+            
+          <Text style={styles.input}>{data?.name != null ? data?.name : 'Select'}</Text>
+       
+              </TouchableOpacity>
           
       <View style={styles.centeredView}>
         <Modal
@@ -85,7 +112,7 @@ const AddExpense = ({ navigation }) => {
             onRequestClose={() => {
               Alert.alert('Modal has been closed.');
               setModalVisible(!modalVisible)}}>
-            
+          
             <View style={styles.centeredView}>
               <View style={styles.modalView}>
            <FlatList
@@ -94,9 +121,14 @@ const AddExpense = ({ navigation }) => {
               data={Apidata}
               numColumns={3}
               renderItem={({ item }) => (
-                <View style={{margin:9,marginTop:10,}}>
+                <View style={{margin:10,marginTop:15,width:'27%'}}>
               <TouchableOpacity onPress={() => [setData(item), setModalVisible(false)]}>
-                 <Text>{item.name}</Text>                               
+              <View style={{alignItems:'center',}}>
+              <View style={{backgroundColor:COLORS.lightwhite,width:50,height:42,borderRadius:15,alignItems:'center'}}>
+                <Image source={{ uri: item.img}} style={{height:23,width:23,marginTop:8}} resizeMode="contain"/>
+                </View> 
+                <Text style={{fontSize:11,fontWeight:'700',marginTop:5}}>{item.name}</Text>  
+                 </View>      
                   </TouchableOpacity>
                 </View>
               )}/>

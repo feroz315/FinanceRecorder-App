@@ -1,8 +1,9 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet,Dimensions } from "react-native";
 import COLORS from '../../const/Colors';
 
 
 const SPACING = 10;
+const { width, height } = Dimensions.get('window');
 
 
 const styles = StyleSheet.create({
@@ -18,26 +19,14 @@ const styles = StyleSheet.create({
     viewInput: {
       flexDirection: 'column',
       marginTop: 25,
-      marginHorizontal: 30,
-      marginRight:20
-    },
-    viewEmail: {
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '85%',
-      borderRadius: 10,
-      height:40 ,
-      marginTop: 15,
-      paddingLeft: 5,
-      borderColor: "#007BFF",
-      borderWidth: 1
+      width: width * 0.93,     
+      alignSelf:'center'
     },
     viewphone: {
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      width: '85%',
+      width: width * 0.81,
       borderRadius: 10,
       height: 40,
       borderWidth: 1,
@@ -48,7 +37,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      width: '85%',
+      width: width * 0.81,
       borderRadius: 10,
       height:40 ,
       paddingLeft: 10,
@@ -60,10 +49,9 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      width: '85%',
+      width: width * 0.81,
       borderRadius: 10,
       height: 40,
-      paddingLeft: 5,
       borderWidth: 1,
       borderColor: "#007BFF",
       marginTop: 15
@@ -73,14 +61,19 @@ const styles = StyleSheet.create({
       backgroundColor: "#007BFF",
       borderRadius: 10,
       alignItems: "center",
-      width: '70%',
-      marginLeft: 50,
-      marginTop: 25
+      width: width * 0.8,
+      height: 40,
+      alignSelf:'center',
+      marginTop: 25,
+      marginRight:5
     },
     btntext: {
       color: COLORS.white,
       fontSize: 19,
-      fontWeight: "500",
+      alignSelf:'center',
+      fontFamily:"Poppins-Medium",
+      fontWeight:"500"
+            
     },
     viewline: {
       flexDirection: 'row',

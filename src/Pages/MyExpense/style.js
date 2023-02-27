@@ -1,5 +1,7 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet,Dimensions } from "react-native";
 import COLORS from '../../const/Colors';
+
+const { height, width } = Dimensions.get('window');
 
 
 
@@ -9,8 +11,7 @@ const styles = StyleSheet.create({
        justifyContent: 'center', 
        alignItems: 'center', 
        marginTop: 50, 
-       marginLeft: 100,
-       
+       marginLeft: 100,      
       },
     headertext: {
       fontSize: 25,
@@ -38,14 +39,30 @@ const styles = StyleSheet.create({
       alignItems: 'center'
     },
     viewmonth: {
-      flexDirection: "row-reverse",
-      justifyContent: 'space-around',
-      alignItems: 'center',
+    
       marginRight:10,
       width: '50%',
       height: 40,
       paddingLeft: 15,
       marginTop: 15
+    },
+    viewbtn:{
+      backgroundColor: "#007BFF",
+      borderRadius: 10,
+      alignItems: "center",
+      width: width * 0.2,
+      height:25,
+      alignSelf:'center',
+      marginTop: 10,
+      
+   },
+    textbtn:{
+      color: COLORS.white,
+      fontSize: 14,
+      fontWeight: "600",
+      marginTop:8,
+      fontFamily: 'Roboto-Regular',
+      
     },
     input: {
       fontFamily: 'OpenSans',
@@ -54,7 +71,7 @@ const styles = StyleSheet.create({
       textAlign:'center'
     },
     viewcarditems:{
-      flexDirection: 'row', 
+      flexDirection: 'row',  
       justifyContent: 'space-between', 
       alignItems: 'center', 
       marginLeft: 5,
@@ -101,9 +118,9 @@ const styles = StyleSheet.create({
       margin: 5,
       backgroundColor: "#FFF",
       elevation: 5,
-      height: 110,
-      width: "95%",
-      borderRadius: 10,
+      height: height * 0.13,
+      width: width * 0.96,
+      borderRadius: 5,
    },
     viewimgtime:{
     flexDirection:'row',

@@ -26,8 +26,15 @@ const styles = StyleSheet.create({
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      marginLeft: 15
+      marginLeft: 10
     },
+    headertext: {
+      fontSize: SPACING * 1.7,
+      color: COLORS.dark,
+      marginBottom: 2,
+      
+    },
+   
     headertext1: {
       fontSize: SPACING * 1.7,
       color: COLORS.dark,
@@ -66,15 +73,13 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginTop: 15,
+      marginTop: 10,
       backgroundColor: COLORS.white,
       marginVertical: 3,
-      height: 50,
+      height: 45,
       width: width * 0.9,
       borderRadius: 10,
       alignSelf:'center'
-      // marginHorizontal: 5,
-      // marginLeft:15
     },
     viewcardcenter:{
       position:'absolute',
@@ -115,7 +120,7 @@ const styles = StyleSheet.create({
     },
     itemtext:{
       marginLeft: 10, 
-      fontSize: 17,
+      fontSize: 16,
       color: "#007BFF"
     },
     itemprice:{
@@ -127,10 +132,12 @@ const styles = StyleSheet.create({
       backgroundColor: "#007BFF",
       borderRadius: 10,
       alignItems: "center",
-      width: width * 0.6,
+      width: width * 0.5,
       height:45,
-      marginLeft: 70,
-      marginTop: 25
+      alignSelf:'center',
+      marginTop: 10,
+      marginBottom:15
+      
     },
     textbtn:{
       color: COLORS.white,

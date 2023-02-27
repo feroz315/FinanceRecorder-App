@@ -12,6 +12,7 @@ const MyExpenseDetails = ({ navigation,route }) => {
    const [ CategoryName, setCategoryName ] = useState('');
    const [ Amount, setAmount ] = useState('');
    const [ Description, setDescription ] = useState('');
+   const [ ItemImg, setItemImg ] = useState();
   
    
    const userid = route.params.id;
@@ -24,6 +25,7 @@ const MyExpenseDetails = ({ navigation,route }) => {
     const result = await apiCall.expenseId(userid);
      console.log("result", result.data.expense)
       setLoading(false)
+      setItemImg(result.data.expense.category?.img)
       setCategoryName(result.data.expense.category?.name)
       setAmount(result.data.expense.ammount)
       setDescription(result.data.expense.description)
@@ -60,7 +62,7 @@ ExpenseId()
 
     <SafeAreaView style={{ flex: 0.30, backgroundColor: "#F2FEFA" }}>
       <View style={styles.header}>
-        <TouchableOpacity style={{ marginTop: 10, marginLeft: 10 }} onPress={() => navigation.navigate("MyExpense")}>
+        <TouchableOpacity style={{ marginTop: 10, marginLeft: 25 }} onPress={() => navigation.goBack()}>
           <Image source={require("../../Images/AddExpense/arrow.png")} />
         </TouchableOpacity>
         <Text style={styles.headertext}>Expense Detail</Text>
@@ -73,7 +75,8 @@ ExpenseId()
         <View style={styles.ViewCard}>
         <Text style={{ marginLeft: 16,color:'#787878',marginTop:15}}>Category</Text>
         <View style={styles.viewdata}>
-        <Text style={{marginLeft:20,marginTop:10,fontSize:15}}>{CategoryName}</Text>
+        <Image source={{ uri: ItemImg}} style={{height:15,width:15,marginLeft:10,alignSelf:'center'}} resizeMode='cover' />
+        <Text style={{marginLeft:8,marginTop:12,fontSize:15}}>{CategoryName}</Text>
         
         </View>
         

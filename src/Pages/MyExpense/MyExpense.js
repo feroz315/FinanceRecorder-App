@@ -5,22 +5,28 @@ import styles from './style';
 import { apiCall } from '../../Connection/apiCall';
 import moment from "moment";
 import { Swipeable } from 'react-native-gesture-handler';
+import { useIsFocused } from '@react-navigation/native';
 
 
 
-const MyExpense = ({ navigation }) => {
-  const [ AllData, setAllData] = useState([{opened : false}]);
+const MyExpense = ({ navigation,route }) => {
+  const isFocused = useIsFocused();
+  const [ AllData, setAllData] = useState([]);
   const [ loading, setLoading ] = useState(false);
   const [ filter,setFilterData ] = useState([]);
-  const [ search,setSearch ] = useState('');
+  const [ search,setSearch ] = useState(''); 
   const [val, setSelected] = useState('');
   const [ opened, setOpended ] = useState(true);
 
 
   const data = ['Jan','Feb','Mar','Apr','May','Jun', 'Jul','Aug','Sep','Oct','Nov','Dec'];
-
+ 
  const openref = useRef();
   
+//  const userid = route.params.id;
+//  console.log( "userData", userid)
+
+
   async function AllExpense() {
     setLoading(true)
     try {
@@ -35,7 +41,6 @@ const MyExpense = ({ navigation }) => {
       setLoading(false)
     }
 }
-
   
 const SearchFilter = (text) => {
   if(text){
@@ -54,18 +59,13 @@ const SearchFilter = (text) => {
   
 }
 
-
-const RemoveCard = (id) => {
-  let card =  filter.filter((item) => item._id !== id);
-  setFilterData(card)
-} 
-
-
 const rightSide = (id) => {
   return(
    <View>
     <Image source={require('../../Images/red.png')} />
-    <TouchableOpacity onPress={() => RemoveCard(id)} 
+    <TouchableOpacity onPress={() => {
+      Remove(id)
+    }} 
      style={{flexDirection:'column',justifyContent:'center',alignItems:'center',marginTop:40,marginLeft:10,position:'absolute'}}> 
     <Image source={require('../../Images/delete.png')}/>
     <Image source={require('../../Images/namedele.png')}/>
@@ -74,18 +74,28 @@ const rightSide = (id) => {
   )
 }
 
+async function Remove(id) {
+  console.log('id=====>',id)
+  try {
+    const result = await apiCall.deleteId(id);
+    AllExpense()
+     } 
+  catch (error) {
+    console.log("Testexpense", error)
+  }
+}
 
 
 
 useEffect(() => {
   AllExpense();
-  },[])
+  },[isFocused])
  
   
   return (
     
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#F2FEFA" }}>
-    <View style={styles.viewheader}>
+  <SafeAreaView style={{ flex: 1, backgroundColor: "#F2FEFA" }}>
+   <View style={styles.viewheader}>
     <Text style={styles.headertext}>My Expense</Text> 
         </View>
         
@@ -97,9 +107,9 @@ useEffect(() => {
         </View>
       </View>
  
-        
+ <View style={{flexDirection:"row",justifyContent:'space-between',alignItems:'center'}}>       
  <View style={styles.viewmonth}>
-  <SelectList
+ <SelectList
   setSelected={(val) => setSelected(val)}
   onSelect={() => AllExpense()}
   data={data}
@@ -112,18 +122,23 @@ useEffect(() => {
   dropdownStyles={{ borderWidth:1,width:140, marginTop:30,marginLeft: 5,zIndex:1,position:'absolute',backgroundColor:"#F2FEFA" }}
   borderWidth={0.2}
   placeholder="This Month" />
+    </View>
+    
+      
   </View>
+
 
   {
     loading?
-    <ActivityIndicator size={'large'} color={"#000"} style={{marginTop:15}}/>:
-        
-    <FlatList
+    <ActivityIndicator size={'large'} color={"#000"} style={{marginTop:5}}/>:
+     <FlatList
       showsHorizontalScrollIndicator={false}
       data={filter}
       renderItem={({ item}) => {
         return (    
-        <Swipeable renderRightActions={rightSide} onSwipeableOpen>
+        <Swipeable renderRightActions={()=>(rightSide(item._id))} 
+         onSwipeableOpen={() => console.log("first",item._id)}
+        >
           <TouchableOpacity style={styles.ViewCard} onPress={() => navigation.navigate("ExpenseDetails",
           {
             id:item._id
@@ -132,7 +147,7 @@ useEffect(() => {
          
          <View style={styles.viewcarditems}>
          <View style={styles.items}>
-         <Image source={require('../../Images/Home/Fuel/Fuel.png')} style={{ color: "007BFF" }} />
+         <Image source={{ uri: item.category.img}} style={{height:15,width:15,marginLeft:3}} resizeMode='cover'/>
          <Text style={styles.texthead}>{item.category.name}</Text>
         </View>
         <Text style={styles.textprice}>${item.ammount}</Text>

@@ -5,9 +5,11 @@ import styles from './style';
 
 
 
-const Settings = ({ navigation }) => {
+const Settings = ({ navigation,data}) => {
 
-    return (
+
+
+  return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#FFF' }}>
             <View style={{ marginTop: 30, alignSelf:'center' }}>
                 <Image source={require("../../Images/Settings/Settings.png")} style={{ width: 100, height: 25 }} />
@@ -15,7 +17,7 @@ const Settings = ({ navigation }) => {
 
             <View style={styles.viewheader}>
                 <View style={styles.header}>
-                    <Text style={styles.headertext1}>Mir Maaz</Text>
+                    <Text style={styles.headertext1}>Mr.{data.name}</Text>
                     <Text style={styles.headertext2}>Admin</Text>
                 </View>
                 <View style={styles.viewuser}>
@@ -28,7 +30,7 @@ const Settings = ({ navigation }) => {
                       <Image source={require("../../Images/Settings/globe.png")} style={{ width: 20, height: 20 }} />
                         <View style={styles.viewtext}>
                             <Text style={styles.User}>Username</Text>
-                            <Text style={styles.name1}>Mir Maaz</Text>
+                            <Text style={styles.name1}>{data.name}</Text>
                         </View>
                         <TouchableOpacity onPress={() => Alert.alert("test")}>
                          <View style={{ marginHorizontal: 200 }}>
@@ -45,7 +47,7 @@ const Settings = ({ navigation }) => {
                      <Image source={require("../../Images/Settings/globe.png")} style={{ width: 20, height: 20 }} />
                      <View style={styles.viewtext2}>
                          <Text style={styles.Email}>Email</Text>        
-                          <Text style={styles.name2}>mir.maaz@gmail.com</Text>
+                          <Text style={styles.name2}>feroz@gmail.com</Text>
                          </View>
                      <TouchableOpacity onPress={() => Alert.alert("test")}>
                        <View style={{ marginHorizontal: 95 }}>
@@ -62,7 +64,7 @@ const Settings = ({ navigation }) => {
                   <Image source={require("../../Images/Settings/globe.png")} style={{ width: 20, height: 20 }} />
                   <View style={styles.viewtext3}>
                       <Text style={styles.number}>Number</Text>
-                      <Text style={styles.name3}>+92 123 1413577</Text>
+                      <Text style={styles.name3}>+92 3110157868</Text>
                   </View>
                   <TouchableOpacity onPress={() => Alert.alert("test")}>
                    <View style={{ marginHorizontal: 145 }}>

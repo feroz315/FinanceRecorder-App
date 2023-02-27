@@ -6,12 +6,15 @@ import styles from './style';
 import * as Progress from 'react-native-progress';
 import {ProgressBar} from 'react-native-multicolor-progress-bar';
 import { apiCall } from '../../Connection/apiCall';
+import { useIsFocused } from '@react-navigation/native';
 
 
 const { height,width} = Dimensions.get('window');
 
 
 const Reports = ({ navigation}) => {
+const isFocused = useIsFocused();
+
 const [ Totalexpense, setTotalexpense ] = useState();   
 const [ TotalItems, setTotalItems ] = useState();   
 
@@ -19,7 +22,6 @@ const [ TotalItems, setTotalItems ] = useState();
     const AllExpense = async () => {  
         try {
           const result = await apiCall.totalExpense();
-           console.log("Total",result.data[0].totalExpenses)
             setTotalexpense(result.data[0].totalExpenses)
         } 
         catch (error) {
@@ -31,7 +33,6 @@ const [ TotalItems, setTotalItems ] = useState();
     async function AllGroupExpense(){
         try {
           const result = await apiCall.expenseGroup();
-           console.log("TotalGroup",result.data.allExpense)  
            setTotalItems(result.data.allExpense)
         } 
         catch (error) {
@@ -42,14 +43,10 @@ const [ TotalItems, setTotalItems ] = useState();
       
 useEffect(() => {
   AllExpense();
-  }, []);
-  
-  
-useEffect(() => {
   AllGroupExpense();
-}, []);
-
+  }, [isFocused]);
   
+    
  
     return (
         <SafeAreaView style={{backgroundColor:COLORS.lightwhite,flex:1}}>
@@ -62,7 +59,7 @@ useEffect(() => {
                   <AnimatedCircularProgress
                             size={300}
                             width={20}
-                            fill={50}
+                            fill={Totalexpense / 100}
                             arcSweepAngle={180}
                             rotation={-90}
                             lineCap='round'

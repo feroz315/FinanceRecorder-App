@@ -12,24 +12,25 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '90%',
         fontFamily: 'OpenSans-Medium',
-        paddingLeft: 10,
+        paddingLeft: 8,
         fontSize: 14,
+        marginTop:5,
         color:COLORS.gray
 
     },
     viewInput: {
         flexDirection: 'column',
         marginTop: 50,
-        marginHorizontal: 30,
+        marginHorizontal: 35,
     },
-    viewEmail: {
+    viewUser: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
         width: '85%',
         borderRadius: 10,
         height: 37,
-        paddingLeft: 5,
+        
         borderColor: "#007BFF",
         borderWidth: 1
     },
@@ -47,13 +48,13 @@ const styles = StyleSheet.create({
     },
     viewRF: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         alignItems: 'center',
-        
+               
     },
     viewtext: {
         flexDirection: 'row',
-        marginLeft: 30,
+        
     },
     textRM: {
         fontSize: 14,
@@ -64,9 +65,8 @@ const styles = StyleSheet.create({
     },
     textFP: {
         fontSize: 14,
-        marginLeft: 5,
         fontWeight: '400',
-        marginRight: 90,
+        marginRight: 60,
         marginBottom:10,
         color:COLORS.gray
        
@@ -76,14 +76,16 @@ const styles = StyleSheet.create({
         backgroundColor: "#007BFF",
         borderRadius: 10,
         alignItems: "center",
-        width: width * 0.75,
-        marginLeft: 40,
+        width: width * 0.77,
+        marginRight:15,
+        alignSelf:"center",
         marginTop: SPACING * 2
     },
     logintext: {
         color: COLORS.white,
-        fontSize: 19,
+        fontSize: 18,
         fontWeight: "500",
+        
     },
     viewline: {
         flexDirection: 'row',

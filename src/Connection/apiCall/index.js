@@ -72,4 +72,9 @@ export const apiCall = {
     if (result.status === 200) return result.data;
     else throw result;
   },
+  deleteId: async obj => {
+    let result = await patch(Apis.deleteId + `?id=${obj}`);
+    if (result.status === 200) return result.data;
+    else throw result;
+  },
 }

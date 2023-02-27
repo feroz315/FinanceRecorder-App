@@ -150,13 +150,13 @@ const styles = StyleSheet.create({
       elevation: 5,
     },
     modalView: {
-      margin: 20,
+      margin: 10,
       backgroundColor: 'white',
       borderRadius: 20,
-      padding: 35,
+      padding: 10,
       alignItems: 'center',
       shadowColor: '#000',
-      height:"75%",
+      height:"72%",
       width:"85%",
       shadowOffset: {
         width: 0,

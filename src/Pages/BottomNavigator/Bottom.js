@@ -85,7 +85,7 @@ const BottomNavigator = ({route}) => {
  
     <Tab.Screen
         name="Settings"
-        component={Settings}
+        children={() => <Settings  data={route?.params}/>}
         options={{
           tabBarLabelStyle: {
             fontSize: 12,
