@@ -7,7 +7,7 @@ import styles from './style';
 import COLORS from '../../const/Colors';
 import { apiCall } from '../../Connection/apiCall';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import DocumentPicker from 'react-native-document-picker';
 
 const { height,width} = Dimensions.get('window');
  
@@ -22,27 +22,6 @@ const AddExpense = ({ navigation }) => {
   
 
 
-
-const Renderimages = [
-
-  { source: require("../../Uilites/Icons/food.png")},
-  { source: require("../../Uilites/Icons/basket.png")},
-  { source: require("../../Uilites/Icons/shirt.png")},
-  { source: require("../../Uilites/Icons/education.png")},
-  { source: require("../../Uilites/Icons/home.png")},
-  { source: require("../../Uilites/Icons/transfer.png")},
-  { source: require("../../Uilites/Icons/investment.png")},
-  { source: require("../../Uilites/Icons/services.png")},
-  { source: require("../../Uilites/Icons/gift.png")},
-  { source: require("../../Uilites/Icons/health.png")},
-  { source: require("../../Uilites/Icons/entertament.png")},
-  { source: require("../../Uilites/Icons/brifcase.png")},
-  { source: require("../../Uilites/Icons/wallet.png")},
-  { source: require("../../Uilites/Icons/electronic.png")},
-
-]
-
-
   async function AllCategory() {
       try {
              let res = await apiCall.category();
@@ -54,7 +33,6 @@ const Renderimages = [
        }
      }
     
-
   const Addexpense = async () =>  {
     let items = {
       categoryId:data._id,
@@ -63,7 +41,7 @@ const Renderimages = [
       }
      console.log("AddExpense",items)
     try {
-        
+    0    
      let res = await apiCall.createaddExpense(items)
      if(res.status === true && res.responseCode === 200){
        navigation.replace("Homescreen")
@@ -74,10 +52,27 @@ const Renderimages = [
   }
  }
 
+ 
+const selectDoc = async () => {
+  try {
+    const doc = await DocumentPicker.pick({
+      type:[DocumentPicker.types.images],
+      allowMultiSelection:true
+    });
+    console.log("first",doc)
+  } catch (error) {
+    if(DocumentPicker.isCancel(error)){
+    console.log("Document",error)
+    }
+    else
+    console.log(error)
+  }
+}
+
+
 useEffect(() => {
 AllCategory();
 },[])
-
 
 
 
@@ -95,7 +90,6 @@ AllCategory();
       <View style={styles.ViewCard}>
           <Text style={{ marginLeft: 15,marginTop:15 }}>Select Category</Text>
 
-
         <TouchableOpacity style={styles.viewcategory} onPress={() => setModalVisible(!modalVisible)}>
           <FontAwesome name="chevron-down" size={15} color={COLORS.gray} style={{marginRight:10,marginBottom:5}}/>
             
@@ -103,7 +97,7 @@ AllCategory();
        
               </TouchableOpacity>
           
-      <View style={styles.centeredView}>
+        <View style={styles.centeredView}>
         <Modal
             animationType="fade"
             transparent={true}
@@ -153,13 +147,12 @@ AllCategory();
 
           <View style={{ marginTop: 10 }}>
             <Text style={{ marginLeft: 15 }}>Attachment</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => selectDoc()}>
               <View style={styles.viewattach}>
                 <Feather name='plus' size={18} style={{ marginTop: 3, textAlign: 'center' }} />
               </View>
             </TouchableOpacity>
           </View>
-
      
         <View style={styles.messageView}>
           <Modal
@@ -191,8 +184,6 @@ AllCategory();
             <Text style={styles.textbtn}> Submit</Text>
           </TouchableOpacity>
         </View>
-
-
     
 
     </SafeAreaView>
