@@ -15,7 +15,7 @@ const { height,width} = Dimensions.get('window');
 const Reports = ({ navigation}) => {
 const isFocused = useIsFocused();
 
-const [ Totalexpense, setTotalexpense ] = useState();   
+const [ Totalexpense, setTotalexpense ] = useState(0);   
 const [ TotalItems, setTotalItems ] = useState();   
 
     
@@ -26,6 +26,7 @@ const [ TotalItems, setTotalItems ] = useState();
         } 
         catch (error) {
           console.log("Testexpense", result)
+          setTotalexpense();
         }
       }
 
@@ -39,13 +40,16 @@ const [ TotalItems, setTotalItems ] = useState();
           console.log("Testexpense", result)
         }
       }
-
+      
       
 useEffect(() => {
-  AllExpense();
   AllGroupExpense();
   }, [isFocused]);
   
+
+useEffect(() => {
+    AllExpense();
+  },[isFocused])
     
  
     return (
@@ -56,16 +60,16 @@ useEffect(() => {
              </View>   
              <View style={styles.ProgressCard}>
                 <View style={{ marginTop: 5, marginLeft: 5 }}>
-                  <AnimatedCircularProgress
+                 <AnimatedCircularProgress
                             size={300}
                             width={20}
-                            fill={Totalexpense / 100}
+                            fill={Totalexpense / 100 }
                             arcSweepAngle={180}
                             rotation={-90}
                             lineCap='round'
                             tintColor={COLORS.cyanblue}
                             onAnimationComplete={() => console.log('onAnimationComplete')}
-                            backgroundColor="#F8F8F8" />
+                            backgroundColor="#F8F8F8" /> 
                     </View>
 
                     <View style={styles.viewpercentge}>

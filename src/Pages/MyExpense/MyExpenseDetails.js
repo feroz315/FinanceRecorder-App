@@ -1,8 +1,11 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect,useRef } from 'react';
 import { View,Text, Image,SafeAreaView ,TouchableOpacity, ActivityIndicator } from 'react-native';
 import { apiCall } from '../../Connection/apiCall';
 import COLORS from '../../const/Colors';
 import styles from './styleExpense';
+import ViewShot from "react-native-view-shot";
+import Share from 'react-native-share';
+
 
 
 
@@ -13,17 +16,19 @@ const MyExpenseDetails = ({ navigation,route }) => {
    const [ Amount, setAmount ] = useState('');
    const [ Description, setDescription ] = useState('');
    const [ ItemImg, setItemImg ] = useState();
-  
+   const ref = useRef();
    
    const userid = route.params.id;
    console.log( "userData", userid)
   
   
-  const ExpenseId = async () =>  {
+
+
+ const ExpenseId = async () =>  {
    setLoading(true)
   try {
     const result = await apiCall.expenseId(userid);
-     console.log("result", result.data.expense)
+     console.log("🚀 ~ file: MyExpenseDetails.js:31 ~ ExpenseId ~ result:", result.data.expense)
       setLoading(false)
       setItemImg(result.data.expense.category?.img)
       setCategoryName(result.data.expense.category?.name)
@@ -53,12 +58,38 @@ const MyExpenseDetails = ({ navigation,route }) => {
 }
 
 
+const Sharedata = async () => {
+  const shareoptions = {
+    message: "Share with your friends",
+  }
+  try {
+    let itemshare = await Share.open(shareoptions)  
+  } catch (error) {
+    console.log("first",error)
+    
+  }
+}
+
+
+const RemoveId = async (id) => {
+  console.log("firstid====>",id)
+  try {
+    const result = await apiCall.deleteId(id)
+  } catch (error) {
+    console.log("Error",error)
+    
+  }
+}
+
+
+
  useEffect(() => {
 ExpenseId()
  }, []);
 
 
-  return (
+ 
+return (
 
     <SafeAreaView style={{ flex: 0.30, backgroundColor: "#F2FEFA" }}>
       <View style={styles.header}>
@@ -70,8 +101,7 @@ ExpenseId()
       {
         loading?
         <ActivityIndicator size={'large'} color={"black"} style={{marginTop:20}} />
-        :
-         
+        :      
         <View style={styles.ViewCard}>
         <Text style={{ marginLeft: 16,color:'#787878',marginTop:15}}>Category</Text>
         <View style={styles.viewdata}>
@@ -107,7 +137,8 @@ ExpenseId()
         <TouchableOpacity>
         <Image source={require('../../Images/edit.png')} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("Homescreen")}>
+
+        <TouchableOpacity onPress={() => Sharedata()}>           
         <Image source={require('../../Images/forward.png')} style={{marginRight:10}} />
         </TouchableOpacity>
         

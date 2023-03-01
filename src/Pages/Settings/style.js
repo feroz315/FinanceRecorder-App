@@ -64,7 +64,8 @@ const styles = StyleSheet.create({
         fontSize: 17, 
         fontFamily: "PTSans-Regular", 
         color: COLORS.cyanblue, 
-        marginLeft: 5
+        marginRight:20
+        
     },
     viewcard2:{
         flexDirection: 'row', 
@@ -88,6 +89,7 @@ const styles = StyleSheet.create({
         fontSize: 18, 
         fontFamily: "PTSans-Regular", 
         color: COLORS.cyanblue,
+        marginRight:20
     },
     viewcard3:{
         flexDirection: 'row', 
@@ -100,7 +102,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column', 
         justifyContent: 'flex-start', 
         alignItems: 'center', 
-        marginLeft: 10 
+        marginLeft: 15 
     },
     number:{
         fontSize: 14, 

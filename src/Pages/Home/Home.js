@@ -18,7 +18,7 @@ const Home = ({ data }) => {
 const isFocused = useIsFocused();
 
 const navigation = useNavigation();
-const [ Monthexpense, setMonthexpense ] = useState(""); 
+const [ Monthexpense, setMonthexpense ] = useState(0); 
 const [ Data, setData ] = useState([])
 const [ loading, setLoading ] = useState(false);
 
@@ -54,6 +54,8 @@ const monthdata = {
             } 
     catch (error) {
       console.log("🚀 ~ file: Home.js:55 ~ HomeExpense ~ error", error)
+      setMonthexpense(0);     
+      
       
     }
   }
@@ -91,12 +93,12 @@ useEffect(() => {
           </View>
         
          <View style={styles.ViewCard}>
-          <LineChart data={monthdata} width={width*0.9} height={135} chartConfig={chartConfig}/>
+          {Monthexpense == 0 ? <View style={{height: width * 0.32}}/> : <LineChart data={monthdata} width={width*0.9} height={135} chartConfig={chartConfig}/>}
             <View style={styles.viewcardcenter}>
             <View style={styles.cardviewtext}>
             <View style={styles.viewtext}>
             <Text style={styles.cardtext}>This Month</Text>
-            <Text style={styles.text}>${Monthexpense ? Monthexpense : 0  } </Text>
+            <Text style={styles.text}>${Monthexpense}</Text>
             </View>
             </View>
             </View>

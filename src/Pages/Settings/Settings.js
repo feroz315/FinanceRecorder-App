@@ -44,7 +44,7 @@ const Settings = ({ navigation,data}) => {
 
 
               <View style={styles.viewcard2}>
-                     <Image source={require("../../Images/Settings/globe.png")} style={{ width: 20, height: 20 }} />
+                     <Image source={require("../../Images/Settings/globe.png")} style={{ width:20, height:20,}} />
                      <View style={styles.viewtext2}>
                          <Text style={styles.Email}>Email</Text>        
                           <Text style={styles.name2}>feroz@gmail.com</Text>

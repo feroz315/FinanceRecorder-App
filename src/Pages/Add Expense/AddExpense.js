@@ -22,6 +22,8 @@ const AddExpense = ({ navigation }) => {
   
 
 
+
+
   async function AllCategory() {
       try {
              let res = await apiCall.category();
@@ -31,8 +33,9 @@ const AddExpense = ({ navigation }) => {
             catch (error) {
             console.log("data",error)
        }
-     }
-    
+  }
+
+         
   const Addexpense = async () =>  {
     let items = {
       categoryId:data._id,
@@ -41,7 +44,7 @@ const AddExpense = ({ navigation }) => {
       }
      console.log("AddExpense",items)
     try {
-    0    
+        
      let res = await apiCall.createaddExpense(items)
      if(res.status === true && res.responseCode === 200){
        navigation.replace("Homescreen")
@@ -53,7 +56,7 @@ const AddExpense = ({ navigation }) => {
  }
 
  
-const selectDoc = async () => {
+const AttachFiles = async () => {
   try {
     const doc = await DocumentPicker.pick({
       type:[DocumentPicker.types.images],
@@ -87,16 +90,19 @@ AllCategory();
 
       </View>
 
-      <View style={styles.ViewCard}>
-          <Text style={{ marginLeft: 15,marginTop:15 }}>Select Category</Text>
 
+      <View style={styles.ViewCard}>
+        <Text style={{ marginLeft: 15,marginTop:15 }}>Select Category</Text>
         <TouchableOpacity style={styles.viewcategory} onPress={() => setModalVisible(!modalVisible)}>
           <FontAwesome name="chevron-down" size={15} color={COLORS.gray} style={{marginRight:10,marginBottom:5}}/>
-            
-          <Text style={styles.input}>{data?.name != null ? data?.name : 'Select'}</Text>
-       
+        
+        <View style={styles.viewdata}>
+          <Image source={{ uri: data?.img}} style={{height:17,width:18,marginLeft:3,marginTop:4}} resizeMode='cover' />
+           <Text style={styles.input}>{data?.name != null ? data?.name : 'Select' }</Text>
+             </View>            
               </TouchableOpacity>
-          
+
+                            
         <View style={styles.centeredView}>
         <Modal
             animationType="fade"
@@ -147,7 +153,7 @@ AllCategory();
 
           <View style={{ marginTop: 10 }}>
             <Text style={{ marginLeft: 15 }}>Attachment</Text>
-            <TouchableOpacity onPress={() => selectDoc()}>
+            <TouchableOpacity onPress={() => AttachFiles()}>
               <View style={styles.viewattach}>
                 <Feather name='plus' size={18} style={{ marginTop: 3, textAlign: 'center' }} />
               </View>

@@ -8,12 +8,17 @@ import styles from './style';
 import { apiCall } from '../../Connection/apiCall';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import COLORS from '../../const/Colors';
+import {CountryPicker} from "react-native-country-codes-picker";
+import {CountryList} from "react-native-country-codes-picker";
+
 
 
 const { width, height } = Dimensions.get('window');
 
 const Registerscreen = ({ navigation, }) => {
 
+  const [show, setShow] = useState(false);
+  const [countryCode, setCountryCode] = useState('');
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [Phonenum, setPhonenum] = useState("");
@@ -49,6 +54,8 @@ const Registerscreen = ({ navigation, }) => {
 
   }
 
+
+
   return (
     <View style={{ width: "110%", }}>
       <ImageBackground source={require("../../Images/Login/Shape/Shape.png")} />
@@ -79,7 +86,7 @@ const Registerscreen = ({ navigation, }) => {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.viewphone} >
+        <View style={styles.viewphone}>
           <Icon name="phone" size={16} color="#007BFF" />
           <TextInput style={styles.input} placeholder="Phone No" keyboardType="numeric" placeholderTextColor="#818181" value={Phonenum} onChangeText={(val) => setPhonenum(val)} />
         </View>
@@ -135,5 +142,73 @@ export default Registerscreen;
 
 
 
+/*
+
+<View style={styles.container}>
+      <TouchableOpacity
+        onPress={() => setShow(true)}
+        style={{
+            width: '80%',
+            height: 60,
+            backgroundColor: 'black',
+            padding: 10,
+        }}
+      >
+        <Text style={{
+            color: 'white',
+            fontSize: 20
+        }}>
+            {countryCode}
+        </Text>
+      </TouchableOpacity>
+
+      // For showing picker just put show state to show prop
+      <CountryPicker
+        show={show}
+        // when picker button press you will get the country object with dial code
+        pickerButtonOnPress={(item) => {
+          setCountryCode(item.dial_code);
+          setShow(false);
+        }}
+      />
+    </View>
 
 
+
+
+
+
+
+
+
+
+
+
+    <View style={styles.container}>
+      <View        
+        style={{
+            width: '80%',
+            height: 60,
+            backgroundColor: 'black',
+            padding: 10,
+        }}
+      >
+        <Text style={{
+            color: 'white',
+            fontSize: 20
+        }}>
+            {countryCode}
+        </Text>
+      </TouchableOpacity>
+
+      // All props the same as for picker
+       <CountryList
+          lang={'pl'}
+          pickerButtonOnPress={(item) => {
+              setCountryCode(item.dial_code);
+          }}
+       />
+    </View>
+
+
+    */

@@ -16,16 +16,13 @@ const MyExpense = ({ navigation,route }) => {
   const [ filter,setFilterData ] = useState([]);
   const [ search,setSearch ] = useState(''); 
   const [val, setSelected] = useState('');
-  const [ opened, setOpended ] = useState(true);
 
 
   const data = ['Jan','Feb','Mar','Apr','May','Jun', 'Jul','Aug','Sep','Oct','Nov','Dec'];
  
  const openref = useRef();
   
-//  const userid = route.params.id;
-//  console.log( "userData", userid)
-
+ 
 
   async function AllExpense() {
     setLoading(true)
@@ -127,7 +124,6 @@ useEffect(() => {
       
   </View>
 
-
   {
     loading?
     <ActivityIndicator size={'large'} color={"#000"} style={{marginTop:5}}/>:
@@ -152,7 +148,7 @@ useEffect(() => {
         </View>
         <Text style={styles.textprice}>${item.ammount}</Text>
         </View>
-        <View style={{ marginTop: 10, marginLeft: 10 }}>
+        <View style={{ marginTop:10,marginLeft:5 }}>
         <Text style={styles.textcentr}>{item.description}</Text>
         </View>
         

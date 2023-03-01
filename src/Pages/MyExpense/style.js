@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
       fontFamily:"Montserrat-Regular",
       fontWeight:'400',
       color: "#555555", 
-      marginLeft:10
+      marginLeft:5
      
     },
     viewcalender:{

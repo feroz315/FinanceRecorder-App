@@ -31,6 +31,14 @@ const styles = StyleSheet.create({
       borderRadius: 5,
       alignSelf:'center'
     },
+    viewdata:{
+      marginLeft: 16 ,
+      marginTop: 20,
+      width: "87%",
+      height: 45,
+      borderRadius:15, 
+      flexDirection:"row"
+    },
     cardviewtext: {
       marginTop: 10,
       marginHorizontal: 10,
@@ -91,7 +99,7 @@ const styles = StyleSheet.create({
       alignSelf:'center', 
       borderRadius: 15, 
       elevation: 10,
-      marginBottom:15
+      marginBottom:20
       
     },
     textbtn:{
