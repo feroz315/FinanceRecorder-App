@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
       marginLeft: 10,
     },
     headerimage: {
-      width: width * 0.17,
-      height: 62,
+      width: width * 0.16,
+      height: 65,
       marginLeft: 5,
       borderRadius:15
    },

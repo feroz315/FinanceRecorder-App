@@ -62,7 +62,6 @@ const monthdata = {
     }
   }
 
-  
 async function ItemExpense() {
   setLoading(true)
   try{
@@ -116,8 +115,9 @@ useEffect(() => {
           </View>
 
           {
-            loading?
+            loading? 
             <ActivityIndicator size={'large'} color={"#000"} style={{marginTop:15}}/>:
+                        
          <FlatList
           showsHorizontalScrollIndicator={false}
           data={Data}
@@ -144,8 +144,8 @@ useEffect(() => {
               </TouchableOpacity>                          
               </View>
               )}}/>
-            
-            }
+                
+           }
 
              <TouchableOpacity style={styles.viewbtn}    
               onPress={() => navigation.replace("AddExpense")}>

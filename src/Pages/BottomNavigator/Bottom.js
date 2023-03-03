@@ -29,7 +29,7 @@ const BottomNavigator = ({route}) => {
        borderTopWidth:0,
        elevation:0,
        activeTintColor: COLORS.cyanblue,
-  
+          
        
       },
       null
@@ -93,7 +93,7 @@ const BottomNavigator = ({route}) => {
             marginBottom:2
            }, 
               tabBarIcon: ({ color }) => (
-            <Image source={require('../../Images/settings.png')} style={{width:25,height:25}}/>
+            <Image source={require('../../Images/settings.png')} style={{width:25,height:25,tintColor:color?COLORS.cyanblue:'red'}}/>
             
           ), headerShown: false
         }}/>

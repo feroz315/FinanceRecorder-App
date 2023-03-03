@@ -43,19 +43,19 @@ const [ TotalItems, setTotalItems ] = useState();
       
 
 
-const getvalue = () => {
+// const getvalue = () => {
   
-  const initialValue = 0;
-  const sumWithInitial = TotalItems.reduce(
-  (accumulator, currentValue) => console.log("S",accumulator.totalAmount + currentValue.totalAmount)
-);
+//   const initialValue = 0;
+//   const sumWithInitial = TotalItems.reduce(
+//   (accumulator, currentValue) => console.log("S",accumulator.totalAmount + currentValue.totalAmount)
+// );
 
-return sumWithInitial
+// return sumWithInitial
 
 
-}
-const res = getvalue()
-console.log("first",res)
+// }
+// const res = getvalue()
+// console.log("first",res)
 
 
 
@@ -107,7 +107,7 @@ useEffect(() => {
           
             <View style={styles.ViewCard}>
                 <View style={styles.ViewProgress}>
-                  <Progress.Bar progress={0.4 } width={width * 0.74} height={16} borderRadius={10} color={COLORS.cyanblue} style={{ marginTop: 12, marginLeft: 12 }} />
+                  <Progress.Bar progress={Totalexpense / 100 } width={width * 0.74} height={16} borderRadius={10} color={COLORS.cyanblue} style={{ marginTop: 12, marginLeft: 12 }} />
                 </View>
               <View style={styles.Viewitems}>
               <FlatList
