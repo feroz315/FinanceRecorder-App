@@ -72,18 +72,17 @@ const styles = StyleSheet.create({
        
     },
     viewbtn: {
-        padding: SPACING * 0.4,
+        paddingVertical: SPACING * 0.4,
         backgroundColor: "#007BFF",
         borderRadius: 10,
         alignItems: "center",
-        width: width * 0.77,
-        marginRight:15,
-        alignSelf:"center",
+        width: width * 0.81,
+        marginRight:45,
         marginTop: SPACING * 2
     },
     logintext: {
         color: COLORS.white,
-        fontSize: 18,
+        fontSize: width * 0.04,
         fontWeight: "500",
         
     },

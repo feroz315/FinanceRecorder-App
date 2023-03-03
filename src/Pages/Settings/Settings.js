@@ -1,3 +1,5 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View,Text, SafeAreaView, Image,Alert,TouchableOpacity } from 'react-native';
 import styles from './style';
@@ -5,8 +7,19 @@ import styles from './style';
 
 
 
-const Settings = ({ navigation,data}) => {
+const Settings = ({ data}) => {
+const navigation =useNavigation()
 
+const Signout = async () => {
+  try {
+    let Logout = await AsyncStorage.removeItem("userdata")
+    console.log("🚀 ~ file: Settings.js:15 ~ Signout ~ Logout:", Logout)
+    navigation.replace("Login")
+    console.log(navigation)
+  } catch (error) {
+    console.log("Error", error)
+   }
+}
 
 
   return (
@@ -17,7 +30,7 @@ const Settings = ({ navigation,data}) => {
 
             <View style={styles.viewheader}>
                 <View style={styles.header}>
-                    <Text style={styles.headertext1}>Mr.{data.name}</Text>
+                    <Text style={styles.headertext1}>Mr.{data}</Text>
                     <Text style={styles.headertext2}>Admin</Text>
                 </View>
                 <View style={styles.viewuser}>
@@ -30,7 +43,7 @@ const Settings = ({ navigation,data}) => {
                       <Image source={require("../../Images/Settings/globe.png")} style={{ width: 20, height: 20 }} />
                         <View style={styles.viewtext}>
                             <Text style={styles.User}>Username</Text>
-                            <Text style={styles.name1}>{data.name}</Text>
+                            <Text style={styles.name1}>{data}</Text>
                         </View>
                         <TouchableOpacity onPress={() => Alert.alert("test")}>
                          <View style={{ marginHorizontal: 200 }}>
@@ -145,7 +158,7 @@ const Settings = ({ navigation,data}) => {
    </View>
 
 
-         <TouchableOpacity onPress={() => navigation.navigate("Login")} 
+         <TouchableOpacity onPress={() => Signout()} 
             style={{alignSelf:'center',marginTop:15}}>
             <Image source={require("../../Images/Settings/Signout.png")} />
               </TouchableOpacity>   

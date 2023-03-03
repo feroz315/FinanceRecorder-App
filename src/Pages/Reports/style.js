@@ -28,26 +28,27 @@ const styles = StyleSheet.create({
    },
     ViewCard: {
         backgroundColor: "#FFF",
-        width: width * 0.92,
+        width: width * 0.90,
         height: height * 0.43,
         elevation: 10,
         borderRadius: 10,
-        marginLeft: 15,
+        alignSelf:'center',
         marginTop: 10,
-        
     },
     ViewProgress: {
         backgroundColor: "#F5F5F5",
         marginTop: 20,
-        marginLeft: 5,
+        marginLeft: 15,
         borderRadius: 10,
         height: 40,
-        width: "95%"
+        width: width * 0.81
     },
     Viewitems: {
         flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: "space-between",
+        alignItems: 'center',
+        alignSelf:'center',
+        marginTop:10
     },
     Viewleftitems: {
         flexDirection: 'column',
@@ -62,8 +63,8 @@ const styles = StyleSheet.create({
     },
     leftitems: {
         flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'flex-start',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         marginLeft: 15,
         
     },
@@ -76,9 +77,10 @@ const styles = StyleSheet.create({
     viewpercentge:{
         flexDirection: 'row', 
         justifyContent: 'space-between', 
-        alignItems: 'center', 
+        alignItems: 'center',
+        alignSelf:'center', 
         position: 'absolute', 
-        marginTop: 160,
+        marginTop: 170,
          
     },
     text0:{
@@ -104,7 +106,8 @@ const styles = StyleSheet.create({
     spending:{
         fontSize: 12, 
         fontWeight: '500',
-        padding: 5
+        padding: 5,
+        color:"black"
     },
     totalamount:{
         fontSize: 34, 

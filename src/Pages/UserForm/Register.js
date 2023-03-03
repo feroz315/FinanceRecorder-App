@@ -78,7 +78,7 @@ const Registerscreen = ({ navigation, }) => {
           <TextInput style={styles.input} placeholder="Username" placeholderTextColor="#818181" value={userName} onChangeText={(val) => setUserName(val)} />
         </View>
 
-              <View style={styles.viewpasword} >
+        <View style={styles.viewpasword} >
           <Icon name="lock" size={16} color="#007BFF" />
           <TextInput style={styles.input} placeholder="Password" secureTextEntry={hidePass ? true : false} placeholderTextColor="#818181" value={password} onChangeText={(val) => setPassword(val)} />
           <TouchableOpacity onPress={() => setHidePass(!hidePass)}>
@@ -95,12 +95,14 @@ const Registerscreen = ({ navigation, }) => {
       <View style={{ justifyContent: 'center', marginRight: 40, marginTop: 5 }}>
         {
           loading ?
-            <ActivityIndicator size={'small'} color='black' />
-            : <TouchableOpacity style={styles.viewbtn}
+            <ActivityIndicator size={'small'} color='black' style={{marginTop:5}}/>
+            :<View style={{height:5 }}/>
+        }
+              <TouchableOpacity style={styles.viewbtn}
               onPress={() => Submit()}>
               <Text style={styles.btntext}>Register</Text>
             </TouchableOpacity>
-        }
+        
       </View>
 
       <View style={styles.viewline}>

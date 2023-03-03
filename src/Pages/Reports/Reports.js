@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import { View, Text, SafeAreaView, Image,TouchableOpacity,FlatList,Dimensions } from 'react-native';
+import { View, Text, SafeAreaView, Image,TouchableOpacity,FlatList,Dimensions, Alert } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import COLORS from '../../const/Colors';
 import styles from './style';
@@ -41,6 +41,25 @@ const [ TotalItems, setTotalItems ] = useState();
         }
       }
       
+
+
+const getvalue = () => {
+  
+  const initialValue = 0;
+  const sumWithInitial = TotalItems.reduce(
+  (accumulator, currentValue) => console.log("S",accumulator.totalAmount + currentValue.totalAmount)
+);
+
+return sumWithInitial
+
+
+}
+const res = getvalue()
+console.log("first",res)
+
+
+
+
       
 useEffect(() => {
   AllGroupExpense();
@@ -59,7 +78,7 @@ useEffect(() => {
            <Image source={require('../../Images/Reports/Reports.png')} style={{width:90,height:25}}/>
              </View>   
              <View style={styles.ProgressCard}>
-                <View style={{ marginTop: 5, marginLeft: 5 }}>
+                <View style={{ marginTop:10, alignSelf:"center" }}>
                  <AnimatedCircularProgress
                             size={300}
                             width={20}
@@ -88,7 +107,7 @@ useEffect(() => {
           
             <View style={styles.ViewCard}>
                 <View style={styles.ViewProgress}>
-                    <Progress.Bar progress={0.4} width={290} height={16} borderRadius={10} style={{ marginTop: 12, marginLeft: 12 }} />
+                  <Progress.Bar progress={0.4 } width={width * 0.74} height={16} borderRadius={10} color={COLORS.cyanblue} style={{ marginTop: 12, marginLeft: 12 }} />
                 </View>
               <View style={styles.Viewitems}>
               <FlatList
@@ -97,7 +116,7 @@ useEffect(() => {
                 data={TotalItems}
                 numColumns={2}
                 renderItem={({ item }) => (
-               <View style={{margin:4,marginLeft:10}}>
+               <TouchableOpacity style={{margin:4,marginLeft:10}} onPress={() => Alert.alert("working")}>
                   <View style={styles.leftitems}>
                       <View style={styles.viewImg}>
                           <Image source={require("../../Uilites/Icons/utilities.png")} style={{ height: 26, width: 24, marginTop: 10, marginLeft: 10 }} />
@@ -108,7 +127,7 @@ useEffect(() => {
                       </View>
                   </View>
                     <View style={styles.line1} />
-                  </View>
+                  </TouchableOpacity>
                 )}/>
                </View>
 

@@ -38,23 +38,21 @@ export const HomeStack = ({data}) => {
 
 
 const StackNavigation = () => {
-  const [showSplashScreen, setShowSplashScreen] = useState(true);
+  // const [showSplashScreen, setShowSplashScreen] = useState(true);
 
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowSplashScreen(false);
-    }, 4000);
-  }, [])
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setShowSplashScreen(false);
+  //   }, 4000);
+  // }, [])
 
   return (
 
     <NavigationContainer>
       <StatusBar backgroundColor={COLORS.white} hidden={true} />
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Splash">
-        {showSplashScreen ?
-          <Stack.Screen name="Splash" component={Splashscreen} />
-          : null}
+        <Stack.Screen name="Splash" component={Splashscreen} />
         <Stack.Screen name="Snap" component={SnapScreen} />
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="BottomNav" component={BottomNavigator} />

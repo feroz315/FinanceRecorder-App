@@ -119,9 +119,10 @@ const styles = StyleSheet.create({
       marginLeft: 10,
     },
     itemtext:{
-      marginLeft: 10, 
-      fontSize: 16,
-      color: "#007BFF"
+      marginLeft: 8, 
+      fontSize: width * 0.04,
+      color: "#007BFF",
+      alignSelf:'center'
     },
     itemprice:{
       fontSize: 17, 

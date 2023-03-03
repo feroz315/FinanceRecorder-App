@@ -61,11 +61,11 @@ const styles = StyleSheet.create({
       backgroundColor: "#007BFF",
       borderRadius: 10,
       alignItems: "center",
-      width: width * 0.8,
-      height: 40,
+      width: width * 0.73,
+      height: 35,
       alignSelf:'center',
       marginTop: 25,
-      marginRight:5
+      marginRight:10
     },
     btntext: {
       color: COLORS.white,

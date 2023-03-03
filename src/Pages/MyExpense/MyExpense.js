@@ -143,7 +143,7 @@ useEffect(() => {
          
          <View style={styles.viewcarditems}>
          <View style={styles.items}>
-         <Image source={{ uri: item.category.img}} style={{height:15,width:15,marginLeft:3}} resizeMode='cover'/>
+         <Image source={{ uri: item.category.img}} style={{height:16,width:20,marginLeft:5}} resizeMode='cover'/>
          <Text style={styles.texthead}>{item.category.name}</Text>
         </View>
         <Text style={styles.textprice}>${item.ammount}</Text>

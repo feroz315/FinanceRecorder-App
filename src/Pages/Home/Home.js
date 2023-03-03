@@ -17,10 +17,12 @@ const screenWidth = Dimensions.get("window").width;
 const Home = ({ data }) => {
 const isFocused = useIsFocused();
 
+
 const navigation = useNavigation();
 const [ Monthexpense, setMonthexpense ] = useState(0); 
 const [ Data, setData ] = useState([])
 const [ loading, setLoading ] = useState(false);
+
 
 
 const monthdata = {
@@ -76,6 +78,7 @@ async function ItemExpense() {
 }
 
 
+
 useEffect(() => {
   ItemExpense();
   HomeExpense();
@@ -85,7 +88,7 @@ useEffect(() => {
   return (
     <SafeAreaView style={{backgroundColor:COLORS.lightwhite,flex:1}}>
           <View style={styles.header}>
-            <Image source={require('../../Images/Men2.png')} style={styles.headerimage} />
+            <Image source={require('../../Images/man.png')} style={styles.headerimage} />
             <View style={styles.headertextview}>
               <Text style={styles.headertext}>Welcome</Text>
               <Text style={styles.headertext1}>{data}</Text>
@@ -107,7 +110,7 @@ useEffect(() => {
           <View style={[styles.viewcenter,{width:width*0.9,alignSelf:'center',paddingHorizontal:width*0.02}]}>
             <Text style={[styles.textrank]}>Top 5 Heads</Text>
             <TouchableOpacity 
-            onPress={() => Alert.alert('work')}>
+            onPress={() => navigation.navigate("MyExpense")}>
               <Text style={styles.viewItem}>View All</Text>
             </TouchableOpacity>
           </View>
@@ -133,7 +136,7 @@ useEffect(() => {
               )}>
               <View style={styles.cards}>
               <View style={styles.viewcarditems}>
-              <Image source={{ uri: item.category.img}} style={{height:15,width:15,}} resizeMode='cover'/>
+              <Image source={{ uri: item.category.img}} style={{height:18,width:22,}} resizeMode='cover'/>
               <Text style={styles.itemtext}>{item.category.name}</Text>
               </View>
               <Text style={styles.itemprice}>${item.ammount}</Text>

@@ -64,11 +64,11 @@ try{
                     </TouchableOpacity>
 
                     <View style={{ height: 100, marginHorizontal: 15 }}>
-                        <Image source={require('../../Images/Login/Logo/Logo.png')} />
+                        <Image source={require('../../Images/Login/Logo/Logo.png')} resizeMode="contain" style={{height:"100%",width:"100%"}}/>
                     </View>
 
-                    <View style={{ marginTop: 65, marginHorizontal:65 }}>
-                        <Image source={require('../../Images/Login/Name/Name2.png')} style={{width:width * 0.6,height:55}} />
+                    <View style={{ marginTop: 65, height:width * 0.17,alignSelf:'center', width: width * 0.64,right:width * 0.05}}>
+                        <Image source={require('../../Images/Login/Name/Name2.png')} style={{width:"100%",height:"100%"}} />
                     </View>
 
                     <View style={styles.viewInput}>
@@ -102,15 +102,17 @@ try{
                         </TouchableOpacity>
                     </View>
 
-              <View style={{flex:1,justifyContent:'center',marginRight:40}}>
+              <View style={{flex:1,justifyContent:'center',alignSelf:'center'}}>
               {
                 loading ? 
-                <ActivityIndicator size={"small"} color='black'/>
-                :<TouchableOpacity style={styles.viewbtn}
+                <ActivityIndicator size={"small"} color='black' style={{marginRight:50}}/>
+                : <View style={{height: 5}}/>
+            }
+                <TouchableOpacity style={styles.viewbtn}
                 onPress={() => Login()}>
                 <Text style={styles.logintext}>Login</Text>
                 </TouchableOpacity>
-            }
+            
             </View>
 
                     <View style={styles.viewline}>
