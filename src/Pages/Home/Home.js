@@ -106,7 +106,7 @@ useEffect(() => {
             </View>
             </View>
 
-          <View style={[styles.viewcenter,{width:width*0.9,alignSelf:'center',paddingHorizontal:width*0.02}]}>
+          <View style={[styles.viewcenter,{width:width*0.9,alignSelf:'center',paddingHorizontal:width*0.02,marginTop:15}]}>
             <Text style={[styles.textrank]}>Top 5 Heads</Text>
             <TouchableOpacity 
             onPress={() => navigation.navigate("MyExpense")}>
@@ -115,8 +115,9 @@ useEffect(() => {
           </View>
           {
             loading?
-            <ActivityIndicator size={'large'} color={"#000"} style={{marginTop:20}}/>:
-            !Data.length > 0 ? <Text style={styles.viemsg}>There is no more Item</Text> : 
+            <ActivityIndicator size={'large'} color={"#000"} style={{marginTop:20,flex:0.40}}/>:
+            !Data.length > 0 ? <Text style={styles.viemsg}>There are no more Items Available</Text>:
+             Data.length > 5 ? null : 
           <FlatList
           showsHorizontalScrollIndicator={false}
           data={Data}
@@ -134,7 +135,7 @@ useEffect(() => {
               )}>
               <View style={styles.cards}>
               <View style={styles.viewcarditems}>
-              <Image source={{ uri: item.category.img}} style={{height:18,width:22,}} resizeMode='cover'/>
+              <Image source={{ uri: item.category.img}} style={{height:18,width:21,}} resizeMode="contain"/>
               <Text style={styles.itemtext}>{item.category.name}</Text>
               </View>
               <Text style={styles.itemprice}>${item.ammount}</Text>
@@ -142,17 +143,15 @@ useEffect(() => {
               </TouchableOpacity>                          
               </View>
               )}}/>
-            
-            
-         
-             }
-        
-          
-             <TouchableOpacity style={styles.viewbtn}    
+                      
+               }
+           
+              <TouchableOpacity style={styles.viewbtn}    
               onPress={() => navigation.replace("AddExpense")}>
               <Text style={styles.textbtn}>Add Expense</Text>
               </TouchableOpacity>       
-       </SafeAreaView>
+           
+              </SafeAreaView>
 
 
   );

@@ -16,13 +16,14 @@ const MyExpenseDetails = ({ navigation,route }) => {
    const [ Amount, setAmount ] = useState('');
    const [ Description, setDescription ] = useState('');
    const [ ItemImg, setItemImg ] = useState();
-   const ref = useRef();
+   const [ Data, setData ] = useState([]);
+
+
    
    const userid = route.params.id;
    console.log( "userData", userid)
   
   
-
 
  const ExpenseId = async () =>  {
    setLoading(true)
@@ -34,14 +35,14 @@ const MyExpenseDetails = ({ navigation,route }) => {
       setCategoryName(result.data.expense.category?.name)
       setAmount(result.data.expense.ammount)
       setDescription(result.data.expense.description)
-      
-      } catch (error) {
+      setData(result.data.expense)
+    
+    } catch (error) {
     console.log("🚀 ~ file: expensedetails.js:58 ~ expensedetails ~ error", error)
      setLoading(false)
     
   }
  }
-
 
  const ExpenseUpdate = async () =>  {
   try {
@@ -57,7 +58,6 @@ const MyExpenseDetails = ({ navigation,route }) => {
  }
 }
 
-
 const Sharedata = async () => {
   const shareoptions = {
     message: "Share with your friends",
@@ -70,27 +70,33 @@ const Sharedata = async () => {
   }
 }
 
-
-const RemoveId = async (id) => {
-  console.log("firstid====>",id)
-  try {
-    const result = await apiCall.deleteId(id)
-  } catch (error) {
-    console.log("Error",error)
+// const RemoveId = async (id) => {
+//   console.log("firstid====>",id)
+//   try {
+//     const result = await apiCall.deleteId(id)
+//     console.log("🚀 ~ file: MyExpenseDetails.js:79 ~ RemoveId ~ result:", result)
+//   } catch (error) {
+//     console.log("Error",error)
     
-  }
-}
+//   }
+// }
 
+
+const RemoveId = (id)  => {
+  let filter = Data.filter(item => item._id !== id)
+  setData(filter);
+  console.log("first",filter)
+}
 
 
  useEffect(() => {
 ExpenseId()
  }, []);
 
+ 
 
  
 return (
-
     <SafeAreaView style={{ flex: 0.30, backgroundColor: "#F2FEFA" }}>
       <View style={styles.header}>
         <TouchableOpacity style={{ marginTop: 10, marginLeft: 25 }} onPress={() => navigation.goBack()}>
@@ -105,8 +111,8 @@ return (
         <View style={styles.ViewCard}>
         <Text style={{ marginLeft: 16,color:'#787878',marginTop:15}}>Category</Text>
         <View style={styles.viewdata}>
-        <Image source={{ uri: ItemImg}} style={{height:15,width:15,marginLeft:10,alignSelf:'center'}} resizeMode='cover' />
-        <Text style={{marginLeft:8,marginTop:12,fontSize:15}}>{CategoryName}</Text>
+        <Image source={{ uri: ItemImg}} style={{height:17,width:18,marginLeft:10,alignSelf:'center'}} resizeMode='cover' />
+        <Text style={{marginLeft:8,marginTop:12,fontSize:16}}>{CategoryName}</Text>
         
         </View>
         
@@ -142,7 +148,7 @@ return (
         <Image source={require('../../Images/forward.png')} style={{marginRight:10}} />
         </TouchableOpacity>
         
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => RemoveId()}>
         <Image source={require('../../Images/delete.png')} style={{tintColor:COLORS.cyanblue}}/>
         </TouchableOpacity>
         </View>
@@ -152,7 +158,6 @@ return (
       }
 
     </SafeAreaView>
-
 
   );
 }

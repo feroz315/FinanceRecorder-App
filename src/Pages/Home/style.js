@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
       marginTop: 10,
       backgroundColor: COLORS.white,
       marginVertical: 3,
-      height: 45,
+      height: 50,
       width: width * 0.9,
       borderRadius: 10,
       alignSelf:'center'
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
       color:COLORS.gray
     },
     
-    viewcarditems:{
+     viewcarditems:{
       flexDirection: 'row', 
       justifyContent: 'center', 
       alignItems: 'center',
@@ -147,8 +147,8 @@ const styles = StyleSheet.create({
       width: width * 0.5,
       height:45,
       alignSelf:'center',
-      marginTop: 10,
-      marginBottom:15
+      marginBottom:15,
+      marginTop:50
       
     },
     textbtn:{

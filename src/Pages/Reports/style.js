@@ -36,19 +36,23 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     ViewProgress: {
-        backgroundColor: "#F5F5F5",
-        marginTop: 20,
+        marginTop: 10,
         marginLeft: 15,
         borderRadius: 10,
         height: 40,
-        width: width * 0.81
+        width: width * 0.1
     },
-    Viewitems: {
+    Progressline: {
+        marginLeft: 12,
+        borderRadius: 10,
+        width: width * 0.1
+    },
+   Viewitems: {
         flexDirection: 'row',
-        justifyContent: "space-between",
+        justifyContent: "center",
         alignItems: 'center',
         alignSelf:'center',
-        marginTop:10
+        marginTop:2
     },
     Viewleftitems: {
         flexDirection: 'column',
@@ -128,7 +132,7 @@ const styles = StyleSheet.create({
         borderRadius: 20
     },
     viewitem:{
-        marginLeft: 10,
+        marginLeft: 8,
         marginBottom:3
     },
     text:{
@@ -136,10 +140,10 @@ const styles = StyleSheet.create({
         color: "#607490"
     },
     price:{
-        fontSize: 18, 
+        fontSize: 16, 
         color: COLORS.cyanblue, 
         fontWeight: '500', 
-        marginLeft: 5 
+         
     },
     line1:{
         borderWidth: 0.2, 

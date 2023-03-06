@@ -76,9 +76,9 @@ const styles = StyleSheet.create({
         backgroundColor: "#007BFF",
         borderRadius: 10,
         alignItems: "center",
-        width: width * 0.81,
+        width: width * 0.80,
         marginRight:45,
-        marginTop: SPACING * 2
+        
     },
     logintext: {
         color: COLORS.white,
@@ -89,8 +89,7 @@ const styles = StyleSheet.create({
     viewline: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 20,
-        marginHorizontal: 50
+        marginHorizontal: 60
     },
     line1: {
         borderBottomWidth: 1,
@@ -107,7 +106,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         alignItems: "center",
         marginTop: 20,
-        paddingRight: 50
+        paddingRight: 40
     },
     gmail: {
         marginLeft: 30,
@@ -126,8 +125,9 @@ const styles = StyleSheet.create({
     viewfooter: {
         flexDirection: 'row',
         justifyContent: 'center',
-        marginTop: 20,
-        marginRight: 60
+        marginTop: 40,
+        marginRight: 60,
+        marginBottom:20
     },
     aconttext: {
         fontSize: 14,

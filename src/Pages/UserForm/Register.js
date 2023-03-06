@@ -64,13 +64,14 @@ const Registerscreen = ({ navigation, }) => {
         <AntDesign name="arrowleft" size={30} color="#000" />
       </TouchableOpacity>
 
-      <View style={{ height: 150, marginHorizontal: 10, }}>
-        <Image source={require('../../Images/Login/Logo/Logo.png')} />
+      <View style={{ height: 90}}>
+      <Image source={require('../../Images/Login/Logo/Logo.png')} resizeMode="cover" style={{height:"210%",width:"75%",marginTop:55,alignSelf:'center',right:35}}/>
       </View>
 
-      <View style={{ marginHorizontal: 80,marginTop:10 }}>
-        <Image source={require('../../Images/Login/Name/Name.png')} />
-      </View>
+    <View style={{ marginTop: 65, height:width * 0.17,alignSelf:'center', width: width * 0.64,right:width * 0.05}}>
+      <Image source={require('../../Images/Login/Name/Name2.png')} style={{width:"100%",height:"100%"}} />
+    </View>
+
 
       <View style={styles.viewInput}>
         <View style={styles.viewconfusername} >
@@ -147,15 +148,15 @@ export default Registerscreen;
 /*
 
 <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => setShow(true)}
+    <TouchableOpacity
+      onPress={() => setShow(true)}
         style={{
             width: '80%',
             height: 60,
             backgroundColor: 'black',
             padding: 10,
-        }}
-      >
+        }}>
+      
         <Text style={{
             color: 'white',
             fontSize: 20

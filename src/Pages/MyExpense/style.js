@@ -77,6 +77,14 @@ const styles = StyleSheet.create({
       marginLeft: 5,
       marginTop:5
     },
+    viemsg:{
+      fontSize:width * 0.05,
+      alignSelf:'center',
+      flex:1,
+      marginTop:200,
+      fontFamily: 'Roboto-Regular',
+      color:COLORS.gray
+    },
     items:{
       flexDirection: 'row', 
       justifyContent: 'center', 
@@ -101,6 +109,23 @@ const styles = StyleSheet.create({
       color: "#555555", 
       marginLeft:5
      
+    },
+    viewbtn:{
+      backgroundColor:COLORS.cyanblue, 
+      height: 35, 
+      width: width * 0.55,
+      alignSelf:'center', 
+      borderRadius: 15, 
+      elevation: 10,
+      marginBottom:20
+      
+    },
+    textbtn:{
+      textAlign: 'center', 
+      marginTop: 5, 
+      fontSize: 18,
+      fontWeight: '600',
+      color:COLORS.white
     },
     viewcalender:{
       flexDirection:'row',

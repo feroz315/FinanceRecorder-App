@@ -10,6 +10,8 @@ import styles from './style';
 const Settings = ({ data}) => {
 const navigation =useNavigation()
 
+
+
 const Signout = async () => {
   try {
     let Logout = await AsyncStorage.removeItem("userdata")

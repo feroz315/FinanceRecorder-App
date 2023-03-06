@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     },
     viewInput: {
       flexDirection: 'column',
-      marginTop: 25,
+      marginTop: 35,
       width: width * 0.93,     
       alignSelf:'center'
     },
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
       paddingLeft: 10,
       borderWidth: 1,
       borderColor: "#007BFF",
-      marginTop: 15
+      marginTop: 16
     },
     viewconfusername: {
       flexDirection: 'row',
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
       height: 40,
       borderWidth: 1,
       borderColor: "#007BFF",
-      marginTop: 15
+      marginTop: 16
     },
     viewbtn: {
       padding: SPACING * 0.5,

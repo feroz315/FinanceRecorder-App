@@ -54,17 +54,13 @@ try{
 
     
  return (
-        <SafeAreaView>
-            <View style={{ width: "130%" }}>
-                <ImageBackground source={require("../../Images/Login/Shape/Shape.png")} style={{ height: '100%' }} />
-                <View style={{ position: "absolute" }}>
-
-                    <TouchableOpacity style={{ marginTop: 30, marginLeft: 15 }} onPress={() => navigation.navigate('Register')}>
+         <ImageBackground source={require("../../Images/Login/Shape/Shape.png")} style={{ height: '100%',width:"115%" }}>
+            <TouchableOpacity style={{ marginTop: 30, marginLeft: 15 }} onPress={() => navigation.navigate('Register')}>
                         <AntDesign name="arrowleft" size={30} color="#000" />
                     </TouchableOpacity>
 
-                    <View style={{ height: 100, marginHorizontal: 15 }}>
-                        <Image source={require('../../Images/Login/Logo/Logo.png')} resizeMode="contain" style={{height:"100%",width:"100%"}}/>
+                    <View style={{ height: 90}}>
+                        <Image source={require('../../Images/Login/Logo/Logo.png')} resizeMode="cover" style={{height:"210%",width:"75%",marginTop:55,alignSelf:'center',right:35}}/>
                     </View>
 
                     <View style={{ marginTop: 65, height:width * 0.17,alignSelf:'center', width: width * 0.64,right:width * 0.05}}>
@@ -96,8 +92,6 @@ try{
                             <Text style={styles.textRM}>Remember Me</Text>
                         </View>
                         <TouchableOpacity onPress={() => navigation.navigate("Forgot")}>
-
-
                             <Text style={styles.textFP}>Forgot password?</Text>
                         </TouchableOpacity>
                     </View>
@@ -106,8 +100,8 @@ try{
               {
                 loading ? 
                 <ActivityIndicator size={"small"} color='black' style={{marginRight:50}}/>
-                : <View style={{height: 5}}/>
-            }
+                :<View style={{height: 5}}/>
+              }
                 <TouchableOpacity style={styles.viewbtn}
                 onPress={() => Login()}>
                 <Text style={styles.logintext}>Login</Text>
@@ -138,11 +132,9 @@ try{
                         <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('Register')}>
                             <Text style={styles.signtext}> Sign Up</Text>
                         </TouchableOpacity>
-                    </View>
-                </View>
-            </View>
-        </SafeAreaView>
-
+                  </View>
+          </ImageBackground>
+        
     )
 };
 

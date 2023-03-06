@@ -6,14 +6,17 @@ import styles from './style';
 import * as Progress from 'react-native-progress';
 import {ProgressBar} from 'react-native-multicolor-progress-bar';
 import { apiCall } from '../../Connection/apiCall';
-import { useIsFocused } from '@react-navigation/native';
+import { useIsFocused, useNavigation } from '@react-navigation/native';
 
 
 const { height,width} = Dimensions.get('window');
 
 
-const Reports = ({ navigation}) => {
+const Reports = () => {
+
+const navigation = useNavigation();  
 const isFocused = useIsFocused();
+
 
 const [ Totalexpense, setTotalexpense ] = useState(0);   
 const [ TotalItems, setTotalItems ] = useState();   
@@ -34,6 +37,7 @@ const [ TotalItems, setTotalItems ] = useState();
     async function AllGroupExpense(){
         try {
           const result = await apiCall.expenseGroup();
+           console.log("🚀 ~ file: Reports.js:40 ~ AllGroupExpense ~ result:", result.data.allExpense)
            setTotalItems(result.data.allExpense)
         } 
         catch (error) {
@@ -56,8 +60,6 @@ const [ TotalItems, setTotalItems ] = useState();
 // }
 // const res = getvalue()
 // console.log("first",res)
-
-
 
 
       
@@ -109,30 +111,32 @@ useEffect(() => {
                 <View style={styles.ViewProgress}>
                   <Progress.Bar progress={Totalexpense / 100 } width={width * 0.74} height={16} borderRadius={10} color={COLORS.cyanblue} style={{ marginTop: 12, marginLeft: 12 }} />
                 </View>
-              <View style={styles.Viewitems}>
-              <FlatList
+                <View style={styles.Viewitems}>
+            <FlatList
                 horizontal={false}
                 showsHorizontalScrollIndicator={false}
                 data={TotalItems}
                 numColumns={2}
                 renderItem={({ item }) => (
-               <TouchableOpacity style={{margin:4,marginLeft:10}} onPress={() => Alert.alert("working")}>
+                <TouchableOpacity style={{margin:4,marginLeft:10}} onPress={() => Alert.alert("work")}>
+              
                   <View style={styles.leftitems}>
                       <View style={styles.viewImg}>
-                          <Image source={require("../../Uilites/Icons/utilities.png")} style={{ height: 26, width: 24, marginTop: 10, marginLeft: 10 }} />
+                          <Image source={require("../../Uilites/Icons/utilities.png")} style={{ height: 25, width: 25, marginTop: 8, marginLeft: 8 }} />
                       </View>
                       <View style={styles.viewitem}>
                           <Text style={styles.text}>{item.categoryName}</Text>
                           <Text style={styles.price}>${item.totalAmount}</Text>
                       </View>
                   </View>
-                    <View style={styles.line1} />
+                <View style={styles.Progressline}>
+                 <Progress.Bar progress={0.5 } width={width * 0.26} height={10} borderRadius={7} color={COLORS.cyanblue} style={{ marginTop: 8, marginLeft: 10 }} />
+                  </View>
                   </TouchableOpacity>
                 )}/>
                </View>
+           </View>  
 
-           </View>    
-           
         </SafeAreaView>
 
     );

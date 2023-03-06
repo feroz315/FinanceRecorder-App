@@ -127,6 +127,7 @@ useEffect(() => {
   {
     loading?
     <ActivityIndicator size={'large'} color={"#000"} style={{marginTop:5}}/>:
+    !filter.length > 0 ? <Text style={styles.viemsg}>There are no more Items Available</Text> : 
      <FlatList
       showsHorizontalScrollIndicator={false}
       data={filter}
@@ -170,6 +171,12 @@ useEffect(() => {
           )}}/>
            
         }
+
+          <TouchableOpacity style={styles.viewbtn}    
+              onPress={() => navigation.replace("AddExpense")}>
+              <Text style={styles.textbtn}>Add Expense</Text>
+              </TouchableOpacity>       
+
         </SafeAreaView>
          
   );
