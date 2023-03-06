@@ -17,10 +17,7 @@ const { width, height } = Dimensions.get('window');
 
 const Registerscreen = ({ navigation, }) => {
 
-  const [show, setShow] = useState(false);
-  const [countryCode, setCountryCode] = useState('');
   const [userName, setUserName] = useState("");
-  const [email, setEmail] = useState("");
   const [Phonenum, setPhonenum] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -137,81 +134,6 @@ const Registerscreen = ({ navigation, }) => {
 
 
 
-
-
 export default Registerscreen;
 
 
-
-
-
-/*
-
-<View style={styles.container}>
-    <TouchableOpacity
-      onPress={() => setShow(true)}
-        style={{
-            width: '80%',
-            height: 60,
-            backgroundColor: 'black',
-            padding: 10,
-        }}>
-      
-        <Text style={{
-            color: 'white',
-            fontSize: 20
-        }}>
-            {countryCode}
-        </Text>
-      </TouchableOpacity>
-
-      // For showing picker just put show state to show prop
-      <CountryPicker
-        show={show}
-        // when picker button press you will get the country object with dial code
-        pickerButtonOnPress={(item) => {
-          setCountryCode(item.dial_code);
-          setShow(false);
-        }}
-      />
-    </View>
-
-
-
-
-
-
-
-
-
-
-
-
-    <View style={styles.container}>
-      <View        
-        style={{
-            width: '80%',
-            height: 60,
-            backgroundColor: 'black',
-            padding: 10,
-        }}
-      >
-        <Text style={{
-            color: 'white',
-            fontSize: 20
-        }}>
-            {countryCode}
-        </Text>
-      </TouchableOpacity>
-
-      // All props the same as for picker
-       <CountryList
-          lang={'pl'}
-          pickerButtonOnPress={(item) => {
-              setCountryCode(item.dial_code);
-          }}
-       />
-    </View>
-
-
-    */

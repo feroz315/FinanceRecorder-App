@@ -140,16 +140,15 @@ try{
 
 
 
-
 export default Loginscreen;
 
 
 
-/*
+  /*
 
             const emailValid = false;
-            if(Email.length == 0){
-                setEmailError("Email is required")
+            if(username.length == 0){
+                setusernameError("username is required")
             }else if(Email.indexOf('') >= 0 ){
                 setEmailError("Email doesn't contain space")
             }else{
