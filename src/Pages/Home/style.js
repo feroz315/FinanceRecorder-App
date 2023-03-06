@@ -112,6 +112,15 @@ const styles = StyleSheet.create({
       fontFamily: 'Roboto-Regular',
       color:COLORS.gray
     },
+    viemsg:{
+      fontSize:width * 0.05,
+      alignSelf:'center',
+      flex:1,
+      marginTop:120,
+      fontFamily: 'Roboto-Regular',
+      color:COLORS.gray
+    },
+    
     viewcarditems:{
       flexDirection: 'row', 
       justifyContent: 'center', 
@@ -121,11 +130,13 @@ const styles = StyleSheet.create({
     itemtext:{
       marginLeft: 8, 
       fontSize: width * 0.04,
+      fontFamily:"Roboto-Regular",
+      
       color: "#007BFF",
       alignSelf:'center'
     },
     itemprice:{
-      fontSize: 17, 
+      fontSize: width * 0.05, 
       color: COLORS.gray, 
       marginRight: 15,
    },

@@ -52,8 +52,8 @@ const monthdata = {
   async function HomeExpense(){
     try {
       const res = await apiCall.monthExpense();
-        setMonthexpense(res.data[0].totalAmount);     
-            } 
+        setMonthexpense(res.data[0].totalAmount);    
+        } 
     catch (error) {
       console.log("🚀 ~ file: Home.js:55 ~ HomeExpense ~ error", error)
       setMonthexpense(0);     
@@ -113,20 +113,18 @@ useEffect(() => {
               <Text style={styles.viewItem}>View All</Text>
             </TouchableOpacity>
           </View>
-
           {
-            loading? 
-            <ActivityIndicator size={'large'} color={"#000"} style={{marginTop:15}}/>:
-                        
-         <FlatList
+            loading?
+            <ActivityIndicator size={'large'} color={"#000"} style={{marginTop:20}}/>:
+            !Data.length > 0 ? <Text style={styles.viemsg}>There is no more Item</Text> : 
+          <FlatList
           showsHorizontalScrollIndicator={false}
           data={Data}
           renderItem={({ item }) => {
             return (    
               <View style={{
                 width:width*0.9,
-                alignSelf:'center',
-                
+                alignSelf:'center',              
               }}>
               <TouchableOpacity 
               onPress={() => navigation.navigate("ExpenseDetails",
@@ -144,9 +142,12 @@ useEffect(() => {
               </TouchableOpacity>                          
               </View>
               )}}/>
-                
-           }
-
+            
+            
+         
+             }
+        
+          
              <TouchableOpacity style={styles.viewbtn}    
               onPress={() => navigation.replace("AddExpense")}>
               <Text style={styles.textbtn}>Add Expense</Text>
