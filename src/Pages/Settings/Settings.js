@@ -26,8 +26,8 @@ const Signout = async () => {
 
   return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#FFF' }}>
-            <View style={{ marginTop: 30, alignSelf:'center' }}>
-                <Image source={require("../../Images/Settings/Settings.png")} style={{ width: 100, height: 25 }} />
+            <View style={{ marginTop: 20, alignSelf:'center' }}>
+                <Image source={require("../../Images/Settings/Settings.png")} style={{ width: 110, height: 30 }} />
             </View>
 
             <View style={styles.viewheader}>
@@ -162,7 +162,7 @@ const Signout = async () => {
 
          <TouchableOpacity onPress={() => Signout()} 
             style={{alignSelf:'center',marginTop:15}}>
-            <Image source={require("../../Images/Settings/Signout.png")} />
+            <Image source={require("../../Images/Settings/Signout.png")} style={{alignSelf:'center',marginRight:40}}/>
               </TouchableOpacity>   
                    
               </View>

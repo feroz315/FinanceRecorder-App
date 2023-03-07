@@ -3,13 +3,14 @@ import { TextInput,View, Text, SafeAreaView, Image, ImageBackground, Dimensions,
 import { ActivityIndicator, Avatar } from 'react-native-paper';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Fontisto from 'react-native-vector-icons/Fontisto';
 import styles from './loginstyle';
 import { apiCall } from '../../Connection/apiCall';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CheckBox from '@react-native-community/checkbox';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import COLORS from '../../const/Colors';
+import { useForm, Controller } from "react-hook-form";
+
+
 
 
 const { width, height } = Dimensions.get('window');
@@ -19,10 +20,11 @@ const Loginscreen = ({ navigation }) => {
     const [userName, setUserName] = useState("");
     const [Password, setPassword] = useState("");
     const [ agree, setAgree ] = useState(false);
-    const [emailError, setEmailError] = useState("");
+    const [userError, setUserError] = useState("");
     const [passwordError, setPasswordError] = useState("");
     const [loading, setLoading ] = useState(false);  
     const [hidePass, setHidePass] = useState(true);
+
 
 
 
@@ -34,16 +36,16 @@ let obj = {
     
 }
 console.log("first",obj)
-try{
+    try{
             let { data,status,responseCode} = await apiCall.signin(obj)
             if(status === true && responseCode === 200){
                 await AsyncStorage.setItem('userdata',JSON.stringify(data))
                setLoading(false)
-                navigation.navigate("BottomNav", {
+                    navigation.navigate("BottomNav", {
                     name:data.name
-                })               
-              }
-          }
+                  })
+                }             
+         }
         catch(error) {
             console.log("test", error)
             setLoading(false)
@@ -52,7 +54,8 @@ try{
     }
 
 
-    
+
+
  return (
          <ImageBackground source={require("../../Images/Login/Shape/Shape.png")} style={{ height: '100%',width:"115%" }}>
             <TouchableOpacity style={{ marginTop: 30, marginLeft: 15 }} onPress={() => navigation.navigate('Register')}>
@@ -72,17 +75,17 @@ try{
                         <Icon name="user" size={16} color="#007BFF" style={{marginRight:5}} />
                          <TextInput style={styles.input} placeholder="Username" placeholderTextColor="#818181" value={userName} onChangeText={(val) => setUserName(val)} />
                         </View>
-                         <Text>{emailError}</Text>
+                         <Text>{userError}</Text>
                         
                         <View style={styles.viewpasword}>
                             <Icon name="lock" size={16} color="#007BFF" />
                             <TextInput style={styles.input} placeholder="Password" secureTextEntry={hidePass ? true : false} placeholderTextColor="#818181" value={Password} onChangeText={(val) => setPassword(val)}/>
                         
-                        <TouchableOpacity onPress={() => setHidePass(!hidePass)}>
+                           <TouchableOpacity onPress={() => setHidePass(!hidePass)}>
                             <Icon name={hidePass ? 'eye-slash' : 'eye'} size={16} color="#007BFF" style={{marginRight:10}}/>
                              </TouchableOpacity>
                            </View>
-                         <Text>{passwordError}</Text>
+                           <Text>{passwordError}</Text>
                     </View>
 
                  <View style={styles.viewRF}>
@@ -132,8 +135,8 @@ try{
                         <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('Register')}>
                             <Text style={styles.signtext}> Sign Up</Text>
                         </TouchableOpacity>
-                  </View>
-          </ImageBackground>
+                         </View>
+                           </ImageBackground>
         
     )
 };
@@ -144,8 +147,7 @@ export default Loginscreen;
 
 
 
-  /*
-
+  /*        
             const emailValid = false;
             if(username.length == 0){
                 setusernameError("username is required")
@@ -185,10 +187,8 @@ export default Loginscreen;
                 setPasswordError("Password is required")
             }else if(Password.length < 0 ){
                 setPasswordError("Password should be minimum 6 characters");
-
             }else if(Password.indexOf('') >= 0){
                 setPasswordError('Password cannot contain spaces');                          
-
             }else{
                 setPasswordError("")
                 passwordValid = true;
@@ -196,6 +196,16 @@ export default Loginscreen;
                 navigation.navigate('BottomNav')
                 setEmail("")
                 setPassword("")
+
+
+
+              if(userName === ""){
+                    setUserError("Please Fill the username")
+                }if(Password.length < 6 && Password === "" ){
+                    setPasswordError('Password must be at least 6 chars long')   
+                }else {
+              
+
 
 */
 

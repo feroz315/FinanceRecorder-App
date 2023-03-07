@@ -146,11 +146,10 @@ useEffect(() => {
                       
                }
            
-              <TouchableOpacity style={styles.viewbtn}    
+               <TouchableOpacity style={styles.viewbtn}    
               onPress={() => navigation.replace("AddExpense")}>
               <Text style={styles.textbtn}>Add Expense</Text>
-              </TouchableOpacity>       
-           
+              </TouchableOpacity>     
               </SafeAreaView>
 
 

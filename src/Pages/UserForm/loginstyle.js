@@ -8,11 +8,10 @@ const SPACING = 10;
 
 const styles = StyleSheet.create({
     input: {
-        position: 'relative',
         height: '100%',
         width: '90%',
         fontFamily: 'OpenSans-Medium',
-        paddingLeft: 8,
+        paddingLeft: 7,
         fontSize: 14,
         marginTop:5,
         color:COLORS.gray
@@ -20,7 +19,7 @@ const styles = StyleSheet.create({
     },
     viewInput: {
         flexDirection: 'column',
-        marginTop: 50,
+        marginTop: 30,
         marginHorizontal: 35,
     },
     viewUser: {
@@ -30,9 +29,9 @@ const styles = StyleSheet.create({
         width: '85%',
         borderRadius: 10,
         height: 37,
-        
         borderColor: "#007BFF",
-        borderWidth: 1
+        borderWidth: 1,
+        
     },
     viewpasword: {
         flexDirection: 'row',
@@ -50,26 +49,22 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-               
     },
     viewtext: {
         flexDirection: 'row',
-        
     },
     textRM: {
         fontSize: 14,
         fontWeight: '400',
         marginTop:4,
         color:COLORS.gray
-
     },
     textFP: {
         fontSize: 14,
         fontWeight: '400',
         marginRight: 60,
         marginBottom:10,
-        color:COLORS.gray
-       
+        color:COLORS.gray    
     },
     viewbtn: {
         paddingVertical: SPACING * 0.4,
@@ -77,14 +72,12 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         alignItems: "center",
         width: width * 0.80,
-        marginRight:45,
-        
+        marginRight:45,        
     },
     logintext: {
         color: COLORS.white,
         fontSize: width * 0.04,
-        fontWeight: "500",
-        
+        fontWeight: "500",        
     },
     viewline: {
         flexDirection: 'row',
@@ -142,6 +135,8 @@ const styles = StyleSheet.create({
         fontFamily: 'Roboto-Medium'
     }
 });
+
+
 
 
 export default styles;

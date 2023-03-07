@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
         fontSize: 24, 
         fontFamily: "PTSans-Regular", 
         fontWeight: "600", 
-        color: COLORS.cyanblue
+        color: COLORS.cyanblue,
+        marginRight:55, 
     },
     headertext2:{
         fontSize: 17, 
@@ -58,7 +59,9 @@ const styles = StyleSheet.create({
     },
     User:{
         fontSize: 14, 
-        fontFamily: "PTSans-Regular" 
+        fontFamily: "PTSans-Regular",
+        marginRight:15
+ 
     },
     name1:{
         fontSize: 17, 
@@ -83,20 +86,20 @@ const styles = StyleSheet.create({
     Email:{
         fontSize: 15, 
         fontFamily: "PTSans-Regular",
-        marginRight:130
+        marginRight:140
     },
     name2:{
         fontSize: 18, 
         fontFamily: "PTSans-Regular", 
         color: COLORS.cyanblue,
-        marginRight:20
+        marginRight:30
     },
     viewcard3:{
         flexDirection: 'row', 
         justifyContent: 'space-between', 
         alignItems: 'center',
         marginTop:10, 
-        marginLeft: 10 
+        marginLeft: 8 
     },
     viewtext3:{
         flexDirection: 'column', 
@@ -154,7 +157,7 @@ const styles = StyleSheet.create({
         fontSize: 17, 
         fontFamily: "PTSans-Regular", 
         color: COLORS.cyanblue,
-        marginLeft: 5
+        
     },
     viewcard6:{
         flexDirection: 'row', 

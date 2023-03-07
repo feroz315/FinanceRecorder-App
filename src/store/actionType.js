@@ -1,9 +1,5 @@
 export const USER_LOGOUT = 'USER_LOGOUT';
 export const USER_LOGIN = 'USER_LOGIN';
-export const EMAIL_VERIFY = 'EMAIL_VERIFY';
 export const PHONE_VERIFY = 'PHONE_VERIFY';
-export const INTRO_DONE = 'INTRO_DONE';
-export const MODAL_SHOWN = 'show';
-export const MODAL_UNSHOWN = 'unShow';
 export const ADD_DATA = 'ADD_DATA';
 export const DEL_DATA = 'DEL_DATA';

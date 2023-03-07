@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     },
     viewInput: {
       flexDirection: 'column',
-      marginTop: 35,
+      marginTop: 15,
       width: width * 0.93,     
       alignSelf:'center'
     },

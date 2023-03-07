@@ -70,18 +70,6 @@ const Sharedata = async () => {
   }
 }
 
-// const RemoveId = async (id) => {
-//   console.log("firstid====>",id)
-//   try {
-//     const result = await apiCall.deleteId(id)
-//     console.log("🚀 ~ file: MyExpenseDetails.js:79 ~ RemoveId ~ result:", result)
-//   } catch (error) {
-//     console.log("Error",error)
-    
-//   }
-// }
-
-
 const RemoveId = (id)  => {
   let filter = Data.filter(item => item._id !== id)
   setData(filter);
@@ -94,7 +82,6 @@ ExpenseId()
  }, []);
 
  
-
  
 return (
     <SafeAreaView style={{ flex: 0.30, backgroundColor: "#F2FEFA" }}>
@@ -149,7 +136,7 @@ return (
         </TouchableOpacity>
         
         <TouchableOpacity onPress={() => RemoveId()}>
-        <Image source={require('../../Images/delete.png')} style={{tintColor:COLORS.cyanblue}}/>
+        <Image source={require('../../Images/delete.png')} style={{tintColor:COLORS.Danger}}/>
         </TouchableOpacity>
         </View>
         

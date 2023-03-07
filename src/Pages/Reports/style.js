@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         backgroundColor: "#FFF",
         elevation: 25,
-        height: height * 0.27,
+        height: height * 0.28,
         width: width * 0.9,
         borderRadius: 10,
    },
@@ -38,9 +38,11 @@ const styles = StyleSheet.create({
     ViewProgress: {
         marginTop: 10,
         marginLeft: 15,
-        borderRadius: 10,
-        height: 40,
-        width: width * 0.1
+        borderRadius: 12,
+        height: 35,
+        width: width * 0.81,
+        backgroundColor: "#DFE4EB",
+
     },
     Progressline: {
         marginLeft: 12,

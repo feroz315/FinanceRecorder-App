@@ -30,6 +30,7 @@ const BottomNavigator = ({route}) => {
        height:width * 0.14,
        borderTopWidth:0,
        elevation:0,
+       
       },
       null
      ]
@@ -46,7 +47,7 @@ const BottomNavigator = ({route}) => {
                },   
   
             tabBarIcon: ({ focused }) => (
-            <Image source={require('../../Images/home.png')} style={{width:28,height:25,tintColor: focused ? "#007BFF" : "#908e8c" }}/>
+            <Image source={require('../../Images/home1.png')} style={{width:25,height:26,tintColor: focused ? "#007BFF" : "#908e8c" }}/>
              ), headerShown: false
         }}/>
          
@@ -58,9 +59,10 @@ const BottomNavigator = ({route}) => {
           fontSize: 12,
           fontWeight: "bold",
           marginBottom:2
+
          }, 
          tabBarIcon: ({ focused }) => (
-          <Image source={require('../../Images/poor.png')} style={{width:30,height:27,tintColor: focused ? "#007BFF" : "#908e8c" }}/>
+          <Image source={require('../../Images/Expense1.png')} style={{width:30,height:27,tintColor: focused ? "#007BFF" : "#908e8c" }}/>
           
         ), headerShown: false
       }}/>
@@ -75,7 +77,7 @@ const BottomNavigator = ({route}) => {
             marginBottom:2
            }, 
             tabBarIcon: ({ focused }) => (
-          <Image source={require('../../Images/report.png')} style={{width:26,height:25,tintColor: focused ? "#007BFF" : "#908e8c"}}/>
+          <Image source={require('../../Images/reports1.png')} style={{width:26,height:25,tintColor: focused ? "#007BFF" : "#908e8c"}}/>
           ), headerShown: false
         }}/>
         
@@ -90,7 +92,7 @@ const BottomNavigator = ({route}) => {
             marginBottom:2
            }, 
               tabBarIcon: ({ focused }) => (
-            <Image source={require('../../Images/settings.png')} style={{width:26,height:25,tintColor: focused ? "#007BFF" : "#908e8c"}}/>
+            <Image source={require('../../Images/setting2.png')} style={{width:26,height:25,tintColor: focused ? "#007BFF" : "#908e8c"}}/>
             
           ), headerShown: false
         }}/>

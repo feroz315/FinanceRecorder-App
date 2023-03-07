@@ -97,7 +97,7 @@ AllCategory();
           <FontAwesome name="chevron-down" size={15} color={COLORS.gray} style={{marginRight:10,marginBottom:5}}/>
         
         <View style={styles.viewdata}>
-          <Image source={{ uri: data?.img}} style={{height:17,width:28,marginTop:4}} resizeMode='cover' />
+          <Image source={{ uri: data?.img}} style={{height:17,width:21,marginTop:4}} resizeMode='cover' />
            <Text style={styles.input}>{data?.name != null ? data?.name : 'Select' }</Text>
              </View>            
               </TouchableOpacity>

@@ -1,9 +1,8 @@
 import {
     USER_LOGOUT,
     USER_LOGIN,
-    EMAIL_VERIFY,
     PHONE_VERIFY,
-    INTRO_DONE,
+  
   } from '../actionType';
   
   // init state
@@ -12,7 +11,6 @@ import {
     isLogin: false,
     email: false,
     phone: false,
-    intro: -1,
   };
   
   export default reducer = (state = initState, action) => {
@@ -22,7 +20,6 @@ import {
           ...state,
           isLogin: false,
           userData: {},
-          intro:0,
           token:''
         };
       case USER_LOGIN:
@@ -31,22 +28,11 @@ import {
           isLogin: true,
           userData: action.userData,
           token: action.token,
-          intro:1
-        };
-      case EMAIL_VERIFY:
-        return {
-          ...state,
-          email: action.isEmailVerified,
         };
       case PHONE_VERIFY:
         return {
           ...state,
           phone: action.isPhoneoVerified,
-        };
-      case INTRO_DONE:
-        return {
-          ...state,
-          intro: action.isIntroDone,
         };
       default:
         return state;

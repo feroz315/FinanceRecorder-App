@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import { TextInput, View, Text, ActivityIndicator, Image, ImageBackground, Dimensions, TouchableOpacity, Alert, Linking } from 'react-native';
+import { TextInput, View, Text, ActivityIndicator, Image, ImageBackground, Dimensions, TouchableOpacity,Linking } from 'react-native';
 import { Avatar } from 'react-native-paper';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './style';
 import { apiCall } from '../../Connection/apiCall';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import COLORS from '../../const/Colors';
-import {CountryPicker} from "react-native-country-codes-picker";
-import {CountryList} from "react-native-country-codes-picker";
 
 
 
@@ -61,7 +58,7 @@ const Registerscreen = ({ navigation, }) => {
         <AntDesign name="arrowleft" size={30} color="#000" />
       </TouchableOpacity>
 
-      <View style={{ height: 90}}>
+      <View style={{ height: 70}}>
       <Image source={require('../../Images/Login/Logo/Logo.png')} resizeMode="cover" style={{height:"210%",width:"75%",marginTop:55,alignSelf:'center',right:35}}/>
       </View>
 

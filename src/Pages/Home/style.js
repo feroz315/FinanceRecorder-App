@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
       marginLeft: 10,
     },
     headerimage: {
-      width: width * 0.16,
+      width: width * 0.18,
       height: 65,
       marginLeft: 5,
       borderRadius:15
@@ -130,8 +130,7 @@ const styles = StyleSheet.create({
     itemtext:{
       marginLeft: 8, 
       fontSize: width * 0.04,
-      fontFamily:"Roboto-Regular",
-      
+      fontFamily:"Roboto-Regular",  
       color: "#007BFF",
       alignSelf:'center'
     },
@@ -141,23 +140,23 @@ const styles = StyleSheet.create({
       marginRight: 15,
    },
     viewbtn:{
-      backgroundColor: "#007BFF",
-      borderRadius: 10,
-      alignItems: "center",
-      width: width * 0.5,
-      height:45,
-      alignSelf:'center',
-      marginBottom:15,
-      marginTop:50
+      backgroundColor:COLORS.cyanblue, 
+      height: 35, 
+      width: width * 0.50,
+      alignSelf:'center', 
+      borderRadius: 15, 
+      elevation: 10,
+      marginBottom:20
       
     },
     textbtn:{
       color: COLORS.white,
       fontSize: 19,
       fontWeight: "600",
-      marginTop:8,
+      marginTop:3,
+      alignSelf:'center',
       fontFamily: 'Roboto-Regular',
-      marginLeft:10,
+      marginLeft:15,
     }
   
   

@@ -113,17 +113,18 @@ const styles = StyleSheet.create({
     viewbtn:{
       backgroundColor:COLORS.cyanblue, 
       height: 35, 
-      width: width * 0.55,
-      alignSelf:'center', 
+      width: width * 0.50,
+      alignSelf:'center',
       borderRadius: 15, 
       elevation: 10,
       marginBottom:20
       
     },
     textbtn:{
-      textAlign: 'center', 
-      marginTop: 5, 
+      alignSelf:"center", 
+      marginTop: 4, 
       fontSize: 18,
+      marginLeft:15,
       fontWeight: '600',
       color:COLORS.white
     },
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
       margin: 5,
       backgroundColor: "#FFF",
       elevation: 5,
-      height: height * 0.13,
+      height: height * 0.14,
       width: width * 0.96,
       borderRadius: 5,
    },

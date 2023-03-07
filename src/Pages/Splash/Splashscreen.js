@@ -34,7 +34,7 @@ useEffect(() => {
   <View style={styles.container}>
      <ImageBackground source={require("../../Images/Mask.png")} resizeMode='cover' style={styles.image}>
    
-   <View style={{height:height * 0.25}}> 
+   <View style={{height:height * 0.30}}> 
       <Image source={require('../../Images/Logo.png')} style={{marginTop:5, resizeMode:'cover', }} />
      </View>
      <Image source={require('../../Images/Name.png')} style={{marginTop:5, resizeMode:'cover',alignSelf:'center' }} />    

@@ -14,6 +14,7 @@ const { height,width} = Dimensions.get('window');
 
 const Reports = () => {
 
+  
 const navigation = useNavigation();  
 const isFocused = useIsFocused();
 
@@ -109,7 +110,7 @@ useEffect(() => {
           
             <View style={styles.ViewCard}>
                 <View style={styles.ViewProgress}>
-                  <Progress.Bar progress={Totalexpense / 100 } width={width * 0.74} height={16} borderRadius={10} color={COLORS.cyanblue} style={{ marginTop: 12, marginLeft: 12 }} />
+                  <Progress.Bar progress={0.4 } width={width * 0.74} height={16} borderRadius={10} color={COLORS.cyanblue} style={{ marginTop: 8, marginLeft: 12 }} />
                 </View>
                 <View style={styles.Viewitems}>
             <FlatList
