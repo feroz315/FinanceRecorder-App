@@ -9,7 +9,7 @@ import {
   const initState = {
     userData: {},
     isLogin: false,
-    email: false,
+    username: false,
     phone: false,
   };
   

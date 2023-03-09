@@ -100,7 +100,6 @@ const styles = StyleSheet.create({
       borderRadius: 15, 
       elevation: 10,
       marginBottom:20
-      
     },
     textbtn:{
       textAlign: 'center', 
@@ -111,9 +110,10 @@ const styles = StyleSheet.create({
     },
     input: {
       fontFamily: 'OpenSans',
-      paddingLeft: 10,
       fontSize: 15,
-      textAlign:'center'
+      textAlign:'center',
+      marginLeft:5,
+      marginTop:3
   },
     viewcategory: {
       flexDirection: "row-reverse",

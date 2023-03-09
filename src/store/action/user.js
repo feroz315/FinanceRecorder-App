@@ -1,9 +1,9 @@
 import {
     USER_LOGOUT,
     USER_LOGIN,
-    EMAIL_VERIFY,
+    // EMAIL_VERIFY,
     PHONE_VERIFY,
-    INTRO_DONE,
+    // INTRO_DONE,
   } from '../actionType';
   
   export const logout = () => {
@@ -20,12 +20,12 @@ import {
     };
   };
   
-  export const emailVerify = isEmailVerified => {
-    return {
-      type: EMAIL_VERIFY,
-      isEmailVerified,
-    };
-  };
+  // export const emailVerify = isEmailVerified => {
+  //   return {
+  //     type: EMAIL_VERIFY,
+  //     isEmailVerified,
+  //   };
+  // };
   
   export const phoneVerify = isPhoneoVerified => {
     return {
@@ -34,9 +34,9 @@ import {
     };
   };
   
-  export const isIntro = isIntroDone => {
-    return {
-      type: INTRO_DONE,
-      isIntroDone,
-    };
-  };
+  // export const isIntro = isIntroDone => {
+  //   return {
+  //     type: INTRO_DONE,
+  //     isIntroDone,
+  //   };
+  // };

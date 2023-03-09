@@ -1,4 +1,4 @@
-import React, { useEffect }from 'react';
+import React, { useEffect,useState }from 'react';
 import {View,Text,Image, Dimensions,StyleSheet,ImageBackground } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -8,8 +8,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 const Splashscreen = ({ navigation }) => {
+const [usename, setUsername] = useState("");
 
-const handlerGetToken = async () =>{
+
+
+
+const handlerGetToken = async () => {
     let datatoken = await AsyncStorage.getItem('userdata')
     console.log("🚀 ~ file: Splashscreen.js:14 ~ getToken ~ token:", datatoken)
     if(!datatoken) {

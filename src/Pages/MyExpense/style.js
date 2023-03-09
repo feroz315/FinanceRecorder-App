@@ -39,12 +39,11 @@ const styles = StyleSheet.create({
       alignItems: 'center'
     },
     viewmonth: {
-    
       marginRight:10,
       width: '50%',
       height: 40,
       paddingLeft: 15,
-      marginTop: 15
+      marginTop: 5
     },
     viewbtn:{
       backgroundColor: "#007BFF",

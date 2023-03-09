@@ -86,15 +86,16 @@ useEffect(() => {
   
   return (
     <SafeAreaView style={{backgroundColor:COLORS.lightwhite,flex:1}}>
-          <View style={styles.header}>
-            <Image source={require('../../Images/man.png')} style={styles.headerimage} />
+    <View style={{backgroundColor:"#F2FEFA",height:width * 0.63}}>
+           <View style={styles.header}>
+            <Image source={require('../../Images/Oval.png')} style={styles.headerimage} />
             <View style={styles.headertextview}>
               <Text style={styles.headertext}>Welcome</Text>
               <Text style={styles.headertext1}>{data}</Text>
               </View>
           </View>
         
-         <View style={styles.ViewCard}>
+        <View style={styles.ViewCard}>
           {Monthexpense == 0 ? <View style={{height: width * 0.32}}/> : <LineChart data={monthdata} width={width*0.9} height={135} chartConfig={chartConfig}/>}
             <View style={styles.viewcardcenter}>
             <View style={styles.cardviewtext}>
@@ -105,8 +106,10 @@ useEffect(() => {
             </View>
             </View>
             </View>
-
-          <View style={[styles.viewcenter,{width:width*0.9,alignSelf:'center',paddingHorizontal:width*0.02,marginTop:15}]}>
+   
+        </View>
+    
+          <View style={[styles.viewcenter,{width:width*0.9,alignSelf:'center',paddingHorizontal:width*0.01,marginTop:60}]}>
             <Text style={[styles.textrank]}>Top 5 Heads</Text>
             <TouchableOpacity 
             onPress={() => navigation.navigate("MyExpense")}>

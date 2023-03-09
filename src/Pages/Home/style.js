@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
       marginLeft: 10
     },
     headertext: {
-      fontSize: SPACING * 1.7,
+      fontSize: SPACING * 2.2,
       color: COLORS.dark,
       marginBottom: 2,
       
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
       elevation: 25,
       marginVertical: 3,
       paddingVertical:10,
-      width: width * 0.9,
+      width: width * 0.91,
       borderRadius: 5,
       marginLeft:15,
       
@@ -60,7 +60,9 @@ const styles = StyleSheet.create({
     cardtext: {
       fontSize: 15,
       fontFamily: 'Roboto-Regular',
-      color: COLORS.gray
+      color: COLORS.gray,
+      fontWeight:"bold"
+      
     },
     text: {
       fontSize: 22,

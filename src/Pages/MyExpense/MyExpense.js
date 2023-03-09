@@ -1,12 +1,15 @@
 import React, { useState,useEffect, useRef } from 'react';
-import { View, Text, TextInput, SafeAreaView, TouchableOpacity, Image,FlatList,ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, SafeAreaView, TouchableOpacity, Image,FlatList,ActivityIndicator,Dimensions } from 'react-native';
 import { SelectList } from 'react-native-dropdown-select-list';
 import styles from './style';
 import { apiCall } from '../../Connection/apiCall';
 import moment from "moment";
 import { Swipeable } from 'react-native-gesture-handler';
 import { useIsFocused } from '@react-navigation/native';
+import COLORS from '../../const/Colors';
 
+
+const { height, width } = Dimensions.get('window');
 
 
 const MyExpense = ({ navigation,route }) => {
@@ -59,7 +62,7 @@ const SearchFilter = (text) => {
 const rightSide = (id) => {
   return(
    <View>
-    <Image source={require('../../Images/red.png')} />
+    <Image source={require('../../Images/red.png')} resizeMode="contain" style={{height:"100%"}}/>
     <TouchableOpacity onPress={() => {
       Remove(id)
     }} 
@@ -91,7 +94,8 @@ useEffect(() => {
   
   return (
     
-  <SafeAreaView style={{ flex: 1, backgroundColor: "#F2FEFA" }}>
+ <SafeAreaView style={{flex:1,backgroundColor:COLORS.white}}>
+  <View style={{height:width * 0.43 , backgroundColor: "#F2FEFA" }}>
    <View style={styles.viewheader}>
     <Text style={styles.headertext}>My Expense</Text> 
         </View>
@@ -103,8 +107,9 @@ useEffect(() => {
       <Image source={require('../../Uilites/Icons/setting.png')} style={{ marginRight: 15, width: 30, height: 25, color: "#000" }} />
         </View>
       </View>
+     </View>
  
- <View style={{flexDirection:"row",justifyContent:'space-between',alignItems:'center'}}>       
+     <View style={{flexDirection:"row",justifyContent:'space-between',alignItems:'center'}}>       
  <View style={styles.viewmonth}>
  <SelectList
   setSelected={(val) => setSelected(val)}
@@ -176,9 +181,8 @@ useEffect(() => {
               onPress={() => navigation.replace("AddExpense")}>
               <Text style={styles.textbtn}>Add Expense</Text>
               </TouchableOpacity>       
-
-        </SafeAreaView>
-         
+     </SafeAreaView>
+                
   );
 }
 

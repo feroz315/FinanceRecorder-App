@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Image,Dimensions } from 'react-native';
+import { Image,Dimensions,View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import COLORS from '../../const/Colors';
@@ -26,11 +26,13 @@ const BottomNavigator = ({route}) => {
       tabBarShowLabel:true,
       tabBarStyle:[
       {
-       backgroundColor:"#F2F2F2",
+       backgroundColor: COLORS.white,
        height:width * 0.14,
        borderTopWidth:0,
-       elevation:0,
-       
+       elevation:25,
+       borderTopStartRadius:25,
+       borderTopRightRadius:25
+             
       },
       null
      ]
@@ -41,13 +43,17 @@ const BottomNavigator = ({route}) => {
         children={() => <HomeStack  data={route?.params?.name}/>}
         options={{
             tabBarLabelStyle: {
-                fontSize: 13,
+                fontSize: 11,
                 fontWeight: "bold",
-                marginBottom:2
-               },   
-  
+                marginBottom:1,
+                
+                
+            },
+                
             tabBarIcon: ({ focused }) => (
-            <Image source={require('../../Images/home1.png')} style={{width:25,height:26,tintColor: focused ? "#007BFF" : "#908e8c" }}/>
+          <View> 
+           <Image source={require('../../Images/home1.png')} style={{width:19,height:20,tintColor: focused ? "#007BFF" : "#908e8c" }}/>
+            </View>  
              ), headerShown: false
         }}/>
          
@@ -56,13 +62,13 @@ const BottomNavigator = ({route}) => {
       component={MyExpense}
       options={{
         tabBarLabelStyle: {
-          fontSize: 12,
+          fontSize: 11,
           fontWeight: "bold",
-          marginBottom:2
+          marginBottom:1
 
          }, 
          tabBarIcon: ({ focused }) => (
-          <Image source={require('../../Images/Expense1.png')} style={{width:30,height:27,tintColor: focused ? "#007BFF" : "#908e8c" }}/>
+          <Image source={require('../../Images/Handmoney.png')} style={{width:25,height:24,tintColor: focused ? "#007BFF" : "#908e8c" }}/>
           
         ), headerShown: false
       }}/>
@@ -72,12 +78,12 @@ const BottomNavigator = ({route}) => {
         component={Reports}
         options={{
           tabBarLabelStyle: {
-            fontSize: 12,
+            fontSize: 11,
             fontWeight: "bold",
-            marginBottom:2
+            marginBottom:1,
            }, 
             tabBarIcon: ({ focused }) => (
-          <Image source={require('../../Images/reports1.png')} style={{width:26,height:25,tintColor: focused ? "#007BFF" : "#908e8c"}}/>
+          <Image source={require('../../Images/reports1.png')} style={{width:24,height:22,tintColor: focused ? "#007BFF" : "#908e8c"}}/>
           ), headerShown: false
         }}/>
         
@@ -87,12 +93,12 @@ const BottomNavigator = ({route}) => {
         children={() => <Settings  data={route?.params}/>}
         options={{
           tabBarLabelStyle: {
-            fontSize: 12,
+            fontSize: 11,
             fontWeight: "bold",
-            marginBottom:2
+            marginBottom:1
            }, 
               tabBarIcon: ({ focused }) => (
-            <Image source={require('../../Images/setting2.png')} style={{width:26,height:25,tintColor: focused ? "#007BFF" : "#908e8c"}}/>
+            <Image source={require('../../Images/setting2.png')} style={{width:22,height:22,tintColor: focused ? "#007BFF" : "#908e8c"}}/>
             
           ), headerShown: false
         }}/>

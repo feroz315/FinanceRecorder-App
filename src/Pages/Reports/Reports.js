@@ -81,7 +81,7 @@ useEffect(() => {
            <Image source={require('../../Images/Reports/Reports.png')} style={{width:90,height:25}}/>
              </View>   
              <View style={styles.ProgressCard}>
-                <View style={{ marginTop:10, alignSelf:"center" }}>
+                <View style={{ marginTop:8, alignSelf:"center" }}>
                  <AnimatedCircularProgress
                             size={300}
                             width={20}

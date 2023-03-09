@@ -5,8 +5,8 @@ import {persistStore, persistReducer} from 'redux-persist';
 
 // local imp
 import userReducer from './reducer/user';
-import changeShown from './reducer/submitModalshown';
-import AddTimeManually from './reducer/addTime';
+// import changeShown from './reducer/submitModalshown';
+// import AddTimeManually from './reducer/addTime';
 
 // config
 const persistConfig = {
@@ -18,8 +18,8 @@ const persistConfig = {
 //  root reducer
 const rootReducer = combineReducers({
   userReducer: userReducer,
-  changeShown,
-  AddTimeManually:AddTimeManually
+  // changeShown,
+  // AddTimeManually:AddTimeManually
 });
 
 const persiReducer = persistReducer(persistConfig, rootReducer);

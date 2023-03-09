@@ -19,10 +19,10 @@ const styles = StyleSheet.create({
         marginRight: 20
     },
     ProgressCard: {
-        marginTop: 20,
+        marginTop: 10,
         backgroundColor: "#FFF",
         elevation: 25,
-        height: height * 0.28,
+        height: height * 0.29,
         width: width * 0.9,
         borderRadius: 10,
    },
