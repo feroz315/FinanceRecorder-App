@@ -17,9 +17,10 @@ const styles = StyleSheet.create({
     viewInput: {
         flexDirection: 'column',
         marginTop: 50,
-        marginHorizontal: 30,
+        marginHorizontal: 20,
+        alignSelf:'center'
     },
-    viewEmail: {
+    viewNum: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -69,9 +70,9 @@ const styles = StyleSheet.create({
         backgroundColor: "#007BFF",
         borderRadius: 10,
         alignItems: "center",
+        alignSelf:'center',
         width: '65%',
-        marginLeft: 50,
-        marginTop: SPACING * 3
+        marginTop: SPACING * 2
     },
     logintext: {
         color: COLORS.white,

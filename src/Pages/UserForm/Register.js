@@ -58,8 +58,8 @@ const Registerscreen = ({ navigation, }) => {
         <AntDesign name="arrowleft" size={30} color="#000" />
       </TouchableOpacity>
 
-      <View style={{ height: 70}}>
-      <Image source={require('../../Images/Login/Logo/Logo.png')} resizeMode="cover" style={{height:"210%",width:"75%",marginTop:55,alignSelf:'center',right:35}}/>
+      <View style={{ height: 80}}>
+      <Image source={require('../../Images/Login/Logo/Logo.png')} resizeMode="cover" style={{height:"230%",width:"75%",marginTop:55,alignSelf:'center',right:35}}/>
       </View>
 
     <View style={{ marginTop: 65, height:width * 0.17,alignSelf:'center', width: width * 0.64,right:width * 0.05}}>

@@ -156,6 +156,7 @@ AllCategory();
             <TouchableOpacity onPress={() => AttachFiles()}>
               <View style={styles.viewattach}>
                 <Feather name='plus' size={18} style={{ marginTop: 3, textAlign: 'center' }} />
+                
               </View>
             </TouchableOpacity>
           </View>

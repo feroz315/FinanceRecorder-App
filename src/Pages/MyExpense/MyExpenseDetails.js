@@ -77,6 +77,7 @@ const RemoveId = (id)  => {
 }
 
 
+
  useEffect(() => {
 ExpenseId()
  }, []);
@@ -120,7 +121,7 @@ return (
         <View style={{ marginTop: 20 }}>
         <Text style={{ marginLeft: 15 }}>Attachment</Text>
         <TouchableOpacity>
-        <View style={styles.viewfile}>
+        {}<View style={styles.viewfile}>
         <Image source={require("../../Images/file.png")} />  
         </View>
         </TouchableOpacity>

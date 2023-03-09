@@ -99,7 +99,7 @@ console.log("first",obj)
                         </TouchableOpacity>
                     </View>
 
-              <View style={{flex:1,justifyContent:'center',alignSelf:'center'}}>
+              <View style={{flex:0.90,justifyContent:'center',alignSelf:'center'}}>
               {
                 loading ? 
                 <ActivityIndicator size={"small"} color='black' style={{marginRight:50}}/>
@@ -108,10 +108,8 @@ console.log("first",obj)
                 <TouchableOpacity style={styles.viewbtn}
                 onPress={() => Login()}>
                 <Text style={styles.logintext}>Login</Text>
-                </TouchableOpacity>
-            
-            </View>
-
+                </TouchableOpacity>          
+             </View>
                     <View style={styles.viewline}>
                         <View style={styles.line1} />
                         <Text style={{ fontSize: 15, padding: 3,color:COLORS.gray }}>  or countinue with   </Text>
