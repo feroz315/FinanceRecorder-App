@@ -77,4 +77,9 @@ export const apiCall = {
     if (result.status === 200) return result.data;
     else throw result;
   },
+ imageupload: async obj => {
+  let result = await post(Apis.imageupload, obj);
+  if (result.status === 200) return result.data;
+  else throw result;
+ },
 }

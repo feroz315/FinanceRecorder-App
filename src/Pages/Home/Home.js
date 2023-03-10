@@ -86,7 +86,7 @@ useEffect(() => {
   
   return (
     <SafeAreaView style={{backgroundColor:COLORS.lightwhite,flex:1}}>
-    <View style={{backgroundColor:"#F2FEFA",height:width * 0.63}}>
+    <View style={{backgroundColor:"#F2FEFA",height:width * 0.62}}>
            <View style={styles.header}>
             <Image source={require('../../Images/Oval.png')} style={styles.headerimage} />
             <View style={styles.headertextview}>

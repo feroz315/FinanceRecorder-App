@@ -13,7 +13,8 @@ export const Apis = {
   monthExpense:'/expense/byMonth',
   passwordchange:'/reset/otp',
   restpassword:"/reset",
-  deleteId:"/expense/delete"
+  deleteId:"/expense/delete",
+  imageupload:"/expense/upload"
 
 };
 

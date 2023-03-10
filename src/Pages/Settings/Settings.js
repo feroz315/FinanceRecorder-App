@@ -4,7 +4,7 @@ import React , {useState }from 'react';
 import { View,Text, SafeAreaView, Image,Alert,TouchableOpacity,FlatList,Modal } from 'react-native';
 import COLORS from '../../const/Colors';
 import styles from './style';
-import { formatCurrency,getSupportedCurrencies } from "react-native-format-currency";
+// import { formatCurrency,getSupportedCurrencies } from "react-native-format-currency";
 
 
 
@@ -12,9 +12,6 @@ import { formatCurrency,getSupportedCurrencies } from "react-native-format-curre
 const Settings = ({ data}) => {
 const navigation =useNavigation()
 const [modalVisible, setModalVisible] = useState(false);
-
-const currencyCodes = getSupportedCurrencies();
-
 
 
 const Signout = async () => {
@@ -27,7 +24,6 @@ const Signout = async () => {
     console.log("Error", error)
    }
 }
-
 
 
   return (
@@ -116,19 +112,18 @@ const Signout = async () => {
             </View>
 
 
-    <View style={styles.viewcard5}>
-            <Image source={require("../../Images/Settings/globe.png")} style={{ width: 20, height: 20 }} />
+      <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={styles.viewcard5}>
+         <Image source={require("../../Images/Settings/globe.png")} style={{ width: 20, height: 20 }} />
             <View style={styles.viewtext5}>
                 <Text style={styles.curreny}>Currency</Text>
                 <Text style={styles.name4}>Dollar</Text>
-            </View>
-            <TouchableOpacity onPress={() => Alert.alert("test")}>
+              </View>
              <View style={{ marginHorizontal: 220 }}>
                 <Image source={require('../../Images/Settings/next.png')} />
-            </View>
+             </View>
             </TouchableOpacity>
-         </View>
-       <View style={{marginTop:10,marginLeft:28}}>
+     
+         <View style={{marginTop:10,marginLeft:28}}>
          <Image source={require("../../Images/Settings/Line.png")}/>
          </View>
 
@@ -175,3 +170,6 @@ const Signout = async () => {
 
 
 export default Settings;
+
+
+

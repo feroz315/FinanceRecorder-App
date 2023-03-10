@@ -76,6 +76,20 @@ const AttachFiles = async () => {
 }
 
 
+const Uploadimage = async () => {
+  try {
+    
+    const result = await apiCall.imageupload();
+    if(result.status === true && result.responseCode === 200){
+    }
+
+  } catch (error) {
+    console.log("first", error)
+  }
+} 
+
+
+
 useEffect(() => {
 AllCategory();
 },[])
@@ -143,7 +157,7 @@ AllCategory();
           <View style={{ alignSelf:'auto'}}>
             <Text style={{ marginLeft: 15, marginTop: 10 }}>Add Amount</Text>
             <View style={styles.viewamount}>
-              <TextInput style={styles.textamount} placeholder="$00.00" value={Amount} onChangeText={(val) => setAmount(val)}/> 
+              <TextInput style={styles.textamount} placeholder="$00.00" keyboardType='number-pad' value={Amount} onChangeText={(val) => setAmount(val)}/> 
             </View>
           </View>
 

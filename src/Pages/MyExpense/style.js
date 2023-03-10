@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     ViewCard: {
       margin: 5,
       backgroundColor: "#FFF",
-      elevation: 5,
+      elevation: 2,
       height: height * 0.14,
       width: width * 0.96,
       borderRadius: 5,

@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
       height: height * 0.75,
       width: width * 0.8,
       borderRadius: 10,
-      marginLeft: 35,
+      marginLeft: 40,
     },
     cardviewtext: {
       marginTop: 10,
