@@ -109,7 +109,7 @@ useEffect(() => {
    
         </View>
     
-          <View style={[styles.viewcenter,{width:width*0.9,alignSelf:'center',paddingHorizontal:width*0.01,marginTop:60}]}>
+          <View style={[styles.viewcenter,{width:width*0.9,alignSelf:'center',paddingHorizontal:width*0.01,marginTop:55}]}>
             <Text style={[styles.textrank]}>Top 5 Heads</Text>
             <TouchableOpacity 
             onPress={() => navigation.navigate("MyExpense")}>

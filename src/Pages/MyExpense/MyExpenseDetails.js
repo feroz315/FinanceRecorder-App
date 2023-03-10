@@ -85,7 +85,7 @@ ExpenseId()
  
  
 return (
-    <SafeAreaView style={{ flex: 0.30, backgroundColor: "#F2FEFA" }}>
+    <SafeAreaView style={{ flex: 0.30, backgroundColor: "#EFFAFD" }}>
       <View style={styles.header}>
         <TouchableOpacity style={{ marginTop: 10, marginLeft: 25 }} onPress={() => navigation.goBack()}>
           <Image source={require("../../Images/AddExpense/arrow.png")} />

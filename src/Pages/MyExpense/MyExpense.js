@@ -95,7 +95,7 @@ useEffect(() => {
   return (
     
  <SafeAreaView style={{flex:1,backgroundColor:COLORS.white}}>
-  <View style={{height:width * 0.43 , backgroundColor: "#F2FEFA" }}>
+  <View style={{height:width * 0.43 , backgroundColor: "#EFFAFD" }}>
    <View style={styles.viewheader}>
     <Text style={styles.headertext}>My Expense</Text> 
         </View>

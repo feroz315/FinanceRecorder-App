@@ -2,6 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View,Text, SafeAreaView, Image,Alert,TouchableOpacity } from 'react-native';
+import COLORS from '../../const/Colors';
 import styles from './style';
 
 
@@ -25,7 +26,7 @@ const Signout = async () => {
 
 
   return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: '#FFF' }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor:COLORS.white }}>
             <View style={{ marginTop: 20, alignSelf:'center' }}>
                 <Image source={require("../../Images/Settings/Settings.png")} style={{ width: 110, height: 30 }} />
             </View>

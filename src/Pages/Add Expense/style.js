@@ -174,6 +174,52 @@ const styles = StyleSheet.create({
       shadowRadius: 4,
       elevation: 5,
     },
+    SubmitView: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop:30,
+    },
+    OTPView:{
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop:30,
+    },
+    modalOTPmessage:{
+      margin: 20,
+      backgroundColor: 'white',
+      borderRadius: 20,
+      padding: 35,
+      alignItems: 'center',
+      shadowColor: '#000',
+      height:"40%",
+      width:"60%",
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+      elevation: 5,
+    },
+    modalViewOTP: {
+      margin: 10,
+      backgroundColor: 'white',
+      borderRadius: 20,
+      padding: 10,
+      alignItems: 'center',
+      shadowColor: '#000',
+      height:"72%",
+      width:"85%",
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+      elevation: 5,
+    },
   })
 
 

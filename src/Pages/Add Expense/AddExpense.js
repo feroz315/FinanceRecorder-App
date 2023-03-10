@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import { View, Text, Image, SafeAreaView, TouchableOpacity,Modal,Pressable,FlatList,TextInput,Dimensions } from 'react-native';
+import { View, Text, Image, SafeAreaView, TouchableOpacity,Modal,Pressable,FlatList,TextInput,Dimensions, Alert } from 'react-native';
 import Feather from 'react-native-vector-icons/AntDesign';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { SelectList } from 'react-native-dropdown-select-list';
@@ -8,6 +8,10 @@ import COLORS from '../../const/Colors';
 import { apiCall } from '../../Connection/apiCall';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import DocumentPicker from 'react-native-document-picker';
+import { Root, Popup } from 'react-native-popup-confirm-toast';
+
+
+
 
 const { height,width} = Dimensions.get('window');
  
@@ -19,6 +23,7 @@ const AddExpense = ({ navigation }) => {
   const [ Amount, setAmount] = useState(""); 
   const [ Description, setDescription] = useState(""); 
   const [ Otpmsg, setOtpmsg ] = useState(""); 
+  const [popmodalVisible, setPopModalVisible] = useState(false);
   
 
 
@@ -47,7 +52,7 @@ const AddExpense = ({ navigation }) => {
         
      let res = await apiCall.createaddExpense(items)
      if(res.status === true && res.responseCode === 200){
-       navigation.replace("Homescreen")
+      //  navigation.replace("Homescreen")
     }
   } catch (error) {
     console.log("🚀 ~ file: AddExpense.js:58 ~ Addexpense ~ error", error)
@@ -73,15 +78,47 @@ const AttachFiles = async () => {
 }
 
 
+const Submitmsg = () => {
+return(
+<Root>
+  <View>
+      <TouchableOpacity
+          onPress={() =>
+              Popup.show({
+                  type: 'confirm',
+                  title: 'Dikkat!',
+                  textBody: 'Your query has been Submitted successfully!',
+                  buttonText: 'Tamam',
+                  confirmText: 'Vazgeç',
+                  callback: () => {
+                      alert('Okey Callback && hidden');
+                      Popup.hide();
+                  },
+                  cancelCallback: () => {
+                      alert('Cancel Callback && hidden');
+                      Popup.hide();
+                  },
+              })
+          }
+      >
+          <Text>Open Popup Confirm Message</Text>
+      </TouchableOpacity>
+  </View>
+</Root>
+
+ )
+}
+
+
+
 useEffect(() => {
 AllCategory();
 },[])
 
 
-
  return (
 
-    <SafeAreaView style={{ flex:0.40, backgroundColor: "#F2FEFA" }}>
+    <SafeAreaView style={{ flex:0.35, backgroundColor: "#EFFAFD" }}>
       <View style={styles.header}>
         <TouchableOpacity style={{ marginTop: 10, marginLeft: 10 }} onPress={() => navigation.replace("BottomNav")}>
           <Image source={require("../../Images/AddExpense/arrow.png")} />
@@ -186,14 +223,12 @@ AllCategory();
           </Modal>
         </View>
     
-          <TouchableOpacity style={styles.viewbtn}
-            onPress={() => Addexpense()}>
+         <TouchableOpacity style={styles.viewbtn}
+            onPress={() => Submitmsg()}>
             <Text style={styles.textbtn}> Submit</Text>
           </TouchableOpacity>
         </View>
-    
-
-    </SafeAreaView>
+      </SafeAreaView>
 
 
   );
