@@ -1,15 +1,19 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { View,Text, SafeAreaView, Image,Alert,TouchableOpacity } from 'react-native';
+import React , {useState }from 'react';
+import { View,Text, SafeAreaView, Image,Alert,TouchableOpacity,FlatList,Modal } from 'react-native';
 import COLORS from '../../const/Colors';
 import styles from './style';
+import { formatCurrency,getSupportedCurrencies } from "react-native-format-currency";
 
 
 
 
 const Settings = ({ data}) => {
 const navigation =useNavigation()
+const [modalVisible, setModalVisible] = useState(false);
+
+const currencyCodes = getSupportedCurrencies();
 
 
 
@@ -23,6 +27,7 @@ const Signout = async () => {
     console.log("Error", error)
    }
 }
+
 
 
   return (
@@ -144,7 +149,6 @@ const Signout = async () => {
       </View>
 
 
-
     <View style={styles.viewcard7}>
       <Image source={require("../../Images/Settings/globe.png")} style={{ width: 20, height: 20 }} />
       <View style={styles.viewtext7}>
@@ -160,14 +164,11 @@ const Signout = async () => {
    <Image source={require("../../Images/Settings/Line.png")}/>
    </View>
 
-
-         <TouchableOpacity onPress={() => Signout()} 
+       <TouchableOpacity onPress={() => Signout()} 
             style={{alignSelf:'center',marginTop:15}}>
             <Image source={require("../../Images/Settings/Signout.png")} style={{alignSelf:'center',marginRight:40}}/>
-              </TouchableOpacity>   
-                   
+              </TouchableOpacity>                    
               </View>
-
         </SafeAreaView>
     )
 };

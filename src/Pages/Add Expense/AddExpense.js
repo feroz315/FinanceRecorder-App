@@ -12,7 +12,6 @@ import { Root, Popup } from 'react-native-popup-confirm-toast';
 
 
 
-
 const { height,width} = Dimensions.get('window');
  
 
@@ -24,9 +23,8 @@ const AddExpense = ({ navigation }) => {
   const [ Description, setDescription] = useState(""); 
   const [ Otpmsg, setOtpmsg ] = useState(""); 
   const [popmodalVisible, setPopModalVisible] = useState(false);
+
   
-
-
 
 
   async function AllCategory() {
@@ -52,12 +50,12 @@ const AddExpense = ({ navigation }) => {
         
      let res = await apiCall.createaddExpense(items)
      if(res.status === true && res.responseCode === 200){
-      //  navigation.replace("Homescreen")
+       
+      navigation.replace("Homescreen")
     }
   } catch (error) {
     console.log("🚀 ~ file: AddExpense.js:58 ~ Addexpense ~ error", error)
-    
-  }
+   }
  }
 
  
@@ -78,42 +76,10 @@ const AttachFiles = async () => {
 }
 
 
-const Submitmsg = () => {
-return(
-<Root>
-  <View>
-      <TouchableOpacity
-          onPress={() =>
-              Popup.show({
-                  type: 'confirm',
-                  title: 'Dikkat!',
-                  textBody: 'Your query has been Submitted successfully!',
-                  buttonText: 'Tamam',
-                  confirmText: 'Vazgeç',
-                  callback: () => {
-                      alert('Okey Callback && hidden');
-                      Popup.hide();
-                  },
-                  cancelCallback: () => {
-                      alert('Cancel Callback && hidden');
-                      Popup.hide();
-                  },
-              })
-          }
-      >
-          <Text>Open Popup Confirm Message</Text>
-      </TouchableOpacity>
-  </View>
-</Root>
-
- )
-}
-
-
-
 useEffect(() => {
 AllCategory();
 },[])
+
 
 
  return (
@@ -224,7 +190,7 @@ AllCategory();
         </View>
     
          <TouchableOpacity style={styles.viewbtn}
-            onPress={() => Submitmsg()}>
+            onPress={() => Addexpense()}>
             <Text style={styles.textbtn}> Submit</Text>
           </TouchableOpacity>
         </View>
