@@ -47,7 +47,7 @@ export const apiCall = {
     if (result.status === 200) return result.data;
     else throw result;
   },
-  updateExpense: async obj => {
+  updateExpense: async (id) => {
     let result = await patch(Apis.updateExpense + `/?id=${id}`);
     if (result.status === 200) return result.data;
     else throw result;

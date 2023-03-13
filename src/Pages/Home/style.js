@@ -75,10 +75,10 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginTop: 10,
+      marginTop: 8,
       backgroundColor: COLORS.white,
       marginVertical: 3,
-      height: 50,
+      height: 40,
       width: width * 0.9,
       borderRadius: 10,
       alignSelf:'center'
@@ -131,13 +131,13 @@ const styles = StyleSheet.create({
     },
     itemtext:{
       marginLeft: 8, 
-      fontSize: width * 0.04,
+      fontSize: width * 0.039,
       fontFamily:"Roboto-Regular",  
       color: "#007BFF",
       alignSelf:'center'
     },
     itemprice:{
-      fontSize: width * 0.05, 
+      fontSize: width * 0.04, 
       color: COLORS.gray, 
       marginRight: 15,
    },

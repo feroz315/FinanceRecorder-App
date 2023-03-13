@@ -1,5 +1,5 @@
 import React, { useState,useEffect,useRef } from 'react';
-import { View,Text, Image,SafeAreaView ,TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View,Text,Image,SafeAreaView,TextInput,TouchableOpacity, ActivityIndicator } from 'react-native';
 import { apiCall } from '../../Connection/apiCall';
 import COLORS from '../../const/Colors';
 import styles from './styleExpense';
@@ -21,7 +21,6 @@ const MyExpenseDetails = ({ navigation,route }) => {
 
    
    const userid = route.params.id;
-   console.log( "userData", userid)
   
   
 
@@ -70,12 +69,20 @@ const Sharedata = async () => {
   }
 }
 
-const RemoveId = (id)  => {
-  let filter = Data.filter(item => item._id !== id)
-  setData(filter);
-  console.log("first",filter)
+async function Remove() {
+  try {
+    const result = await apiCall.deleteId(userid);
+    console.log("🚀 ~ file: MyExpenseDetails.js:77 ~ Remove ~ result:", result)
+    setCategoryName("")
+    setItemImg("")
+    setAmount("")
+    setDescription("")
+   
+   } 
+  catch (error) {
+    console.log("Testexpense", error)
+  }
 }
-
 
 
  useEffect(() => {
@@ -99,46 +106,51 @@ return (
         <View style={styles.ViewCard}>
         <Text style={{ marginLeft: 16,color:'#787878',marginTop:15}}>Category</Text>
         <View style={styles.viewdata}>
-        <Image source={{ uri: ItemImg}} style={{height:17,width:18,marginLeft:10,alignSelf:'center'}} resizeMode='cover' />
-        <Text style={{marginLeft:8,marginTop:12,fontSize:16}}>{CategoryName}</Text>
-        
+        <Image source={{ uri: ItemImg ? ItemImg : null }} style={{height:17,width:20,marginLeft:10,alignSelf:'center'}} resizeMode='cover' />
+        <TextInput style={{marginLeft:7,fontSize:16}} value={CategoryName} onChangeText={() => setCategoryName()} />
+
+
         </View>
         
-        <View style={{ marginTop:15 }}>
+        <View style={{ marginTop:15 }}> 
         <Text style={{ marginLeft: 15,marginTop:10 }}>Add Amount </Text>
         <View style={styles.viewamount}>
         <Text style={styles.textamount}>${Amount}</Text>
+        <TextInput style={{alignSelf:"center",fontWeight:"600",marginTop:20,fontSize:25}} value={Amount} onChangeText={() => setAmount()} />
+
         </View>
         </View>   
         
         <View style={{ marginTop: 20 }}>
         <Text style={{ marginLeft: 15 }}>Description</Text>
         <View style={styles.viewadd}>
-        <Text style={styles.textadd}>{Description}</Text>
+        <TextInput style={{marginLeft:10,fontWeight:"500",marginTop:10,fontSize:16}} value={Description} onChangeText={() => setDescription()}/>
+
         </View>
         </View>
         
         <View style={{ marginTop: 20 }}>
         <Text style={{ marginLeft: 15 }}>Attachment</Text>
         <TouchableOpacity>
-        {}<View style={styles.viewfile}>
+        <View style={styles.viewfile}>
         <Image source={require("../../Images/file.png")} />  
         </View>
         </TouchableOpacity>
         </View>
         
       <View style={styles.viewicons}>
-        <TouchableOpacity>
-        <Image source={require('../../Images/edit.png')} />
+        <TouchableOpacity onPress={() => ExpenseUpdate()}>
+        <Image source={require('../../Images/edit.png')} style={{width:35}}/>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => Sharedata()}>           
         <Image source={require('../../Images/forward.png')} style={{marginRight:10}} />
         </TouchableOpacity>
-        
-        <TouchableOpacity onPress={() => RemoveId()}>
-        <Image source={require('../../Images/delete.png')} style={{tintColor:COLORS.Danger}}/>
-        </TouchableOpacity>
+      
+        <TouchableOpacity onPress={() => Remove()}>
+        <Image source={require('../../Images/delete.png')} style={{tintColor:"#FF6161"}}/>
+        </TouchableOpacity> 
+          
         </View>
         
         </View>

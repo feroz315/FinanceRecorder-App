@@ -75,7 +75,6 @@ const rightSide = (id) => {
 }
 
 async function Remove(id) {
-  console.log('id=====>',id)
   try {
     const result = await apiCall.deleteId(id);
     AllExpense()
@@ -139,8 +138,8 @@ useEffect(() => {
       renderItem={({ item}) => {
         return (    
         <Swipeable renderRightActions={()=>(rightSide(item._id))} 
-         onSwipeableOpen={() => console.log("first",item._id)}
-        >
+         onSwipeableOpen={() => console.log("first",item._id)}>
+        
           <TouchableOpacity style={styles.ViewCard} onPress={() => navigation.navigate("ExpenseDetails",
           {
             id:item._id
@@ -178,7 +177,7 @@ useEffect(() => {
         }
 
           <TouchableOpacity style={styles.viewbtn}    
-              onPress={() => navigation.replace("AddExpense")}>
+              onPress={() => navigation.navigate("AddExpense")}>
               <Text style={styles.textbtn}>Add Expense</Text>
               </TouchableOpacity>       
      </SafeAreaView>

@@ -50,22 +50,32 @@ const AddExpense = ({ navigation }) => {
         
      let res = await apiCall.createaddExpense(items)
      if(res.status === true && res.responseCode === 200){
-       
-      navigation.replace("Homescreen")
+        navigation.replace("Homescreen")
     }
   } catch (error) {
     console.log("🚀 ~ file: AddExpense.js:58 ~ Addexpense ~ error", error)
    }
  }
 
- 
+  
 const AttachFiles = async () => {
   try {
-    const doc = await DocumentPicker.pick({
+    const res = await DocumentPicker.pick({
       type:[DocumentPicker.types.images],
       allowMultiSelection:true
     });
-    console.log("first",doc)
+    console.log("first"+JSON.stringify(res));
+    const filename = res[0].uri.replace("file://", "");
+    console.log(`fileName======> ${filename}`)
+    const formdata = new FormData()
+    formdata.append('document', {
+      uri: filename,
+      type: res[0].type,
+      name: res[0].name
+    })
+    formdata.append('document_type', 1)
+    console.log('final formdata', formdata)
+         
   } catch (error) {
     if(DocumentPicker.isCancel(error)){
     console.log("Document",error)
@@ -140,8 +150,8 @@ AllCategory();
               renderItem={({ item }) => (
                 <View style={{margin:10,marginTop:15,width:'27%'}}>
               <TouchableOpacity onPress={() => [setData(item), setModalVisible(false)]}>
-              <View style={{alignItems:'center',}}>
-              <View style={{backgroundColor:COLORS.lightwhite,width:50,height:42,borderRadius:15,alignItems:'center'}}>
+              <View style={{alignItems:'center',marginRight:8,}}>
+              <View style={{backgroundColor:COLORS.lightwhite,width:50,height:42,borderRadius:15,alignItems:'center',}}>
                 <Image source={{ uri: item.img}} style={{height:23,width:23,marginTop:8}} resizeMode="contain"/>
                 </View> 
                 <Text style={{fontSize:11,fontWeight:'700',marginTop:5}}>{item.name}</Text>  
@@ -157,7 +167,7 @@ AllCategory();
           <View style={{ alignSelf:'auto'}}>
             <Text style={{ marginLeft: 15, marginTop: 10 }}>Add Amount</Text>
             <View style={styles.viewamount}>
-              <TextInput style={styles.textamount} placeholder="$00.00" keyboardType='number-pad' value={Amount} onChangeText={(val) => setAmount(val)}/> 
+              <TextInput style={styles.textamount} placeholder="$00.00" keyboardType="numeric" value={Amount} onChangeText={(val) => setAmount(val)}/> 
             </View>
           </View>
 
