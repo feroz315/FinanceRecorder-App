@@ -28,7 +28,7 @@ const Homestack = createStackNavigator();
 export const HomeStack = ({data}) => {
   return (
     <Homestack.Navigator screenOptions={{ headerShown: false }}>
-      <Homestack.Screen name="Homescreen" children={() => <Home  data={data}/>} />
+      <Homestack.Screen name="Homescreen" component={Home} />
       <Homestack.Screen name="AddExpense" component={AddExpense} />
       <Homestack.Screen name="ExpenseDetails" component={MyExpenseDetails} />
     </Homestack.Navigator>

@@ -12,7 +12,7 @@ import userReducer from './reducer/user';
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['userReducer','AddTimeManually'], 
+  whitelist: ['userReducer'], 
 };
 
 //  root reducer

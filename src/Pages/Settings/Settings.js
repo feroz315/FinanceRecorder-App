@@ -4,8 +4,9 @@ import React , {useState }from 'react';
 import { View,Text, SafeAreaView, Image,Alert,TouchableOpacity,FlatList,Modal } from 'react-native';
 import COLORS from '../../const/Colors';
 import styles from './style';
-// import { formatCurrency,getSupportedCurrencies } from "react-native-format-currency";
 
+import { useSelector,useDispatch } from 'react-redux';
+import { logout } from '../../store/action/user';
 
 
 const Settings = ({ data}) => {
@@ -13,12 +14,21 @@ const navigation =useNavigation()
 const [modalVisible, setModalVisible] = useState(false);
 
 
+const Logoutuser = useSelector(state => state.userReducer.userData)
+console.log("🚀 ~ file: Settings.js:18 ~ Settings ~ Logoutuser:", Logoutuser)
+const UserName = useSelector(state => state.userReducer.userData.name)
+console.log("🚀 ~ file: Settings.js:20 ~ Settings ~ Username:", UserName)
+
+const Dispatch = useDispatch();
+
+
+
+
 const Signout = async () => {
   try {
-    let Logout = await AsyncStorage.removeItem("userdata")
-    console.log("🚀 ~ file: Settings.js:15 ~ Signout ~ Logout:", Logout)
+    let Userlogout = await AsyncStorage.removeItem("userdata")
+    Dispatch(logout())
     navigation.replace("Login")
-    console.log(navigation)
   } catch (error) {
     console.log("Error", error)
    }
@@ -33,7 +43,7 @@ const Signout = async () => {
 
             <View style={styles.viewheader}>
                 <View style={styles.header}>
-                    <Text style={styles.headertext1}>Mr.{data}</Text>
+                    <Text style={styles.headertext1}>Mr.{UserName}</Text>
                     <Text style={styles.headertext2}>Admin</Text>
                 </View>
                 <View style={styles.viewuser}>
@@ -46,7 +56,7 @@ const Signout = async () => {
                       <Image source={require("../../Images/Settings/globe.png")} style={{ width: 20, height: 20 }} />
                         <View style={styles.viewtext}>
                             <Text style={styles.User}>Username</Text>
-                            <Text style={styles.name1}>{data}</Text>
+                            <Text style={styles.name1}>{UserName}</Text>
                         </View>
                         <TouchableOpacity onPress={() => Alert.alert("test")}>
                          <View style={{ marginHorizontal: 200 }}>

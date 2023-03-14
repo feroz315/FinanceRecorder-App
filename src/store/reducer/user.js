@@ -6,7 +6,7 @@ import {
   } from '../actionType';
   
   // init state
-  const initState = {
+  const initState = { 
     userData: {},
     isLogin: false,
     username: false,

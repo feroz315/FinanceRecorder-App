@@ -9,8 +9,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import CheckBox from '@react-native-community/checkbox';
 import COLORS from '../../const/Colors';
 import { useForm, Controller } from "react-hook-form";
-
-
+import { useSelector,useDispatch } from 'react-redux';
+import { login,phoneVerify } from '../../store/action/user';
 
 
 const { width, height } = Dimensions.get('window');
@@ -26,9 +26,12 @@ const Loginscreen = ({ navigation }) => {
     const [hidePass, setHidePass] = useState(true);
 
 
+    const Reduxdata = useSelector(state => state.userReducer)
+    const Dispatch = useDispatch();
 
 
-async function Login()  {
+
+async function UserLogin()  {
 setLoading(true)
 let obj = {
     username: userName,
@@ -40,20 +43,17 @@ console.log("first",obj)
             let { data,status,responseCode} = await apiCall.signin(obj)
             if(status === true && responseCode === 200){
                 await AsyncStorage.setItem('userdata',JSON.stringify(data))
-               setLoading(false)
-                    navigation.navigate("BottomNav", {
-                    name:data.name
-                  })
-                }             
-         }
+                Dispatch(login(data,data.token))
+                setLoading(false)
+                 navigation.navigate("BottomNav")
+               }             
+          }
         catch(error) {
             console.log("test", error)
             setLoading(false)
         }
      
     }
-
-
 
 
  return (
@@ -106,7 +106,7 @@ console.log("first",obj)
                 :<View style={{height: 5}}/>
               }
                 <TouchableOpacity style={styles.viewbtn}
-                onPress={() => Login()}>
+                onPress={() => UserLogin()}>
                 <Text style={styles.logintext}>Login</Text>
                 </TouchableOpacity>          
              </View>

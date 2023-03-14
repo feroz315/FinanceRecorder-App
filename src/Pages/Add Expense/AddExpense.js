@@ -8,7 +8,6 @@ import COLORS from '../../const/Colors';
 import { apiCall } from '../../Connection/apiCall';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import DocumentPicker from 'react-native-document-picker';
-import { Root, Popup } from 'react-native-popup-confirm-toast';
 
 
 

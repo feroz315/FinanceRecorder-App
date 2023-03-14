@@ -19,7 +19,7 @@ import { HomeStack } from '../StackNavigator/StackNavigator';
 const Tab = createBottomTabNavigator();
 
 
-const BottomNavigator = ({route}) => {
+const BottomNavigator = () => {
   return (
   <Tab.Navigator
     screenOptions={{
@@ -40,7 +40,7 @@ const BottomNavigator = ({route}) => {
         
       <Tab.Screen
         name="Home"
-        children={() => <HomeStack  data={route?.params?.name}/>}
+        component={HomeStack}
         options={{
             tabBarLabelStyle: {
                 fontSize: 11,
@@ -89,7 +89,7 @@ const BottomNavigator = ({route}) => {
  
     <Tab.Screen
         name="Settings"
-        children={() => <Settings  data={route?.params?.name}/>}
+        component={Settings}
         options={{
           tabBarLabelStyle: {
             fontSize: 11,

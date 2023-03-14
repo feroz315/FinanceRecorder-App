@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         fontSize: 17, 
         fontFamily: "PTSans-Regular", 
         fontWeight: "300",
-        marginRight:115, 
+        marginRight:150, 
     },
     viewuser:{
         backgroundColor: "#F5F5F5", 
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     User:{
         fontSize: 14, 
         fontFamily: "PTSans-Regular",
-        marginRight:15
+        marginRight:35
  
     },
     name1:{
