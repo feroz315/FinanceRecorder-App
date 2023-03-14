@@ -68,17 +68,18 @@ const AttachFiles = async () => {
     const filename = res[0].uri.replace("file://", "");
     console.log(`fileName======> ${filename}`)
     const formdata = new FormData()
-    formdata.append('document', {
+    formdata.append('attachment', {
       uri: filename,
       type: res[0].type,
       name: res[0].name
     })
-    formdata.append('document_type', 1)
-    console.log('final formdata', formdata)
-         
+    formdata.append('attachment', 1)
+    Uploadimage(formdata._parts)
+    console.log('final formdata', formdata._parts)
+
   } catch (error) {
     if(DocumentPicker.isCancel(error)){
-    console.log("Document",error)
+    console.log("attachment",error)
     }
     else
     console.log(error)
@@ -86,11 +87,12 @@ const AttachFiles = async () => {
 }
 
 
-const Uploadimage = async () => {
+const Uploadimage = async (data) => {
   try {
-    
-    const result = await apiCall.imageupload();
+    const result = await apiCall.imageupload(data)
+    console.log("🚀 ~ file: AddExpense.js:92 ~ Uploadimage ~ result:", result)
     if(result.status === true && result.responseCode === 200){
+
     }
 
   } catch (error) {

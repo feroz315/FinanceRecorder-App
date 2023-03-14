@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         fontSize: 17, 
         fontFamily: "PTSans-Regular", 
         fontWeight: "300",
-        marginRight:45, 
+        marginRight:115, 
     },
     viewuser:{
         backgroundColor: "#F5F5F5", 
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         flexDirection: "column", 
         justifyContent: 'flex-start', 
         alignItems: 'flex-start',
-        marginTop: 20,
+        marginTop: 35,
         marginLeft:10
     },
     viewcard1:{

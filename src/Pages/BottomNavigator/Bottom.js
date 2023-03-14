@@ -45,9 +45,8 @@ const BottomNavigator = ({route}) => {
             tabBarLabelStyle: {
                 fontSize: 11,
                 fontWeight: "bold",
-                marginBottom:1,
-                
-                
+                marginBottom:1,            
+             
             },
                 
             tabBarIcon: ({ focused }) => (
@@ -90,7 +89,7 @@ const BottomNavigator = ({route}) => {
  
     <Tab.Screen
         name="Settings"
-        children={() => <Settings  data={route?.params}/>}
+        children={() => <Settings  data={route?.params?.name}/>}
         options={{
           tabBarLabelStyle: {
             fontSize: 11,

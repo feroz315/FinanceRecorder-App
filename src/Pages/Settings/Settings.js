@@ -8,7 +8,6 @@ import styles from './style';
 
 
 
-
 const Settings = ({ data}) => {
 const navigation =useNavigation()
 const [modalVisible, setModalVisible] = useState(false);
@@ -60,28 +59,11 @@ const Signout = async () => {
                      </View>
 
 
-              <View style={styles.viewcard2}>
-                     <Image source={require("../../Images/Settings/globe.png")} style={{ width:20, height:20,}} />
-                     <View style={styles.viewtext2}>
-                         <Text style={styles.Email}>Email</Text>        
-                          <Text style={styles.name2}>feroz@gmail.com</Text>
-                         </View>
-                     <TouchableOpacity onPress={() => Alert.alert("test")}>
-                       <View style={{ marginHorizontal: 95 }}>
-                         <Image source={require('../../Images/Settings/next.png')} />
-                     </View>
-                     </TouchableOpacity>
-                  </View>
-                <View style={{marginTop:13,marginLeft:28}}>
-                  <Image source={require("../../Images/Settings/Line.png")}/>
-                  </View>
-
-
            <View style={styles.viewcard3}>
                   <Image source={require("../../Images/Settings/globe.png")} style={{ width: 20, height: 20 }} />
                   <View style={styles.viewtext3}>
                       <Text style={styles.number}>Number</Text>
-                      <Text style={styles.name3}>+92 3110157868</Text>
+                      <Text style={styles.name3}>+92 3150137635</Text>
                   </View>
                   <TouchableOpacity onPress={() => Alert.alert("test")}>
                    <View style={{ marginHorizontal: 145 }}>
@@ -160,7 +142,7 @@ const Signout = async () => {
    </View>
 
        <TouchableOpacity onPress={() => Signout()} 
-            style={{alignSelf:'center',marginTop:15}}>
+            style={{alignSelf:'center',marginTop:40}}>
             <Image source={require("../../Images/Settings/Signout.png")} style={{alignSelf:'center',marginRight:40}}/>
               </TouchableOpacity>                    
               </View>
@@ -173,3 +155,48 @@ export default Settings;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+              <View style={styles.viewcard2}>
+                     <Image source={require("../../Images/Settings/globe.png")} style={{ width:20, height:20,}} />
+                     <View style={styles.viewtext2}>
+                         <Text style={styles.Email}>Email</Text>        
+                          <Text style={styles.name2}>feroz@gmail.com</Text>
+                         </View>
+                     <TouchableOpacity onPress={() => Alert.alert("test")}>
+                       <View style={{ marginHorizontal: 95 }}>
+                         <Image source={require('../../Images/Settings/next.png')} />
+                     </View>
+                     </TouchableOpacity>
+                  </View>
+                <View style={{marginTop:13,marginLeft:28}}>
+                  <Image source={require("../../Images/Settings/Line.png")}/>
+                  </View>
+
+*/

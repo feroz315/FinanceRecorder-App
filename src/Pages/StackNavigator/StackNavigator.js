@@ -38,15 +38,6 @@ export const HomeStack = ({data}) => {
 
 
 const StackNavigation = () => {
-  // const [showSplashScreen, setShowSplashScreen] = useState(true);
-
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setShowSplashScreen(false);
-  //   }, 4000);
-  // }, [])
-
   return (
 
     <NavigationContainer>

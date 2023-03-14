@@ -120,7 +120,7 @@ useEffect(() => {
   save="value"
   boxStyles={{ borderRadius:10,borderWidth:0, width: 140,}}
   search={false}
-  dropdownStyles={{ borderWidth:1,width:140, marginTop:30,marginLeft: 5,zIndex:1,position:'absolute',backgroundColor:"#F2FEFA" }}
+  dropdownStyles={{ borderWidth:1,width:140, marginTop:30,marginLeft: 5,zIndex:1,position:'absolute',backgroundColor:"#FFF" }}
   borderWidth={0.2}
   placeholder="This Month" />
     </View>
