@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: '85%',
         borderRadius: 10,
-        height: 37,
+        height: 38,
         borderColor: "#007BFF",
         borderWidth: 1,
         
@@ -71,8 +71,8 @@ const styles = StyleSheet.create({
         backgroundColor: "#007BFF",
         borderRadius: 10,
         alignItems: "center",
-        width: width * 0.80,
-        marginRight:45,        
+        width: width * 0.73,
+        marginRight:50,        
     },
     logintext: {
         color: COLORS.white,
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     viewline: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginHorizontal: 60
+        marginHorizontal: 50
     },
     line1: {
         borderBottomWidth: 1,

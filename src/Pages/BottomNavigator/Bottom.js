@@ -8,7 +8,6 @@ const { height, width } = Dimensions.get('window');
 
 
 
-import Home from '../Home/Home';
 import Settings from '../Settings/Settings';
 import MyExpense from '../MyExpense/MyExpense';
 import Reports from '../Reports/Reports';
@@ -34,7 +33,7 @@ const BottomNavigator = () => {
        borderTopRightRadius:25
              
       },
-      null
+       null
      ]
     }}>
         
@@ -48,8 +47,7 @@ const BottomNavigator = () => {
                 marginBottom:1,            
              
             },
-                
-            tabBarIcon: ({ focused }) => (
+              tabBarIcon: ({ focused }) => (
           <View> 
            <Image source={require('../../Images/home1.png')} style={{width:19,height:20,tintColor: focused ? "#007BFF" : "#908e8c" }}/>
             </View>  

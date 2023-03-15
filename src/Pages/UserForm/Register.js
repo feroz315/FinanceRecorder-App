@@ -23,6 +23,7 @@ const Registerscreen = ({ navigation }) => {
   const [hidePass, setHidePass] = useState(true);
   
   const UserName = useSelector(state => state.userReducer.userData)
+  console.log("🚀 ~ file: Register.js:26 ~ Registerscreen ~ UserName:", UserName)
   const Dispatch = useDispatch();
 
 
@@ -38,11 +39,12 @@ const Registerscreen = ({ navigation }) => {
       let { data, status, responseCode } = await apiCall.register(Userdata)
       if (status == true && responseCode == 200) {
         await AsyncStorage.setItem('userdata', JSON.stringify(data));
+        console.log("🚀 ~ file: Register.js:41 ~ Submit ~ data:", data)
         Dispatch(login(data,data.name))
+        // Dispatch(login(data,data.phoneNo))
+        
         setLoading(false)
-        navigation.navigate('BottomNav', {
-          phone:data.Phonenum
-        }) 
+        navigation.navigate('BottomNav') 
         setUserName("")
         setPassword("")
         setPhonenum("")

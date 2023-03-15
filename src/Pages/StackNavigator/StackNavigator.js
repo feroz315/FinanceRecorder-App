@@ -25,7 +25,7 @@ const Homestack = createStackNavigator();
 
 
 
-export const HomeStack = ({data}) => {
+export const HomeStack = () => {
   return (
     <Homestack.Navigator screenOptions={{ headerShown: false }}>
       <Homestack.Screen name="Homescreen" component={Home} />
