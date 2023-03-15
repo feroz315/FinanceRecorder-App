@@ -5,20 +5,18 @@ import { View,Text, SafeAreaView, Image,Alert,TouchableOpacity,FlatList,Modal } 
 import COLORS from '../../const/Colors';
 import styles from './style';
 
+
 import { useSelector,useDispatch } from 'react-redux';
 import { logout } from '../../store/action/user';
 
 
-const Settings = ({ data}) => {
+
+const Settings = () => {
 const navigation =useNavigation()
 const [modalVisible, setModalVisible] = useState(false);
 
 
-const Logoutuser = useSelector(state => state.userReducer.userData)
-console.log("🚀 ~ file: Settings.js:18 ~ Settings ~ Logoutuser:", Logoutuser)
 const UserName = useSelector(state => state.userReducer.userData.name)
-console.log("🚀 ~ file: Settings.js:20 ~ Settings ~ Username:", UserName)
-
 const Dispatch = useDispatch();
 
 
@@ -27,6 +25,7 @@ const Dispatch = useDispatch();
 const Signout = async () => {
   try {
     let Userlogout = await AsyncStorage.removeItem("userdata")
+    console.log("🚀 ~ file: Settings.js:29 ~ Signout ~ Userlogout:", Userlogout)
     Dispatch(logout())
     navigation.replace("Login")
   } catch (error) {

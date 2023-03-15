@@ -7,19 +7,23 @@ import styles from './style';
 import { apiCall } from '../../Connection/apiCall';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import COLORS from '../../const/Colors';
-
+import { useSelector,useDispatch } from 'react-redux';
+import { login } from '../../store/action/user';
 
 
 const { width, height } = Dimensions.get('window');
 
-const Registerscreen = ({ navigation, }) => {
+
+const Registerscreen = ({ navigation }) => {
 
   const [userName, setUserName] = useState("");
   const [Phonenum, setPhonenum] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [hidePass, setHidePass] = useState(true);
-
+  
+  const UserName = useSelector(state => state.userReducer.userData)
+  const Dispatch = useDispatch();
 
 
   async function Submit() {
@@ -34,11 +38,15 @@ const Registerscreen = ({ navigation, }) => {
       let { data, status, responseCode } = await apiCall.register(Userdata)
       if (status == true && responseCode == 200) {
         await AsyncStorage.setItem('userdata', JSON.stringify(data));
+        Dispatch(login(data,data.name))
         setLoading(false)
         navigation.navigate('BottomNav', {
-          name: data.name,
-          
-        })
+          phone:data.Phonenum
+        }) 
+        setUserName("")
+        setPassword("")
+        setPhonenum("")
+                      
       }
 
     } catch (error) {

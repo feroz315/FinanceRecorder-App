@@ -10,7 +10,7 @@ import CheckBox from '@react-native-community/checkbox';
 import COLORS from '../../const/Colors';
 import { useForm, Controller } from "react-hook-form";
 import { useSelector,useDispatch } from 'react-redux';
-import { login,phoneVerify } from '../../store/action/user';
+import { login } from '../../store/action/user';
 
 
 const { width, height } = Dimensions.get('window');
@@ -26,7 +26,7 @@ const Loginscreen = ({ navigation }) => {
     const [hidePass, setHidePass] = useState(true);
 
 
-    const Reduxdata = useSelector(state => state.userReducer)
+    const Logindata = useSelector(state => state.userReducer)
     const Dispatch = useDispatch();
 
 

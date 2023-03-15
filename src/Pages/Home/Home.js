@@ -9,13 +9,16 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { useIsFocused } from '@react-navigation/native';
 
 
+import { useSelector } from 'react-redux';
+
 
 const { height,width} = Dimensions.get('window');
 const screenWidth = Dimensions.get("window").width;
 
 
-const Home = ({ data }) => {
+const Home = () => {
 const isFocused = useIsFocused();
+const UserName = useSelector(state => state.userReducer.userData.name)
 
 
 const navigation = useNavigation();
@@ -91,7 +94,7 @@ useEffect(() => {
             <Image source={require('../../Images/Oval.png')} style={styles.headerimage} />
             <View style={styles.headertextview}>
               <Text style={styles.headertext}>Welcome</Text>
-              <Text style={styles.headertext1}>{data}</Text>
+              <Text style={styles.headertext1}>{UserName}</Text>
               </View>
           </View>
         
@@ -119,7 +122,7 @@ useEffect(() => {
           {
             loading?
             <ActivityIndicator size={'large'} color={"#000"} style={{marginTop:20,flex:0.40}}/>:
-            !Data.length > 0 ? <Text style={styles.viemsg}>There are no more Items Available</Text>:
+            !Data.length > 0 ? <Text style={styles.viemsg}>There are no Items Available</Text>:
              Data.length > 5 ? null : 
           <FlatList
           showsHorizontalScrollIndicator={false}
