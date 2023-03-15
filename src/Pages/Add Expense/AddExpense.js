@@ -118,7 +118,6 @@ AllCategory();
 
       </View>
 
-
       <View style={styles.ViewCard}>
         <Text style={{ marginLeft: 15,marginTop:15 }}>Select Category</Text>
         <TouchableOpacity style={styles.viewcategory} onPress={() => setModalVisible(!modalVisible)}>

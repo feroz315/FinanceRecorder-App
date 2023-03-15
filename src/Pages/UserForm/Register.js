@@ -9,6 +9,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import COLORS from '../../const/Colors';
 import { useSelector,useDispatch } from 'react-redux';
 import { login } from '../../store/action/user';
+import {CountryPicker} from "react-native-country-codes-picker";
+
 
 
 const { width, height } = Dimensions.get('window');
@@ -21,10 +23,15 @@ const Registerscreen = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [hidePass, setHidePass] = useState(true);
+
+  const [show, setShow] = useState(false);
+  const [countryCode, setCountryCode] = useState('');
+
+
   
   const UserName = useSelector(state => state.userReducer.userData)
-  console.log("🚀 ~ file: Register.js:26 ~ Registerscreen ~ UserName:", UserName)
   const Dispatch = useDispatch();
+
 
 
   async function Submit() {
@@ -39,9 +46,8 @@ const Registerscreen = ({ navigation }) => {
       let { data, status, responseCode } = await apiCall.register(Userdata)
       if (status == true && responseCode == 200) {
         await AsyncStorage.setItem('userdata', JSON.stringify(data));
-        console.log("🚀 ~ file: Register.js:41 ~ Submit ~ data:", data)
+        console.log("🚀 ~ file: Register.js:49 ~ Submit ~ data:", data)
         Dispatch(login(data,data.name))
-        // Dispatch(login(data,data.phoneNo))
         
         setLoading(false)
         navigation.navigate('BottomNav') 
@@ -61,6 +67,7 @@ const Registerscreen = ({ navigation }) => {
 
 
   return (
+    <>
     <View style={{ width: "110%", }}>
       <ImageBackground source={require("../../Images/Login/Shape/Shape.png")} />
 
@@ -79,7 +86,7 @@ const Registerscreen = ({ navigation }) => {
 
       <View style={styles.viewInput}>
         <View style={styles.viewconfusername} >
-          <Icon name="user" size={16} color="#007BFF" />
+          <Icon name="user" size={16} color="#007BFF" style={{marginLeft:15}}/>
           <TextInput style={styles.input} placeholder="Username" placeholderTextColor="#818181" value={userName} onChangeText={(val) => setUserName(val)} />
         </View>
 
@@ -90,11 +97,22 @@ const Registerscreen = ({ navigation }) => {
             <Icon name={hidePass ? 'eye-slash' : 'eye'} size={16} color="#007BFF" style={{ marginRight: 10 }} />
           </TouchableOpacity>
         </View>
-
+      
         <View style={styles.viewphone}>
-          <Icon name="phone" size={16} color="#007BFF" />
-          <TextInput style={styles.input} placeholder="Phone No" keyboardType="numeric" placeholderTextColor="#818181" value={Phonenum} onChangeText={(val) => setPhonenum(val)} />
-        </View>
+        <TouchableOpacity style={{flexDirection:'row'}} onPress={() => setShow(true)}>
+        <Icon name="phone" size={16} color="#007BFF" style={{marginLeft:4,marginTop:2}}/>
+        <View style={{flexDirection:'row',justifyContent:'center',alignItems:"center",marginLeft:3,marginBottom:2}}>
+        <Text style={{color:'#818181', fontSize:14,marginLeft:2}}>{countryCode}</Text>
+        <CountryPicker show={show} pickerButtonOnPress={(item) => {
+          setCountryCode(item.dial_code);
+          setShow(false)}}/>
+          </View>
+          </TouchableOpacity>
+          <View style={{marginRight:2}}>
+          <TextInput style={styles.input} placeholder="Phone" keyboardType="numeric" placeholderTextColor="#818181" value={Phonenum} onChangeText={(val) => setPhonenum(val)} />
+          </View>
+          </View>
+      
       </View>
 
       <View style={{ justifyContent: 'center', marginRight: 40, marginTop: 5 }}>
@@ -135,12 +153,11 @@ const Registerscreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
     </View>
-
+</>
   )
 };
 
 
 
 export default Registerscreen;
-
 

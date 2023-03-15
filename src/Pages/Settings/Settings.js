@@ -17,9 +17,9 @@ const [modalVisible, setModalVisible] = useState(false);
 
 
 const UserName = useSelector(state => state.userReducer.userData.name)
+const UserPhone = useSelector(state => state.userReducer.userData.phoneNo)
+
 const Dispatch = useDispatch();
-
-
 
 
 const Signout = async () => {
@@ -72,7 +72,7 @@ const Signout = async () => {
                   <Image source={require("../../Images/Settings/globe.png")} style={{ width: 20, height: 20 }} />
                   <View style={styles.viewtext3}>
                       <Text style={styles.number}>Number</Text>
-                      <Text style={styles.name3}>+92 3150137635</Text>
+                      <Text style={styles.name3}>+92{UserPhone}</Text>
                   </View>
                   <TouchableOpacity onPress={() => Alert.alert("test")}>
                    <View style={{ marginHorizontal: 145 }}>

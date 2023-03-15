@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     input: {
       position: 'relative',
       height: '100%',
-      width: '90%',
+      width: '100%',
       fontFamily: 'OpenSans-Medium',
       paddingLeft: 5,
       fontSize: 14,
@@ -20,22 +20,24 @@ const styles = StyleSheet.create({
       flexDirection: 'column',
       marginTop: 15,
       width: width * 0.93,     
-      alignSelf:'center'
+      alignSelf:'center',
+
     },
     viewphone: {
       flexDirection: 'row',
-      justifyContent: 'center',
+      justifyContent: "flex-start",
       alignItems: 'center',
       width: width * 0.81,
       borderRadius: 10,
       height: 40,
       borderWidth: 1,
       borderColor: "#007BFF",
-      marginTop: 15
+      marginTop: 15,
+      
     },
     viewpasword: {
       flexDirection: 'row',
-      justifyContent: 'center',
+      justifyContent: "space-around",
       alignItems: 'center',
       width: width * 0.81,
       borderRadius: 10,
@@ -54,14 +56,15 @@ const styles = StyleSheet.create({
       height: 40,
       borderWidth: 1,
       borderColor: "#007BFF",
-      marginTop: 16
+      marginTop: 16,
+      
     },
     viewbtn: {
       padding: SPACING * 0.5,
       backgroundColor: "#007BFF",
       borderRadius: 10,
       alignItems: "center",
-      width: width * 0.73,
+      width: width * 0.75,
       height: 35,
       alignSelf:'center',
       marginTop: 25,
