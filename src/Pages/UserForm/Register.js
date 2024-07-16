@@ -26,7 +26,7 @@ const Registerscreen = ({ navigation }) => {
 
   const [show, setShow] = useState(false);
   const [countryCode, setCountryCode] = useState('');
-
+  const [ edit,setEdit ] = useState("")
 
   
   const UserName = useSelector(state => state.userReducer.userData)
@@ -98,7 +98,7 @@ const Registerscreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       
-        <View style={styles.viewphone}>
+      <View style={styles.viewphone}>
         <TouchableOpacity style={{flexDirection:'row'}} onPress={() => setShow(true)}>
         <Icon name="phone" size={16} color="#007BFF" style={{marginLeft:4,marginTop:2}}/>
         <View style={{flexDirection:'row',justifyContent:'center',alignItems:"center",marginLeft:3,marginBottom:2}}>
@@ -107,9 +107,10 @@ const Registerscreen = ({ navigation }) => {
           setCountryCode(item.dial_code);
           setShow(false)}}/>
           </View>
-          </TouchableOpacity>
+          </TouchableOpacity>:
           <View style={{marginRight:2}}>
-          <TextInput style={styles.input} placeholder="Phone" keyboardType="numeric" placeholderTextColor="#818181" value={Phonenum} onChangeText={(val) => setPhonenum(val)} />
+         {setEdit ? <TextInput style={styles.input} placeholder="Phone" keyboardType="numeric" placeholderTextColor="#818181" 
+          value={Phonenum} onChangeText={(val) => setPhonenum(val)} /> : edit }
           </View>
           </View>
       

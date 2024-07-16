@@ -31,8 +31,7 @@ const styles = StyleSheet.create({
         height: 38,
         borderColor: "#007BFF",
         borderWidth: 1,
-        
-    },
+  },
     viewpasword: {
         flexDirection: 'row',
         justifyContent: 'center',

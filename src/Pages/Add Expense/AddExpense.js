@@ -15,6 +15,7 @@ const { height,width} = Dimensions.get('window');
  
 
 const AddExpense = ({ navigation }) => {
+
   const [ Apidata, setApidata ] = useState([]); 
   const [data, setData] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
@@ -23,7 +24,7 @@ const AddExpense = ({ navigation }) => {
   const [ Otpmsg, setOtpmsg ] = useState(""); 
   const [popmodalVisible, setPopModalVisible] = useState(false);
 
-  
+ 
 
 
   async function AllCategory() {
@@ -35,8 +36,7 @@ const AddExpense = ({ navigation }) => {
             catch (error) {
             console.log("data",error)
        }
-  }
-
+}
          
   const Addexpense = async () =>  {
     let items = {
@@ -54,9 +54,8 @@ const AddExpense = ({ navigation }) => {
   } catch (error) {
     console.log("🚀 ~ file: AddExpense.js:58 ~ Addexpense ~ error", error)
    }
- }
+}
 
-  
 const AttachFiles = async () => {
   try {
     const res = await DocumentPicker.pick({
@@ -84,7 +83,6 @@ const AttachFiles = async () => {
     console.log(error)
   }
 }
-
 
 const Uploadimage = async (data) => {
   try {

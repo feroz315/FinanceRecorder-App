@@ -21,7 +21,7 @@ const MyExpense = ({ navigation,route }) => {
   const [val, setSelected] = useState('');
 
 
-  const data = ['Jan','Feb','Mar','Apr','May','Jun', 'Jul','Aug','Sep','Oct','Nov','Dec'];
+ const data = ['Jan','Feb','Mar','Apr','May','Jun', 'Jul','Aug','Sep','Oct','Nov','Dec'];
  
  const openref = useRef();
   
@@ -85,7 +85,6 @@ async function Remove(id) {
 }
 
 
-
 useEffect(() => {
   AllExpense();
   },[isFocused])
@@ -106,10 +105,11 @@ useEffect(() => {
       <Image source={require('../../Uilites/Icons/setting.png')} style={{ marginRight: 15, width: 30, height: 25, color: "#000" }} />
         </View>
       </View>
+      
      </View>
  
      <View style={{flexDirection:"row",justifyContent:'space-between',alignItems:'center'}}>       
- <View style={styles.viewmonth}>
+  <View style={styles.viewmonth}>
  <SelectList
   setSelected={(val) => setSelected(val)}
   onSelect={() => AllExpense()}

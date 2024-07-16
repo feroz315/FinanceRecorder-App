@@ -27,7 +27,6 @@ const [ Data, setData ] = useState([])
 const [ loading, setLoading ] = useState(false);
 
 
-
 const monthdata = {
     labels: ["January", "February", "March", "April", "May", "June"],
     datasets: [
@@ -123,8 +122,9 @@ useEffect(() => {
             loading?
             <ActivityIndicator size={'large'} color={"#000"} style={{marginTop:20,flex:0.40}}/>:
             !Data.length > 0 ? <Text style={styles.viemsg}>There are no Items Available</Text>:
-             Data.length > 5 ? null : 
-          <FlatList
+             Data.length > 5 ? null :
+              
+        <FlatList
           showsHorizontalScrollIndicator={false}
           data={Data}
           renderItem={({ item }) => {
@@ -152,7 +152,7 @@ useEffect(() => {
                       
                }
            
-               <TouchableOpacity style={styles.viewbtn}    
+            <TouchableOpacity style={styles.viewbtn}    
               onPress={() => navigation.replace("AddExpense")}>
               <Text style={styles.textbtn}>Add Expense</Text>
               </TouchableOpacity>     

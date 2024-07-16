@@ -79,7 +79,10 @@ console.log("first",obj)
                         
                         <View style={styles.viewpasword}>
                             <Icon name="lock" size={16} color="#007BFF" />
-                            <TextInput style={styles.input} placeholder="Password" secureTextEntry={hidePass ? true : false} placeholderTextColor="#818181" value={Password} onChangeText={(val) => setPassword(val)}/>
+                            <TextInput style={styles.input} placeholder="Password" secureTextEntry={hidePass ? true : false} 
+                             placeholderTextColor="#818181" 
+                             value={Password} 
+                             onChangeText={(val) => setPassword(val)}/>
                         
                            <TouchableOpacity onPress={() => setHidePass(!hidePass)}>
                             <Icon name={hidePass ? 'eye-slash' : 'eye'} size={16} color="#007BFF" style={{marginRight:10}}/>
@@ -145,65 +148,4 @@ export default Loginscreen;
 
 
 
-  /*        
-            const emailValid = false;
-            if(username.length == 0){
-                setusernameError("username is required")
-            }else if(Email.indexOf('') >= 0 ){
-                setEmailError("Email doesn't contain space")
-            }else{
-                setEmailError("")
-                emailValid = true
-            } 
-            let passwordValid = false;
-            if(Password.length == 0 ){
-                setPasswordError("Password is required")
-            }else if(Password.length < 0 ){
-                setPasswordError("Password should be minimum 6 characters");
-
-            }else if(Password.indexOf('') >= 0){
-                setPasswordError('Password cannot contain spaces');                          
-
-            }else{
-                setPasswordError("")
-                passwordValid = true;
-            }
-                navigation.navigate('BottomNav')
-                setEmail("")
-                setPassword("")
-            const emailValid = false;
-            if(Email.length == 0){
-                setEmailError("Email is required")
-            }else if(Email.indexOf('') >= 0 ){
-                setEmailError("Email doesn't contain space")
-            }else{
-                setEmailError("")
-                emailValid = true
-            } 
-            let passwordValid = false;
-            if(Password.length == 0 ){
-                setPasswordError("Password is required")
-            }else if(Password.length < 0 ){
-                setPasswordError("Password should be minimum 6 characters");
-            }else if(Password.indexOf('') >= 0){
-                setPasswordError('Password cannot contain spaces');                          
-            }else{
-                setPasswordError("")
-                passwordValid = true;
-            }
-                navigation.navigate('BottomNav')
-                setEmail("")
-                setPassword("")
-
-
-
-              if(userName === ""){
-                    setUserError("Please Fill the username")
-                }if(Password.length < 6 && Password === "" ){
-                    setPasswordError('Password must be at least 6 chars long')   
-                }else {
-              
-
-
-*/
-
+  
