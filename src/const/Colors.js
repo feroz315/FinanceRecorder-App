@@ -22,7 +22,7 @@ const COLORS = {
     lightyellow:'#FCCD91',
     lighdark:'#170708',
     Danger:"#DB3D45",
-    cyanblue:"#007BFF"
+    cyanblue:"#007BFF",
     
   
   };
