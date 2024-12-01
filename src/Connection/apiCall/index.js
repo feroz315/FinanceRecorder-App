@@ -50,7 +50,7 @@ export const apiCall = {
   updateExpense: async (id) => {
     let result = await patch(Apis.updateExpense + `/?id=${id}`);
     if (result.status === 200) return result.data;
-    else throw result;
+    else throw result
   },
   expenseGroup: async obj => {
     let result = await get(Apis.expenseGroup, obj);
