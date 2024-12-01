@@ -17,7 +17,7 @@ const handlerGetToken = async () => {
     let datatoken = await AsyncStorage.getItem('userdata')
     console.log("🚀 ~ file: Splashscreen.js:14 ~ getToken ~ token:", datatoken)
     if(!datatoken) {
-      navigation.replace("Login",)
+      navigation.replace("BottomNav",)
     }else {
       navigation.replace("BottomNav",{
         
