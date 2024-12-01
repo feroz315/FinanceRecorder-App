@@ -105,7 +105,6 @@ const SnapScreen = ({ navigation }) => {
             <Text style={styles.skipbtn}>SKIP</Text>
           </TouchableOpacity>
         </View>
-
       </ImageBackground>
     </SafeAreaView>
   );
