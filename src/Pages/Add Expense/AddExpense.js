@@ -2,10 +2,10 @@ import React, { useState,useEffect } from 'react';
 import { View, Text, Image, SafeAreaView, TouchableOpacity,Modal,Pressable,FlatList,TextInput,Dimensions, Alert } from 'react-native';
 import Feather from 'react-native-vector-icons/AntDesign';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { SelectList } from 'react-native-dropdown-select-list';
+// import { SelectList } from 'react-native-dropdown-select-list';
 import styles from './style';
 import COLORS from '../../const/Colors';
-import { apiCall } from '../../Connection/apiCall';
+// import { apiCall } from '../../Connection/apiCall';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import DocumentPicker from 'react-native-document-picker';
 

@@ -5,7 +5,7 @@ import { LineChart } from "react-native-chart-kit";
 import styles from './style';
 import { apiCall } from '../../Connection/apiCall';
 import { useNavigation } from '@react-navigation/native';
-import { ScrollView } from 'react-native-gesture-handler';
+// import { ScrollView } from 'react-native-gesture-handler';
 import { useIsFocused } from '@react-navigation/native';
 
 
