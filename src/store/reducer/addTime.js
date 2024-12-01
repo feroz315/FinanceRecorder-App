@@ -19,7 +19,7 @@ export default AddTimeManually=(state=initialState,action)=>{
             ...state,
             data:state.data.splice(action.payload,1)
         };
-        default: return state
+        default: return state;
     }
 
 }
