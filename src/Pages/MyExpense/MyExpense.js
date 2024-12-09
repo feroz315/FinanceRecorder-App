@@ -67,7 +67,7 @@ const rightSide = (id) => {
       Remove(id)
     }} 
      style={{flexDirection:'column',justifyContent:'center',alignItems:'center',marginTop:40,marginLeft:10,position:'absolute'}}> 
-    <Image source={require('../../Images/delete.png')}/>
+    <Image source={require('../../Images/trash.png')}/>
     <Image source={require('../../Images/namedele.png')}/>
     </TouchableOpacity>
    </View> 

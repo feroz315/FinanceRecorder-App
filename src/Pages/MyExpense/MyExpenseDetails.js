@@ -148,7 +148,7 @@ return (
         </TouchableOpacity>
       
         <TouchableOpacity onPress={() => Remove()}>
-        <Image source={require('../../Images/delete.png')} style={{tintColor:"#FF6161"}}/>
+        <Image source={require('../../Images/trash.png')} style={{tintColor:"#FF6161"}}/>
         </TouchableOpacity> 
           
         </View>
